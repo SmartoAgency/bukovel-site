@@ -553,21 +553,22 @@ body #cdawrap {
   z-index: 1;
   top: 0;
   left: 0;
+  transition: width 1s ease;
+  will-change: width;
+
   & path {
     stroke-dasharray: 2000;
     stroke-dashoffset: 2000;
     fill: transparent;
     stroke: #000;
-    // fill: transparent;
-    // transition: opacity 1s ease;
-    // opacity: 0;
+    transition: transform 1s ease;
+    will-change: transform;
   }
 
-  //   .chalet__invest-link:hover & > path {
-  //     stroke-dashoffset: 0;
-  //     stroke: black;
-  //     opacity: 1;
-  //     fill: black;
-  //     transition: stroke-dashoffset 4s ease, fill 0.8s ease 2s;
-  //   }
+  .chalet__invest-link:hover & path {
+    transform: scale(1.3);
+  }
+  .chalet__invest-link:hover & {
+    width: 100%;
+  }
 }
