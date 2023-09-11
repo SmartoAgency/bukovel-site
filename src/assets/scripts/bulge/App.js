@@ -20,16 +20,11 @@ const ASSETS = [
   '13.jpg',
   '14.jpg',
   '15.jpg',
-  '16.jpg',
-  '17.jpg',
-  '18.jpg',
-  '19.jpg',
-  '20.jpg',
 ];
 
 export default class App {
   #components;
-  // #lenis;
+  #lenis;
   #guiCard = {
     bulge: 0,
     strength: 1.1,
@@ -39,7 +34,7 @@ export default class App {
   constructor() {
     this.#components = this.createComponents();
 
-    // this.#lenis = this.createLenis();
+    this.#lenis = this.createLenis();
 
     this.events();
   }
@@ -63,15 +58,15 @@ export default class App {
     return components;
   }
 
-  // createLenis() {
-  //   // Set up Lenis scroll
-  //   const lenis = new Lenis({ infinite: false, lerp: 0.1, smoothWheel: true });
-  //   this.scrollEl = document.querySelector('.scroll');
+  createLenis() {
+    // Set up Lenis scroll
+    const lenis = new Lenis({ infinite: false, lerp: 0.1, smoothWheel: true });
+    this.scrollEl = document.querySelector('.scroll');
 
-  //   lenis.on('scroll', this.handleScroll);
+    lenis.on('scroll', this.handleScroll);
 
-  //   return lenis;
-  // }
+    return lenis;
+  }
 
   events() {
     gsap.ticker.add(this.handleRAF);
@@ -86,7 +81,7 @@ export default class App {
   }
 
   handleRAF = time => {
-    // this.#lenis.raf(time * 1000);
+    this.#lenis.raf(time * 1000);
 
     for (let i = 0; i < this.#components.length; i++) {
       const comp = this.#components[i];

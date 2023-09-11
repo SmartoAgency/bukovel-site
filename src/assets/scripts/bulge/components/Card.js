@@ -92,7 +92,6 @@ export default class Card {
     this.#index = index;
     this.#guiObj = guiObj;
     this.setScene();
-
     this.#el.dataset.intersectId = index;
 
     this.#isTouch = isTouch();
@@ -113,13 +112,6 @@ export default class Card {
       width: this.#el.offsetWidth,
       height: this.#el.offsetHeight,
     });
-
-    // console.log(this.#renderer);
-
-    this.disable = () => {
-      console.log('i disable card');
-      this.#renderer.disable();
-    };
 
     const { gl } = this.#renderer;
 
@@ -152,7 +144,7 @@ export default class Card {
     const geometry = new Triangle(gl);
 
     const texture = LoaderManager.get(`${this.#index}`);
-    // console.log(texture);
+   
     this.#program = new Program(gl, {
       vertex,
       fragment,
@@ -169,9 +161,9 @@ export default class Card {
         uStrength: { value: this.#guiObj.strength },
       },
     });
-    console.log(this.#program);
+    
     this.#mesh = new Mesh(gl, { geometry, program: this.#program });
-    // console.log(this.#mesh);
+    
 
     this.events();
 

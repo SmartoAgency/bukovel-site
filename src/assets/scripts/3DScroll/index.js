@@ -178,7 +178,7 @@ const applyAnimation = (grid, animationType) => {
           transformOrigin: '50% 0%',
           z: () => gsap.utils.random(-5000, -2000),
           // rotationX: () => gsap.utils.random(-60, -25),
-          filter: 'brightness(0%)',
+          filter: 'brightness(50%)',
         })
         .to(
           gridItems,
