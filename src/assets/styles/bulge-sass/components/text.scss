@@ -1,0 +1,64 @@
+$fontSize: 3vw;
+$height: 18vw;
+
+
+
+.text {
+  transition: transform 1.2s var(--ease-out-bounce) 0.1s;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(0.2);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  border-radius: 60px;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+
+
+  // background-image: linear-gradient(to top, #383535ad, transparent 30%);
+  .is-visible & {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.text__words {
+  font-size: 36px;
+  color: $color-white;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 14px;
+
+  // @include respond-to(smartphone) {
+  //   font-size: 28px;
+  // }
+}
+
+.card__number {
+  font-size: 16px;
+  font-weight: 400;
+  color: $color-white;
+  text-align: center;
+  color: #f8eaa9
+}
+
+.card__link {
+  font-size: 14px;
+  margin-top: 12px;
+  font-weight: 400;
+  line-height: 120%;
+  color: $color-white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card__link--arrow {
+  width: 18px;
+  height: 14px;
+}

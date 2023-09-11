@@ -1,0 +1,201 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'home'
+    var id_page = 'id-page-home'
+    var class_page = 'class-page-home'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+    var spaCards = [{num: "01.", text: 'БАСЕЙН "ВИЩЕ НЕБА"' },{num: "02.", text: 'БАСЕЙН "ЛАГУНА"' },
+    {num: "03.", text: 'БАНЯ МОЛЬФАРА' },{num: "04.", text: 'ПАНОРАМНА ШОУ-САУНА' },
+    {num: "05.", text: 'ЯПОНСЬКІ БАНІ "ОФУРО"' },{num: '06.', text: 'БАНЯ МАГІЧНІ КУЛІ' },
+    {num: "07.", text: 'МЕДИТАЦІЙНА БАНЯ' },{num: "08.", text: 'ТУРЕЦЬКИЙ ХАМАМ' },
+    {num: "09.", text: 'РИМСЬКА БАНЯ' },{num: "10.", text: 'ПРОЦЕДУРНІ КІМНАТИ' },
+    {num: "11.", text: 'ФІТО КІМНАТА' },{num: "12.", text: "М'ЯКА КІМНАТА" },
+    {num: "13.", text: 'МАСАЖНІ КІМНАТИ' },{num: "14.", text: 'ДУБОВА КІМНАТА' },{num:"15.", text: "ВИДОВИЙ СПОРТЗАЛ"}]
+    var rooftopCards = [{num: "01.", text: 'БАСЕЙН "ВИЩЕ НЕБА"' },{num: "02.", text: 'БАСЕЙН "ЛАГУНА"' },
+    {num: "03.", text: 'БАНЯ МОЛЬФАРА' },{num: "04.", text: 'ПАНОРАМНА ШОУ-САУНА' }]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/home.bundle.js')
+
+block content
+  .background
+    canvas.background__canvas
+  section.hero-section 
+  section.content.content--spacing
+    .grid.grid--3
+      .grid-wrap
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/18.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/29.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/6.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/37.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/15.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/32.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/41.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/23.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/5.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/12.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/27.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/1.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/46.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/35.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/20.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/39.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/8.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/25.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/2.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/44.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/43.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/17.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/26.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/11.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/14.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/7.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/33.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/30.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/10.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/21.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/16.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/31.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/24.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/36.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/42.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/3.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/38.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/9.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/4.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/40.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/28.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/22.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/34.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/13.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/19.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/47.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/45.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/48.jpg)')
+    h3.content__title.content__title--left.content__title--bottom
+      | Інфраструктура, 
+      span яка  
+        span(style={color:"yellow"}) не лишить
+          br 
+          |   вас осторонь!
+          +img("scroll3Dimg/1.jpg")
+  section.spa-section
+    .spa.section
+      .container
+        h2.section-title.spa-title 
+          span.section-title__first-row 
+            span WELNESS 
+            span.section-title__accent & 
+          span.section-title__second-row SPA  
+          span.section-title__number 01
+            span.section-title__accent .
+  section.bulge 
+    .container.cards__container()
+      each card in spaCards 
+        .card
+          .card__content
+            canvas.card__canvas
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number=card.num
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+  section.spa-section
+    .section.rooftop
+      .container
+        h2.section-title.spa-title 
+          span.section-title__first-row 
+            span Rooftop 
+            span.section-title__accent & 
+          span.section-title__number(style="margin-top:0") Garden
+          span.section-title__second-row Solarium  
+          span.section-title__first-row
+            span.section-title__number 02
+              span.section-title__accent .
+            +svg("section-arrow").section__arrow
+  section
+    .container.cards__container
+      .card-curtains(id="card-curtains" style="width:100%;height: 100vh")
+      each card in rooftopCards 
+        .card__content
+          img.
+          .card__mask
+        +svg("card-logo").card__logo
+        .text
+          .text__content
+            p.card__number=card.num
+            .text__words=card.text
+            p.card__link Дізнатися більше
+              +svg("card-arrow").card__link--arrow
+        <div class="plane">
+          +img("scroll3Dimg/1.jpg")
+        </div>
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

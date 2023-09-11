@@ -1,0 +1,62 @@
+.svg-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.svg-test {
+    width: 400px;
+    height: 300px;
+    z-index: 2;
+}
+
+.rect-test {
+    stroke: silver;
+    stroke-width: 30;
+    fill: none;
+    stroke-dasharray: 40 30;
+    stroke-dashoffset: 300;
+    transition: all 1s ease;
+}
+
+.svg-test:hover .rect-test {
+    stroke-dashoffset: 0;
+}
+
+.circle-test {
+    fill: orange;
+    stroke: red;
+    stroke-width: 50;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    stroke-opacity: .6;
+    transition: all 1s ease;
+}
+
+.svg-test:hover .circle-test {
+    stroke-dashoffset: 0;
+
+}
+
+.js-path {
+    z-index: 2;
+    fill: none;
+    stroke: blue;
+    stroke-width: 0.5;
+    transition: all 2s ease-in-out;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    opacity: 0.3;
+    transition: all 2s ease-in-out, stroke-dashoffset 3s ease;
+
+}
+
+.svg-test:hover .js-path {
+
+    opacity: 1;
+    stroke: yellow;
+    stroke-dashoffset: 0;
+
+
+}

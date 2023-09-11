@@ -1,0 +1,95 @@
+$default-font: "Gilroy",
+	sans-serif;
+$default-font2: "montser",
+	sans-serif;
+
+$mc2: #FF554C;
+$mc3: #E5DF06;
+$mc4: #4F90B6;
+$gray: rgb(135, 135, 151);
+$text: #22223E;
+$wc: #fff;
+$bc: #000;
+$bc2: #000;
+
+$color-white: rgba(255, 255, 255, 1);
+$color-yellow: rgba(224, 185, 0, 1);
+$color-black: rgba(17, 17, 17, 1);
+$color-gray-0: rgba(241, 244, 249, 1);
+$color-gray-1: rgba(220, 226, 235, 1);
+$color-gray-2: rgba(148, 152, 158, 1);
+$color-gray-3: rgba(68, 75, 85, 1);
+$color-gray-4: rgba(47, 52, 58, 1);
+
+@mixin text-style-1920-h-1() {
+	font-size: 250px;
+	font-family: $default-font ;
+	line-height: 90%;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $color-white;
+}
+
+@mixin text-style-1920-h-2() {
+	font-size: 180px;
+	font-family: "Gilroy-Medium";
+	line-height: 100%;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+@mixin text-style-1920-h-3() {
+	font-size: 96px;
+	font-family: "Gilroy-Bold";
+	line-height: 100%;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+@mixin text-style-1920-h-4() {
+	font-size: 36px;
+	font-family: "Gilroy-Medium";
+	line-height: 100%;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-1920-h-4-link() {
+	font-size: 36px;
+	font-family: "Gilroy-Medium";
+	line-height: 100%;
+	text-decoration: underline;
+	text-transform: none;
+}
+
+@mixin text-style-1920-h-5-regular() {
+	font-size: 24px;
+	font-family: "Gilroy-Medium";
+	line-height: 120%;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-1920-h-5-bold() {
+	font-size: 24px;
+	font-family: "Gilroy-Bold";
+	line-height: 120%;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-1920-body() {
+	font-size: 16px;
+	font-family: "Gilroy-Medium";
+	line-height: 140%;
+	text-decoration: none;
+	text-transform: none;
+}
+
+@mixin text-style-1920-tiny() {
+	font-size: 14px;
+	font-family: "Gilroy-Medium";
+	line-height: 120%;
+	text-decoration: none;
+	text-transform: uppercase;
+}

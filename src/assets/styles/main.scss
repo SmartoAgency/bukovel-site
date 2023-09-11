@@ -1,0 +1,45 @@
+@import './assets/vars'; // переменные
+@import './assets/smart-grid'; // mixins smartgrid.js
+@import './common/container.scss';
+
+
+
+// assets
+@import './assets/mixins'; // миксины
+@import './assets/fonts'; // шрифты
+@import './assets/base'; // общие стили
+@import './assets/animation'; // анимации
+
+@import './assets/interface'; // main style
+@import './assets/breadcrubs'; // main style
+@import './assets/templates.scss';
+
+// sass dima
+
+@import './footer';
+@import './404';
+
+@import '../../pug/components/form/form';
+@import '../../pug/components/toster/toster';
+
+
+
+
+
+//@import 'pages/contacts';
+//@import 'pages/contact';
+//@import 'pages/home';
+// @import './assets/templates'; // main style
+
+//bulge
+@import './bulge-sass/imports/index';
+@import './bulge-sass/includes/reset';
+@import './bulge-sass/includes/root';
+
+@import './bulge-sass/components/card';
+@import './bulge-sass/components/text';
+@import './bulge-sass/components/lenis';
+@import './bulge-sass/components/scroll';
+@import './bulge-sass/components/background';
+
+@import "./svg"
