@@ -5,7 +5,7 @@ import { gsap, ScrollTrigger } from 'gsap/all';
 
 // Define a variable that will store the Lenis smooth scrolling object
 let lenis;
-const initSmoothScrolling = () => {
+export const initSmoothScrolling = () => {
   // Instantiate the Lenis object with specified properties
   lenis = new Lenis({
     lerp: 0.1,
@@ -23,6 +23,7 @@ const initSmoothScrolling = () => {
   };
   // Start the animation frame loop
   requestAnimationFrame(scrollFn);
+  return lenis;
 };
 // Function to initialize Lenis for smooth scrolling
 // const initSmoothScrolling = () => {

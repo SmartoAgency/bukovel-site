@@ -11,13 +11,13 @@ block variable
         link: pagesLink[0].about
       }
     ]
-    var spaCards = [{num: "01.", text: 'БАСЕЙН "ВИЩЕ НЕБА"' },{num: "02.", text: 'БАСЕЙН "ЛАГУНА"' },
-    {num: "03.", text: 'БАНЯ МОЛЬФАРА' },{num: "04.", text: 'ПАНОРАМНА ШОУ-САУНА' },
-    {num: "05.", text: 'ЯПОНСЬКІ БАНІ "ОФУРО"' },{num: '06.', text: 'БАНЯ МАГІЧНІ КУЛІ' },
-    {num: "07.", text: 'МЕДИТАЦІЙНА БАНЯ' },{num: "08.", text: 'ТУРЕЦЬКИЙ ХАМАМ' },
-    {num: "09.", text: 'РИМСЬКА БАНЯ' },{num: "10.", text: 'ПРОЦЕДУРНІ КІМНАТИ' },
-    {num: "11.", text: 'ФІТО КІМНАТА' },{num: "12.", text: "М'ЯКА КІМНАТА" },
-    {num: "13.", text: 'МАСАЖНІ КІМНАТИ' },{num: "14.", text: 'ДУБОВА КІМНАТА' },{num:"15.", text: "ВИДОВИЙ СПОРТЗАЛ"}]
+    var spaCards = [{num: 1, text: 'БАСЕЙН "ВИЩЕ НЕБА"' },{num: 2, text: 'БАСЕЙН "ЛАГУНА"' },
+    {num: 3, text: 'БАНЯ МОЛЬФАРА' },{num: 4, text: 'ПАНОРАМНА ШОУ-САУНА' },
+    {num: 5, text: 'ЯПОНСЬКІ БАНІ "ОФУРО"' },{num: 6, text: 'БАНЯ МАГІЧНІ КУЛІ' },
+    {num: 7, text: 'МЕДИТАЦІЙНА БАНЯ' },{num: 8, text: 'ТУРЕЦЬКИЙ ХАМАМ' },
+    {num: 9, text: 'РИМСЬКА БАНЯ' },{num: 10, text: 'ПРОЦЕДУРНІ КІМНАТИ' },
+    {num: 11, text: 'ФІТО КІМНАТА' },{num: 12, text: "М'ЯКА КІМНАТА" },
+    {num: 13, text: 'МАСАЖНІ КІМНАТИ' },{num: 14, text: 'ДУБОВА КІМНАТА' },{num:15, text: "ВИДОВИЙ СПОРТЗАЛ"}]
 
     var rooftopCards = [{num: 1, text: 'БАСЕЙН "ВИЩЕ НЕБА"' },{num: 2, text: 'БАСЕЙН "ЛАГУНА"' },
     {num: 3, text: 'БАНЯ МОЛЬФАРА' },{num: 4, text: 'ПАНОРАМНА ШОУ-САУНА' }]
@@ -25,7 +25,7 @@ block variable
     var skiFunCards = [{num: 1, text: 'DIRECT SKI IN/SKI OUT' },{num: 2, text: 'АПРЕ-СКІ ТЕРАСА' },
     {num: 3, text: 'ТРЕВЕЛАТОР' },{num: 4, text: 'НАВЧАЛЬНА ГІРКА' },{num: 5, text: 'ЛИЖНА ІНФРАСТРУКТУРА' }]
 
-     var foodCards = [{num: 1, text: 'ПАНОРАМНИЙ РЕСТОРАН' },{num: 2, text: 'АЗІЙСЬКИЙ РЕСТОРАН' },
+      var foodCards = [{num: 1, text: 'ПАНОРАМНИЙ РЕСТОРАН' },{num: 2, text: 'АЗІЙСЬКИЙ РЕСТОРАН' },
     {num: 3, text: 'ЛОБІ БАР' },{num: 4, text: 'ЛІНІЯ СНІДАНКІВ' }]
 
     var businessCards = [{num: 1, text: 'КОНФЕРЕНЦ-ЗАЛИ' },{num: 2, text: 'БАНКЕТНІ ЗАЛИ' },
@@ -155,7 +155,7 @@ block content
         span(style={color:"yellow"}) не лишить
           br 
           |   вас осторонь!
-       
+
   section.spa-section
     .spa.section
       .container
@@ -171,14 +171,14 @@ block content
   section.bulge 
     .container.cards__container()
       each card in spaCards 
-        .card
+        .card--without-bulge.is-visible
           .card__content
-            canvas.card__canvas
+            +img(`scroll3Dimg/${card.num}.jpg`).cardOut__img
             .card__mask
           +svg("card-logo").card__logo
           .text
             .text__content
-              p.card__number=card.num
+              p.card__number 0#{card.num}.
               .text__words=card.text
               p.card__link Дізнатися більше
                 +svg("card-arrow").card__link--arrow
@@ -195,12 +195,12 @@ block content
             span.section-title__number 02
               span.section-title__accent .
             +svg("section-arrow").section__arrow
-   
+
     .container.cards__container
       each card in rooftopCards 
         .card--without-bulge.is-visible
           .card__content
-            +img(`scroll3Dimg/${spaCards.length +card.num}.jpg`)
+            +img(`scroll3Dimg/${spaCards.length +card.num}.jpg`).cardOut__img
             .card__mask
           +svg("card-logo").card__logo
           .text
@@ -217,7 +217,7 @@ block content
             span Ski 
             span.section-title__accent & 
           span.section-title__second-row Fun
-          
+
           span.section-title__first-row
             span.section-title__number 03
               span.section-title__accent .
@@ -226,7 +226,7 @@ block content
       each card in skiFunCards
         .card--without-bulge.is-visible
           .card__content
-            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length +card.num}.jpg`)
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length +card.num}.jpg`).cardOut__img
             .card__mask
           +svg("card-logo").card__logo
           .text
@@ -243,7 +243,7 @@ block content
             span Food
             span.section-title__accent & 
           span.section-title__second-row Drinks
-          
+
           span.section-title__first-row
             span.section-title__number 04
               span.section-title__accent .
@@ -252,7 +252,7 @@ block content
       each card in foodCards 
         .card--without-bulge.is-visible
           .card__content
-            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+card.num}.jpg`)
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+card.num}.jpg`).cardOut__img
             .card__mask
           +svg("card-logo").card__logo
           .text
@@ -269,7 +269,7 @@ block content
             span Business
             span.section-title__accent & 
           span.section-title__second-row Meetings
-          
+
           span.section-title__first-row
             span.section-title__number 05
               span.section-title__accent .
@@ -278,7 +278,7 @@ block content
       each card in businessCards 
         .card--without-bulge.is-visible
           .card__content
-            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+card.num}.jpg`)
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+card.num}.jpg`).cardOut__img
             .card__mask
           +svg("card-logo").card__logo
           .text
@@ -304,7 +304,7 @@ block content
       each card in hotelCards 
         .card--without-bulge.is-visible
           .card__content
-            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`)
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`).cardOut__img
             .card__mask
           +svg("card-logo").card__logo
           .text
@@ -339,18 +339,18 @@ block content
             .invest-link__arrow-wrap 
               +svg("arrow-right").section__arrow.invest-link__arrow
   .container.cards__container
-      each card in hotelCards 
-        .card--without-bulge.is-visible
-          .card__content
-            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`)
-            .card__mask
-          +svg("card-logo").card__logo
-          .text
-            .text__content
-              p.card__number 0#{card.num}.
-              .text__words=card.text
-              p.card__link Дізнатися більше
-                +svg("card-arrow").card__link--arrow
+    each card in hotelCards 
+      .card--without-bulge.is-visible
+        .card__content
+          +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`).cardOut__img
+          .card__mask
+        +svg("card-logo").card__logo
+        .text
+          .text__content
+            p.card__number 0#{card.num}.
+            .text__words=card.text
+            p.card__link Дізнатися більше
+              +svg("card-arrow").card__link--arrow
 block footer
   include ../includes/footer.pug
 
