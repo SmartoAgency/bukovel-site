@@ -4,7 +4,7 @@ $default-font2: 'montser', sans-serif;
 $mc2: #ff554c;
 $mc3: #e5df06;
 $mc4: #4f90b6;
-$gray: rgb(135, 135, 151);
+$gray: #878797;
 $text: #22223e;
 $wc: #fff;
 $bc: #000;
@@ -15,9 +15,9 @@ $color-yellow: rgba(224, 185, 0, 1);
 $color-black: rgba(17, 17, 17, 1);
 $color-gray-0: rgba(241, 244, 249, 1);
 $color-gray-1: rgba(220, 226, 235, 1);
-$color-gray-2: rgba(148, 152, 158, 1);
+$color-gray-2: #94989e;
 $color-gray-3: rgba(68, 75, 85, 1);
-$color-gray-4: rgba(47, 52, 58, 1);
+$color-gray-4: #0d141f;
 
 @mixin text-style-1920-h-1() {
   font-size: 250px;
@@ -47,27 +47,35 @@ $color-gray-4: rgba(47, 52, 58, 1);
   color: $color-white;
 }
 
-@mixin text-style-1920-h-4() {
+@mixin text-style-link() {
   font-size: 36px;
-  font-family: 'Gilroy-Medium';
+  font-family: 'Gilroy';
   line-height: 100%;
-  text-decoration: none;
-  text-transform: none;
+  font-weight: 500;
+  color: $color-yellow;
+}
+@mixin text-style-link-underlined() {
+  font-size: 36px;
+  font-family: 'Gilroy';
+  line-height: 100%;
+  font-weight: 500;
+  color: $color-black;
+  text-decoration: underline;
 }
 @mixin text-style-p() {
   font-size: 36px;
   font-family: 'Gilroy';
-  font-weight: 400;
+  font-weight: 500;
   line-height: 100%;
   color: $color-white;
   text-transform: none;
 }
-@mixin text-style-1920-h-4-link() {
+@mixin text-style-date() {
   font-size: 36px;
-  font-family: 'Gilroy-Medium';
+  font-family: 'Gilroy';
   line-height: 100%;
-  text-decoration: underline;
-  text-transform: none;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 @mixin text-style-1920-h-5-regular() {
@@ -86,12 +94,11 @@ $color-gray-4: rgba(47, 52, 58, 1);
   text-transform: none;
 }
 
-@mixin text-style-1920-body() {
+@mixin text-style-news-descr() {
   font-size: 16px;
-  font-family: 'Gilroy-Medium';
   line-height: 140%;
-  text-decoration: none;
-  text-transform: none;
+  font-weight: 500;
+  font-family: 'Gilroy';
 }
 
 @mixin text-style-1920-tiny() {

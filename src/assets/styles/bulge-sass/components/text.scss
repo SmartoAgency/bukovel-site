@@ -1,8 +1,6 @@
 $fontSize: 3vw;
 $height: 18vw;
 
-
-
 .text {
   transition: transform 1.2s var(--ease-out-bounce) 0.1s;
   width: 100%;
@@ -10,7 +8,7 @@ $height: 18vw;
   top: 50%;
   left: 50%;
   height: 100%;
-  transform: translate(-50%, -50%) scale(0.2);
+  transform: translate(-50%, -50%);
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -20,12 +18,6 @@ $height: 18vw;
   display: flex;
   align-items: flex-end;
   padding: 40px;
-
-
-  // background-image: linear-gradient(to top, #383535ad, transparent 30%);
-  .is-visible & {
-    transform: translate(-50%, -50%);
-  }
 }
 
 .text__words {
@@ -45,7 +37,6 @@ $height: 18vw;
   font-weight: 400;
   color: $color-white;
   text-align: center;
-  color: #f8eaa9
 }
 
 .card__link {
