@@ -2,8 +2,6 @@
 @import './assets/smart-grid'; // mixins smartgrid.js
 @import './common/container.scss';
 
-
-
 // assets
 @import './assets/mixins'; // миксины
 @import './assets/fonts'; // шрифты
@@ -14,22 +12,14 @@
 @import './assets/breadcrubs'; // main style
 @import './assets/templates.scss';
 
-// sass dima
+// includes
 
 @import './footer';
 @import './404';
+@import './includes/navigation.scss';
 
 @import '../../pug/components/form/form';
 @import '../../pug/components/toster/toster';
-
-
-
-
-
-//@import 'pages/contacts';
-//@import 'pages/contact';
-//@import 'pages/home';
-// @import './assets/templates'; // main style
 
 //bulge
 @import './bulge-sass/imports/index';
@@ -41,5 +31,3 @@
 @import './bulge-sass/components/lenis';
 @import './bulge-sass/components/scroll';
 @import './bulge-sass/components/background';
-
-@import "./svg"

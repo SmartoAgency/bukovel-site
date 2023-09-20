@@ -171,14 +171,14 @@ block content
   section.bulge 
     .container.cards__container()
       each card in spaCards 
-        .card--without-bulge.is-visible
+        .card--without-bulge
           .card__content
             +img(`scroll3Dimg/${card.num}.jpg`).cardOut__img
             .card__mask
           +svg("card-logo").card__logo
           .text
             .text__content
-              p.card__number 0#{card.num}.
+              p.card__number #{card.num>9 ? card.num : "0"+card.num}.
               .text__words=card.text
               p.card__link Дізнатися більше
                 +svg("card-arrow").card__link--arrow
@@ -198,7 +198,7 @@ block content
 
     .container.cards__container
       each card in rooftopCards 
-        .card--without-bulge.is-visible
+        .card--without-bulge
           .card__content
             +img(`scroll3Dimg/${spaCards.length +card.num}.jpg`).cardOut__img
             .card__mask
@@ -224,7 +224,7 @@ block content
             +svg("section-arrow").section__arrow
     .container.cards__container
       each card in skiFunCards
-        .card--without-bulge.is-visible
+        .card--without-bulge
           .card__content
             +img(`scroll3Dimg/${spaCards.length+rooftopCards.length +card.num}.jpg`).cardOut__img
             .card__mask
@@ -250,7 +250,7 @@ block content
             +svg("section-arrow").section__arrow
     .container.cards__container
       each card in foodCards 
-        .card--without-bulge.is-visible
+        .card--without-bulge
           .card__content
             +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+card.num}.jpg`).cardOut__img
             .card__mask
@@ -276,7 +276,7 @@ block content
             +svg("section-arrow").section__arrow
     .container.cards__container
       each card in businessCards 
-        .card--without-bulge.is-visible
+        .card--without-bulge
           .card__content
             +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+card.num}.jpg`).cardOut__img
             .card__mask
@@ -302,7 +302,7 @@ block content
             +svg("section-arrow").section__arrow
     .container.cards__container
       each card in hotelCards 
-        .card--without-bulge.is-visible
+        .card--without-bulge
           .card__content
             +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`).cardOut__img
             .card__mask
@@ -314,7 +314,7 @@ block content
               p.card__link Дізнатися більше
                 +svg("card-arrow").card__link--arrow
   section
-    .section.hotel.chalet
+    .section.chalet
       .container
         h2.section-title.spa-title 
           span.section-title__first-row 
@@ -338,19 +338,88 @@ block content
                 | інвестором
             .invest-link__arrow-wrap 
               +svg("arrow-right").section__arrow.invest-link__arrow
-  .container.cards__container
-    each card in hotelCards 
-      .card--without-bulge.is-visible
-        .card__content
-          +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`).cardOut__img
-          .card__mask
-        +svg("card-logo").card__logo
-        .text
-          .text__content
-            p.card__number 0#{card.num}.
-            .text__words=card.text
-            p.card__link Дізнатися більше
-              +svg("card-arrow").card__link--arrow
+  section
+    .section.building
+      .container.building-padding
+        .svg-title__wrap
+          +svg("tree-title").svg-title__tree
+          h2.section-title.spa-title.building-title Будівництво
+          +svg("leave1").svg-title__leave1.svg-title__leave
+          +svg("leave2").svg-title__leave2.svg-title__leave
+          +svg("leave3").svg-title__leave3.svg-title__leave
+          +svg("leave4").svg-title__leave4.svg-title__leave
+          +svg("leave5").svg-title__leave5.svg-title__leave
+        .progress-preview
+          video.progress-preview__video
+            <source src="path" type="video/mp4">
+            | Відео не відтворюється на вашому браузері
+          .progress-preview__text-wrap
+            .progress-preview__date-wrap
+              p.progress-preview__month Липень
+              p.progress-preview__year 2023
+            .progress-preview__descr На сьогодні вже введені в експлуатацію, приймають гостей та приносять власникам пасивний дохід перші два будинки апарт-готелю.
+              br
+              | Зараз тривають роботи над зведенням третього будинку:
+              ul 
+                li Монолітний каркас вже залили на 80 відсотків.
+                li Зовнішні стіни виконали на 50%.
+                li Внутрішні стіни та перегородки влаштували на 15%
+                li Сходові марші та майданчики залиті до рівня восьмого поверху.
+                li В будинку розпочали влаштування металопластикових вікон.
+                li Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
+            a(href="#" aria-label="move to building progress page").all-progress-link  
+              p Більше звітів
+              +svg("link-arrow").svg--link-arrow
+  section
+    .section.news
+      .container 
+        h2.section-title.building-title
+          span.section-title__first-row 
+            span Новини
+            span.section-title__accent & 
+          span.section-title__first-row 
+           a.all-progress-link.all-news-link
+              p Перейти до розділу
+              +svg("link-arrow").svg--link-arrow
+           span Акції
+        .news__container
+  section
+    .section.building.contacts
+      .container
+        h2.section-title.building-title Контакти
+        .contacts__content-map-wrap 
+          .contacts__content
+            .contacts__email
+              p.contacts__label Наша адреса:
+              a(href="mailto:reservations@mountain-residence.com").contacts__location Івано-Франківська область, с. Поляниця, урочище Вишні, 421
+              a(href="#").all-progress-link.direction-link
+                p Прокласти маршрут
+                +svg("link-arrow").svg--link-arrow
+            .contacts__schedule
+              p.contacts__label Графік роботи:
+              p.contacts__schedule-info Пн-Нд 9:00-18:00
+            .contacts__phone
+              p.contacts__label Відділ інвестицій:
+              a(href="tel:+38 067 517 68 41").contacts__phone--invest +38 067 517 68 41
+            .contacts__phone
+              p.contacts__label Відділ бронювання:
+              a(href="tel:+38 034 259 50 00").contacts__phone--booking +38 034 259 50 00
+            .contacts__email
+              p.contacts__label E-mail:
+              a(href="mailto:reservations@mountain-residence.com").contacts__email-link reservations@mountain-residence.com
+            .contacts__email
+              p.contacts__label E-mail:
+              ul.contacts__social-list
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") instagram
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") facebook
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") youtube
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") cartel restaurants
+          .contacts__map
+             
 block footer
   include ../includes/footer.pug
 
