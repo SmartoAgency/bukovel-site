@@ -548,6 +548,7 @@ body #cdawrap {
   background-color: #e0b900;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .invest-link__text {
@@ -582,8 +583,10 @@ body #cdawrap {
   z-index: 1;
   top: 0;
   left: 0;
-  transition: width 1s ease;
+  // transition: width 1s ease;
+  // width: 100%;
   will-change: width;
+  overflow: visible;
 
   & path {
     stroke-dasharray: 2000;
@@ -595,10 +598,10 @@ body #cdawrap {
   }
 
   .chalet__invest-link:hover & path {
-    transform: scale(1.3);
+    transform: scale(1.3) translateX(60%);
   }
 
-  .chalet__invest-link:hover & {
-    width: 100%;
-  }
+  // .chalet__invest-link:hover & {
+  //   width: 100%;
+  // }
 }
