@@ -1,358 +1,449 @@
 
 extends ../layout/main
 block variable
-    -
-        var title_page = 'home'
-        var id_page = 'id-page-home'
-        var class_page = 'class-page-home'
-        var breadcrumbsSubitem = [
-            {
-                label: 'About',
-                link: pagesLink[0].about
-            }
-        ]
-        var spaCards = [{num: 1, text: 'БАСЕЙН "ВИЩЕ НЕБА"' },{num: 2, text: 'БАСЕЙН "ЛАГУНА"' },
-        {num: 3, text: 'БАНЯ МОЛЬФАРА' },{num: 4, text: 'ПАНОРАМНА ШОУ-САУНА' },
-        {num: 5, text: 'ЯПОНСЬКІ БАНІ "ОФУРО"' },{num: 6, text: 'БАНЯ МАГІЧНІ КУЛІ' },
-        {num: 7, text: 'МЕДИТАЦІЙНА БАНЯ' },{num: 8, text: 'ТУРЕЦЬКИЙ ХАМАМ' },
-        {num: 9, text: 'РИМСЬКА БАНЯ' },{num: 10, text: 'ПРОЦЕДУРНІ КІМНАТИ' },
-        {num: 11, text: 'ФІТО КІМНАТА' },{num: 12, text: "М'ЯКА КІМНАТА" },
-        {num: 13, text: 'МАСАЖНІ КІМНАТИ' },{num: 14, text: 'ДУБОВА КІМНАТА' },{num:15, text: "ВИДОВИЙ СПОРТЗАЛ"}]
+  -
+    var title_page = 'home'
+    var id_page = 'id-page-home'
+    var class_page = 'class-page-home'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+    var spaCards = [{num: 1, text: 'БАСЕЙН "ВИЩЕ НЕБА"' },{num: 2, text: 'БАСЕЙН "ЛАГУНА"' },
+    {num: 3, text: 'БАНЯ МОЛЬФАРА' },{num: 4, text: 'ПАНОРАМНА ШОУ-САУНА' },
+    {num: 5, text: 'ЯПОНСЬКІ БАНІ "ОФУРО"' },{num: 6, text: 'БАНЯ МАГІЧНІ КУЛІ' },
+    {num: 7, text: 'МЕДИТАЦІЙНА БАНЯ' },{num: 8, text: 'ТУРЕЦЬКИЙ ХАМАМ' },
+    {num: 9, text: 'РИМСЬКА БАНЯ' },{num: 10, text: 'ПРОЦЕДУРНІ КІМНАТИ' },
+    {num: 11, text: 'ФІТО КІМНАТА' },{num: 12, text: "М'ЯКА КІМНАТА" },
+    {num: 13, text: 'МАСАЖНІ КІМНАТИ' },{num: 14, text: 'ДУБОВА КІМНАТА' },{num:15, text: "ВИДОВИЙ СПОРТЗАЛ"}]
 
-        var rooftopCards = [{num: 1, text: 'БАСЕЙН "ВИЩЕ НЕБА"' },{num: 2, text: 'БАСЕЙН "ЛАГУНА"' },
-        {num: 3, text: 'БАНЯ МОЛЬФАРА' },{num: 4, text: 'ПАНОРАМНА ШОУ-САУНА' }]
+    var rooftopCards = [{num: 1, text: 'БАСЕЙН "ВИЩЕ НЕБА"' },{num: 2, text: 'БАСЕЙН "ЛАГУНА"' },
+    {num: 3, text: 'БАНЯ МОЛЬФАРА' },{num: 4, text: 'ПАНОРАМНА ШОУ-САУНА' }]
 
-        var skiFunCards = [{num: 1, text: 'DIRECT SKI IN/SKI OUT' },{num: 2, text: 'АПРЕ-СКІ ТЕРАСА' },
-        {num: 3, text: 'ТРЕВЕЛАТОР' },{num: 4, text: 'НАВЧАЛЬНА ГІРКА' },{num: 5, text: 'ЛИЖНА ІНФРАСТРУКТУРА' }]
+    var skiFunCards = [{num: 1, text: 'DIRECT SKI IN/SKI OUT' },{num: 2, text: 'АПРЕ-СКІ ТЕРАСА' },
+    {num: 3, text: 'ТРЕВЕЛАТОР' },{num: 4, text: 'НАВЧАЛЬНА ГІРКА' },{num: 5, text: 'ЛИЖНА ІНФРАСТРУКТУРА' }]
 
-            var foodCards = [{num: 1, text: 'ПАНОРАМНИЙ РЕСТОРАН' },{num: 2, text: 'АЗІЙСЬКИЙ РЕСТОРАН' },
-        {num: 3, text: 'ЛОБІ БАР' },{num: 4, text: 'ЛІНІЯ СНІДАНКІВ' }]
+      var foodCards = [{num: 1, text: 'ПАНОРАМНИЙ РЕСТОРАН' },{num: 2, text: 'АЗІЙСЬКИЙ РЕСТОРАН' },
+    {num: 3, text: 'ЛОБІ БАР' },{num: 4, text: 'ЛІНІЯ СНІДАНКІВ' }]
 
-        var businessCards = [{num: 1, text: 'КОНФЕРЕНЦ-ЗАЛИ' },{num: 2, text: 'БАНКЕТНІ ЗАЛИ' },
-        {num: 3, text: 'КОВОРКІНГ ЛАУНДЖ' }]
+    var businessCards = [{num: 1, text: 'КОНФЕРЕНЦ-ЗАЛИ' },{num: 2, text: 'БАНКЕТНІ ЗАЛИ' },
+    {num: 3, text: 'КОВОРКІНГ ЛАУНДЖ' }]
 
-        var hotelCards = [{num: 1, text: 'САЛОН КРАСИ' },{num: 2, text: 'ТОРГІВЕЛЬНА ЗОНА' },
-        {num: 3, text: 'ДИТЯЧА КІМНАТА' },{num: 4, text: 'ЦІЛОДОБОВА РЕЦЕПЦІЯ' },
-        {num: 5, text: 'КОНСЬЄРЖ СЕРВІС' },{num: 6, text: 'ВЕЛОПАРКОВКА ПІД ОХОРОНОЮ' },
-        {num: 7, text: 'КРИТИЙ ПАРКІНГ' },{num: 8, text: 'ТРАНСФЕРИ ТА ТАКСІ' },]
+    var hotelCards = [{num: 1, text: 'САЛОН КРАСИ' },{num: 2, text: 'ТОРГІВЕЛЬНА ЗОНА' },
+    {num: 3, text: 'ДИТЯЧА КІМНАТА' },{num: 4, text: 'ЦІЛОДОБОВА РЕЦЕПЦІЯ' },
+    {num: 5, text: 'КОНСЬЄРЖ СЕРВІС' },{num: 6, text: 'ВЕЛОПАРКОВКА ПІД ОХОРОНОЮ' },
+    {num: 7, text: 'КРИТИЙ ПАРКІНГ' },{num: 8, text: 'ТРАНСФЕРИ ТА ТАКСІ' },]
 
 block meta
-    title= title_page
-    meta(name='description' content='')
+  title= title_page
+  meta(name='description' content='')
 block head
-    link(rel='stylesheet' href="./assets/styles/main.min.css")
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
 block scripts
-    script(defer src='./assets/scripts/vendors.bundle.js')
-    script(defer src='./assets/scripts/home.bundle.js')
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/home.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
 
 block content
-    .background
-        canvas.background__canvas
-    <div class="scroll is-visible"></div>
-    section.hero-section
-    section.content.content--spacing
-        .grid.grid--3
-            .grid-wrap
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/18.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/29.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/6.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/37.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/15.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/32.jpg)')
-                //- .grid__item
-                //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/41.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/23.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/5.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/12.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/27.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/1.jpg)')
-                //- .grid__item
-                //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/46.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/35.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/20.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/39.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/8.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/25.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/2.jpg)')
-                //- .grid__item
-                //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/44.jpg)')
-                //- .grid__item
-                //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/43.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/17.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/26.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/11.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/14.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/7.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/33.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/30.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/10.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/21.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/16.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/31.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/24.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/36.jpg)')
-                //- .grid__item
-                //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/42.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/3.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/38.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/9.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/4.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/40.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/28.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/22.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/34.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/13.jpg)')
-                .grid__item
-                    .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/19.jpg)')
-                //- .grid__item
-                //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/47.jpg)')
-                //- .grid__item
-                //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/45.jpg)')
-                //- .grid__item
-                //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/48.jpg)')
-        h3.content__title.content__title--left.content__title--bottom
-            | Інфраструктура, 
-            span яка  
-                span(style={color:"yellow"}) не лишить
-                    br 
-                    |   вас осторонь!
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.hero-section
+    .container.hero__bg
+      div.section-title.spa-title 
+        span.section-title__first-row 
+          h1 Mountain
+          ul.hero__social-list
+            li 
+              a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") instagram
+            li 
+              a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") facebook
+            li 
+              a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") youtube
+            li 
+              a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") cartel restaurants 
 
-    section.spa-section
-        .spa.section
-            .container
-                h2.section-title.spa-title 
-                    span.section-title__first-row 
-                        span WELNESS 
-                        span.section-title__accent & 
-                    span.section-title__second-row SPA  
-                    span.section-title__first-row
-                        span.section-title__number 01
-                            span.section-title__accent .
-                        +svg("section-arrow").section__arrow
-    section.bulge 
-        .container.cards__container()
-            each card in spaCards 
-                .card--without-bulge.is-visible
-                    .card__content
-                        +img(`scroll3Dimg/${card.num}.jpg`).cardOut__img
-                        .card__mask
-                    +svg("card-logo").card__logo
-                    .text
-                        .text__content
-                            p.card__number 0#{card.num}.
-                            .text__words=card.text
-                            p.card__link Дізнатися більше
-                                +svg("card-arrow").card__link--arrow
-    section
-        .section.rooftop
-            .container
-                h2.section-title.spa-title 
-                    span.section-title__first-row 
-                        span Rooftop 
-                        span.section-title__accent & 
-                    span.section-title__number(style="margin-top:0") Garden
-                    span.section-title__second-row Solarium  
-                    span.section-title__first-row
-                        span.section-title__number 02
-                            span.section-title__accent .
-                        +svg("section-arrow").section__arrow
+        span.section-title__first-row
+          p.hero__text-block Продаж апартаментів в самому центрі Буковелю! Інвестиція, приречена на успіх!
+          h2  Residence
+      .hero__invest-more-wrap 
+        buttom.arrow-down__button 
+          <svg class="arrow-down__svg " viewBox="0 0 179 138" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-2.55046e-06 71.6522L169 71.6522M169 71.6522L169 61.0435L105.625 7.99999M169 71.6522L169 82.2609L105.625 130" stroke="white" stroke-width="10" />
+          </svg>
+        include ../includes/invest-link.pug
+  section.content.content--spacing
+    .grid.grid--3
+      .grid-wrap
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/18.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/29.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/6.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/37.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/15.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/32.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/41.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/23.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/5.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/12.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/27.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/1.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/46.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/35.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/20.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/39.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/8.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/25.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/2.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/44.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/43.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/17.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/26.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/11.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/14.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/7.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/33.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/30.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/10.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/21.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/16.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/31.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/24.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/36.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/42.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/3.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/38.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/9.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/4.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/40.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/28.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/22.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/34.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/13.jpg)')
+        .grid__item
+          .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/19.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/47.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/45.jpg)')
+        //- .grid__item
+        //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/48.jpg)')
+    h3.content__title.content__title--left.content__title--bottom
+      | Інфраструктура, 
+      span яка  
+        span(style={color:"yellow"}) не лишить
+          br 
+          |   вас осторонь!
 
-        .container.cards__container
-            each card in rooftopCards 
-                .card--without-bulge.is-visible
-                    .card__content
-                        +img(`scroll3Dimg/${spaCards.length +card.num}.jpg`).cardOut__img
-                        .card__mask
-                    +svg("card-logo").card__logo
-                    .text
-                        .text__content
-                            p.card__number 0#{card.num}.
-                            .text__words=card.text
-                            p.card__link Дізнатися більше
-                                +svg("card-arrow").card__link--arrow
-    section
-        .section.ski-fun
-            .container
-                h2.section-title.spa-title 
-                    span.section-title__first-row 
-                        span Ski 
-                        span.section-title__accent & 
-                    span.section-title__second-row Fun
+  section.spa-section
+    .spa.section
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section1bg.jpg" alt="фото" img-paralax)
+      .container
+        div.section-title.spa-title 
+          span.section-title__first-row 
+            h2 WELNESS 
+            span.section-title__accent & 
+          h2.section-title__second-row SPA  
+          span.section-title__first-row
+            span.section-title__number 01
+              span.section-title__accent .
+            +svg("section-arrow").section__arrow
+  section.bulge 
+    .container.cards__container()
+      each card in spaCards 
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number #{card.num>9 ? card.num : "0"+card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+  section
+    .section.rooftop
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section2bg.jpg" alt="фото" img-paralax)
+      .container
+        .section-title.spa-title 
+          span.section-title__first-row 
+            h2 Rooftop 
+            span.section-title__accent & 
+          h2.section-title__number(style="margin-top:0") Garden
+          h2.section-title__second-row Solarium  
+          span.section-title__first-row
+            span.section-title__number 02
+              span.section-title__accent .
+            +svg("section-arrow").section__arrow
 
-                    span.section-title__first-row
-                        span.section-title__number 03
-                            span.section-title__accent .
-                        +svg("section-arrow").section__arrow
-        .container.cards__container
-            each card in skiFunCards
-                .card--without-bulge.is-visible
-                    .card__content
-                        +img(`scroll3Dimg/${spaCards.length+rooftopCards.length +card.num}.jpg`).cardOut__img
-                        .card__mask
-                    +svg("card-logo").card__logo
-                    .text
-                        .text__content
-                            p.card__number 0#{card.num}.
-                            .text__words=card.text
-                            p.card__link Дізнатися більше
-                                +svg("card-arrow").card__link--arrow
-    section
-        .section.food
-            .container
-                h2.section-title.spa-title 
-                    span.section-title__first-row 
-                        span Food
-                        span.section-title__accent & 
-                    span.section-title__second-row Drinks
-
-                    span.section-title__first-row
-                        span.section-title__number 04
-                            span.section-title__accent .
-                        +svg("section-arrow").section__arrow
-        .container.cards__container
-            each card in foodCards 
-                .card--without-bulge.is-visible
-                    .card__content
-                        +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+card.num}.jpg`).cardOut__img
-                        .card__mask
-                    +svg("card-logo").card__logo
-                    .text
-                        .text__content
-                            p.card__number 0#{card.num}.
-                            .text__words=card.text
-                            p.card__link Дізнатися більше
-                                +svg("card-arrow").card__link--arrow
-    section
-        .section.business
-            .container
-                h2.section-title.spa-title 
-                    span.section-title__first-row 
-                        span Business
-                        span.section-title__accent & 
-                    span.section-title__second-row Meetings
-
-                    span.section-title__first-row
-                        span.section-title__number 05
-                            span.section-title__accent .
-                        +svg("section-arrow").section__arrow
-        .container.cards__container
-            each card in businessCards 
-                .card--without-bulge.is-visible
-                    .card__content
-                        +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+card.num}.jpg`).cardOut__img
-                        .card__mask
-                    +svg("card-logo").card__logo
-                    .text
-                        .text__content
-                            p.card__number 0#{card.num}.
-                            .text__words=card.text
-                            p.card__link Дізнатися більше
-                                +svg("card-arrow").card__link--arrow
-    section
-        .section.hotel
-            .container
-                h2.section-title.spa-title 
-                    span.section-title__first-row 
-                        span Hotel
-                        span.section-title__accent & 
-                    span.section-title__number(style="margin-top:0") Info
-                    span.section-title__second-row Services 
-                    span.section-title__first-row
-                        span.section-title__number 06
-                            span.section-title__accent .
-                        +svg("section-arrow").section__arrow
-        .container.cards__container
-            each card in hotelCards 
-                .card--without-bulge.is-visible
-                    .card__content
-                        +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`).cardOut__img
-                        .card__mask
-                    +svg("card-logo").card__logo
-                    .text
-                        .text__content
-                            p.card__number 0#{card.num}.
-                            .text__words=card.text
-                            p.card__link Дізнатися більше
-                                +svg("card-arrow").card__link--arrow
-    section
-        .section.hotel.chalet
-            .container
-                h2.section-title.spa-title 
-                    span.section-title__first-row 
-                        span Chalet
-                        span.section-title__accent & 
-                    span.section-title__number(style="margin-top:0") Apartaments
-                .chalet__bottom-content 
-                    p.chalet__text-block ОБЕРІТЬ АПАРТАМЕНТИ НА СВІЙ СМАК. ЗА ВСЕ ІНШЕ ПОДБАЄМО МИ.
-                    a.chalet__invest-link
-                        .invest-link__text-wrap
-                            <svg class = 'logo-part__svg' width="329" height="272" viewBox="0 0 329 272" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M-5.57547 155.127C-5.57547 155.127 -5.39859 155.541 -5.28067 155.719C-5.51648 155.837 -5.75232 156.014 -5.92917 156.132C-5.81128 155.778 -5.63437 155.482 -5.51645 155.127M7.7485 188.524C13.8209 184.564 19.9523 180.781 26.2605 177.116C36.7546 170.969 47.7792 165.531 59.2166 160.211C72.8942 166.713 87.751 170.85 102.961 172.86C125.836 175.993 149.654 173.806 172.116 167.068C194.578 160.152 215.507 148.33 232.663 132.725C249.76 117.12 263.379 97.7917 270.336 76.0396C251.47 88.8071 234.255 100.333 216.274 109.732C198.469 119.248 180.311 126.814 161.622 132.548C142.874 138.045 123.596 142.242 103.374 144.488C98.6577 145.079 93.9413 145.552 89.107 145.966C95.71 142.596 102.313 138.872 108.739 134.439C122.829 124.923 135.682 112.155 144.289 97.4961C153.25 82.8371 158.38 66.3457 160.738 50.0907C164.511 17.2261 157.849 -14.4564 146.471 -43.2425C150.244 -12.5058 151.364 18.6447 143.405 46.6033C135.8 74.5618 117.877 97.5553 94.0002 110.441C69.6516 123.209 38.759 132.016 9.92984 147.089C6.98206 148.566 4.09326 150.162 1.20447 151.817C3.97537 136.331 6.8642 122.026 10.6963 108.313C15.4127 91.3488 21.2493 75.4485 28.6187 60.1983C35.9292 44.9482 44.5956 30.4074 54.9717 16.1621C65.23 1.7395 77.139 -11.9147 90.5219 -27.1057C70.2412 -25.2142 51.1397 -16.3479 34.9269 -3.75764C19.9523 7.82773 7.63055 23.0779 -1.33066 40.1013C-3.3941 33.1855 -5.87018 26.388 -8.81793 19.8269C-19.312 -3.69853 -34.8763 -24.8596 -55.2748 -39.6959C-46.8442 -15.9932 -39.9464 6.2318 -35.6427 28.575C-31.162 50.8591 -29.1576 72.9068 -29.8061 94.9545C-30.2188 117.002 -33.4613 138.932 -38.9442 160.92C-41.6561 171.796 -45.0165 182.613 -48.7897 193.548C-54.1546 200.287 -59.048 207.143 -63.5876 214.118C-67.7144 220.62 -71.6055 227.181 -75.4376 233.743C-80.8025 223.398 -87.2287 213.409 -94.8339 204.129C-105.977 182.199 -113.582 159.147 -119.477 135.917C-122.484 122.972 -124.901 109.968 -126.552 96.9051C-126.847 93.063 -127.259 89.1618 -127.849 85.2015C-129.5 67.9416 -129.853 50.6818 -128.674 33.7175C-126.316 0.0844498 -117.709 -32.6029 -99.9041 -60.6205C-82.0406 -88.6973 -54.0957 -110.272 -20.9038 -127C-57.692 -125.049 -96.013 -108.322 -122.189 -77.7622C-146.125 -50.8676 -159.036 -15.875 -163.34 18.9993C-174.954 8.83258 -188.632 1.14841 -202.899 -3.28477C-226.481 -10.3779 -251.478 -9.90498 -272.938 -0.802185C-250.653 5.04961 -230.903 12.4974 -214.042 22.6641C-197.416 32.8309 -183.621 45.9531 -173.893 61.2623C-168.882 69.0056 -165.109 77.6355 -161.925 87.0338C-159.39 103.171 -155.322 119.012 -149.839 134.262C-147.304 144.902 -144.356 155.778 -140.465 166.417C-142.293 165.412 -144.062 164.348 -146.007 163.462C-162.868 155.423 -181.911 151.167 -201.013 150.812C-212.214 150.694 -223.062 152.054 -233.497 153.886C-242.576 149.217 -251.125 144.133 -258.966 138.518C-275.414 126.932 -288.797 112.983 -299.232 96.846C-320.692 65.0453 -326.941 24.7329 -325.644 -21.6086C-340.442 -3.16654 -347.929 20.5362 -349.167 45.0073C-350.052 69.4785 -343.567 95.4273 -329.417 116.529C-316.27 137.158 -296.52 153.472 -274.471 162.634C-283.609 164.526 -292.452 166.063 -301.296 166.713C-316.329 167.895 -331.54 167.008 -346.75 164.053C-377.348 158.201 -406.826 143.247 -436.009 124.805C-417.379 153.886 -389.198 178.18 -354.591 191.184C-337.376 197.568 -318.629 200.878 -299.94 200.819C-281.133 200.878 -263.152 197.036 -246.644 193.371C-230.137 189.47 -215.103 186.042 -200.305 185.037C-185.625 184.209 -170.768 185.805 -156.148 189.943C-128.144 197.686 -102.085 215.3 -76.6757 235.811C-88.2899 256.263 -98.4302 277.188 -107.509 298.644C-119.3 327.962 -129.5 357.812 -136.987 388.431C-144.71 418.99 -149.25 450.318 -151.667 481.587C-153.082 513.033 -151.785 544.597 -145.477 575.097C-143.885 544.006 -140.406 513.683 -134.275 483.892C-127.849 454.16 -119.831 424.96 -110.162 396.292C-90.1764 339.429 -65.8279 283.276 -33.5793 233.802C-25.7971 221.389 -16.9539 209.626 -8.05157 200.464C-5.69336 198.514 -4.04263 196.504 -1.15381 194.435L7.7485 188.229V188.524Z" fill="#111111"/>
-                                <path d="M233.899 54.1691C239.382 46.7805 243.509 38.919 246.457 30.5846C249.404 22.3093 251.232 13.5612 251.763 4.39931C252.116 -4.8217 251.468 -14.4565 247.459 -25.2734C237.496 -19.4808 230.834 -12.565 225.233 -5.17636C219.75 2.21227 215.623 10.0738 212.616 18.4081C209.61 26.6834 207.782 35.3724 207.251 44.5935C206.898 53.8145 207.546 63.4492 211.614 74.2662C221.636 68.5326 228.298 61.5578 233.899 54.1691Z" fill="#111111"/>
-                                <path d="M62.8128 49.0268C58.3911 54.5831 54.9127 60.9077 52.5545 68.119C50.3142 75.4486 48.9583 83.4283 50.3732 93.6542C60.6314 92.7675 68.1188 89.5756 74.7218 85.7335C81.2069 81.8323 86.5718 76.9854 90.9935 71.37C95.4151 65.8138 98.8345 59.43 101.193 52.2187C103.433 44.8892 104.848 36.9095 103.374 26.6836C93.1159 27.6293 85.6875 30.7621 79.0845 34.6042C72.5994 38.5645 67.2345 43.3523 62.8128 48.9086" fill="#111111"/>
-                                <path d="M295.274 239.062C298.222 224.167 298.458 208.976 296.512 194.14C294.272 179.481 289.202 164.644 279.651 153.709C281.891 167.954 281.479 181.076 278.885 194.08C276.762 206.966 272.812 219.438 268.155 231.142C258.427 254.845 244.749 274.055 225.117 285.286C205.898 296.812 181.667 300.536 156.139 299.472C147.237 299.117 138.158 298.053 129.02 296.694C122.653 294.743 116.227 293.206 109.742 292.083C111.746 290.783 113.809 289.423 115.814 287.887C118.939 285.404 122.771 281.798 125.424 278.429C127.841 275.178 130.199 271.986 132.086 268.381C135.977 261.406 138.689 253.781 140.162 246.096C142.933 230.728 140.87 215.005 132.97 202.001C126.19 215.537 120.471 226.709 113.927 236.284C110.744 241.072 107.383 245.387 103.964 249.466C102.195 251.475 100.486 253.426 98.599 255.317C96.8303 256.913 95.887 257.918 93.7646 259.455C85.9235 265.366 75.0757 271.927 64.5227 278.961C53.7338 286.054 43.1219 294.152 31.8025 303.787C37.757 305.856 43.7114 306.92 49.548 307.274C63.6384 310.348 76.8444 313.954 89.6377 318.209C107.56 324.239 124.421 331.509 140.457 340.375C156.611 349.183 171.998 359.408 186.678 371.23C201.476 383.17 215.743 396.233 230.069 412.134C229.48 390.263 219.988 369.575 207.254 351.842C201.83 344.395 195.522 337.656 188.801 331.332C207.49 330.859 226.473 326.426 243.629 316.2C257.837 307.688 269.746 296.221 278.531 282.271C287.079 268.558 292.444 253.84 295.392 238.944" fill="#111111"/>
-                                <path d="M17.8877 238.413C14.2324 246.215 11.4026 254.727 11.1667 265.78C22.1914 265.189 30.5631 262.056 38.2273 258.155C45.7735 254.136 52.2586 249.17 57.8594 243.319C63.4602 237.467 68.2356 230.787 71.9497 223.103C75.546 215.301 78.4348 206.789 78.6707 195.795C67.705 196.445 59.2743 199.578 51.6691 203.479C44.1817 207.499 37.6377 212.464 31.978 218.315C26.3183 224.108 21.6018 230.847 17.8877 238.472" fill="#111111"/>
-                                <path d="M178.6 224.167C174.296 231.379 170.995 239.181 168.931 247.752C166.986 256.382 165.924 265.544 167.988 276.597C178.718 273.287 186.323 268.085 193.044 262.352C199.647 256.559 205.012 249.998 209.375 242.846C213.737 235.694 217.039 227.832 219.102 219.32C221.048 210.69 222.05 201.529 219.987 190.416C209.257 193.726 201.592 198.869 194.872 204.602C188.269 210.395 182.904 216.956 178.6 224.167Z" fill="#111111"/>
-                            </svg>
-                            p.invest-link__text Стати 
-                                br 
-                                | інвестором
-                        .invest-link__arrow-wrap 
-                            +svg("arrow-right").section__arrow.invest-link__arrow
     .container.cards__container
-        each card in hotelCards 
-            .card--without-bulge.is-visible
-                .card__content
-                    +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`).cardOut__img
-                    .card__mask
-                +svg("card-logo").card__logo
-                .text
-                    .text__content
-                        p.card__number 0#{card.num}.
-                        .text__words=card.text
-                        p.card__link Дізнатися більше
-                            +svg("card-arrow").card__link--arrow
+      each card in rooftopCards 
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${spaCards.length +card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number 0#{card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+  section
+    .section.ski-fun
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section3bg.jpg" alt="фото" img-paralax)
+      .container
+        .section-title.spa-title 
+          span.section-title__first-row 
+            h2 Ski 
+            span.section-title__accent & 
+          h2.section-title__second-row Fun
+
+          span.section-title__first-row
+            span.section-title__number 03
+              span.section-title__accent .
+            +svg("section-arrow").section__arrow
+    .container.cards__container
+      each card in skiFunCards
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length +card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number 0#{card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+  section
+    .section.food
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section4bg.jpg" alt="фото" img-paralax)
+      .container
+        .section-title.spa-title 
+          span.section-title__first-row 
+            h2 Food
+            span.section-title__accent & 
+          h2.section-title__second-row Drinks
+
+          span.section-title__first-row
+            span.section-title__number 04
+              span.section-title__accent .
+            +svg("section-arrow").section__arrow
+    .container.cards__container
+      each card in foodCards 
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number 0#{card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+  section
+    .section.business
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section5bg.jpg" alt="фото" img-paralax)
+      .container
+        .section-title.spa-title 
+          span.section-title__first-row 
+            h2 Business
+            span.section-title__accent & 
+          h2.section-title__second-row Meetings
+
+          span.section-title__first-row
+            span.section-title__number 05
+              span.section-title__accent .
+            +svg("section-arrow").section__arrow
+    .container.cards__container
+      each card in businessCards 
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number 0#{card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+  section
+    .section.hotel
+      .bg-parallax-wrap
+        img(src="./assets/images/sectionsBg/section6bg.jpg" alt="фото" img-paralax)
+      .container
+        .section-title.spa-title 
+          span.section-title__first-row 
+            h2 Hotel
+            span.section-title__accent & 
+          h2.section-title__number(style="margin-top:0") Info
+          h2.section-title__second-row Services 
+          span.section-title__first-row
+            span.section-title__number 06
+              span.section-title__accent .
+            +svg("section-arrow").section__arrow
+    .container.cards__container
+      each card in hotelCards 
+        .card--without-bulge
+          .card__content
+            +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`).cardOut__img
+            .card__mask
+          +svg("card-logo").card__logo
+          .text
+            .text__content
+              p.card__number 0#{card.num}.
+              .text__words=card.text
+              p.card__link Дізнатися більше
+                +svg("card-arrow").card__link--arrow
+  section
+    .section.chalet
+      .container
+        .section-title.spa-title 
+          span.section-title__first-row 
+            h2 Chalet
+            span.section-title__accent & 
+          h2.section-title__number(style="margin-top:0") Apartaments
+        .chalet__bottom-content 
+          p.chalet__text-block ОБЕРІТЬ АПАРТАМЕНТИ НА СВІЙ СМАК. ЗА ВСЕ ІНШЕ ПОДБАЄМО МИ.
+          include ../includes/invest-link.pug
+  section
+    .section.building
+      .container.building-padding
+        .svg-title__wrap
+          +svg("tree-title").svg-title__tree
+          h2.section-title.spa-title.building-title Будівництво
+          +svg("leave1").svg-title__leave1.svg-title__leave
+          +svg("leave2").svg-title__leave2.svg-title__leave
+          +svg("leave3").svg-title__leave3.svg-title__leave
+          +svg("leave4").svg-title__leave4.svg-title__leave
+          +svg("leave5").svg-title__leave5.svg-title__leave
+        .progress-preview
+          video.progress-preview__video
+            <source src="path" type="video/mp4">
+            | Відео не відтворюється на вашому браузері
+          .progress-preview__text-wrap
+            .progress-preview__date-wrap
+              p.progress-preview__month Липень
+              p.progress-preview__year 2023
+            .progress-preview__descr На сьогодні вже введені в експлуатацію, приймають гостей та приносять власникам пасивний дохід перші два будинки апарт-готелю.
+              br
+              | Зараз тривають роботи над зведенням третього будинку:
+              ul 
+                li Монолітний каркас вже залили на 80 відсотків.
+                li Зовнішні стіни виконали на 50%.
+                li Внутрішні стіни та перегородки влаштували на 15%
+                li Сходові марші та майданчики залиті до рівня восьмого поверху.
+                li В будинку розпочали влаштування металопластикових вікон.
+                li Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
+            a(href="#" aria-label="move to building progress page").all-progress-link  
+              p Більше звітів
+              +svg("link-arrow").svg--link-arrow
+  section
+    .section.news
+      .container 
+        .section-title.building-title
+          span.section-title__first-row 
+            h2 Новини
+            span.section-title__accent & 
+          span.section-title__first-row 
+            a.all-progress-link.all-news-link
+              p Перейти до розділу
+              +svg("link-arrow").svg--link-arrow
+            span Акції
+        .news__container
+  section
+    .section.building.contacts
+      .container
+        h2.section-title.building-title Контакти
+        .contacts__content-map-wrap 
+          .contacts__content
+            .contacts__email
+              p.contacts__label Наша адреса:
+              a(href="mailto:reservations@mountain-residence.com").contacts__location Івано-Франківська область, с. Поляниця, урочище Вишні, 421
+              a(href="#").all-progress-link.direction-link
+                p Прокласти маршрут
+                +svg("link-arrow").svg--link-arrow
+            .contacts__schedule
+              p.contacts__label Графік роботи:
+              p.contacts__schedule-info Пн-Нд 9:00-18:00
+            .contacts__phone
+              p.contacts__label Відділ інвестицій:
+              a(href="tel:+38 067 517 68 41").contacts__phone--invest +38 067 517 68 41
+            .contacts__phone
+              p.contacts__label Відділ бронювання:
+              a(href="tel:+38 034 259 50 00").contacts__phone--booking +38 034 259 50 00
+            .contacts__email
+              p.contacts__label E-mail:
+              a(href="mailto:reservations@mountain-residence.com").contacts__email-link reservations@mountain-residence.com
+            .contacts__email
+              p.contacts__label E-mail:
+              ul.contacts__social-list
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") instagram
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") facebook
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") youtube
+                li 
+                  a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") cartel restaurants
+          .contacts__map
+
 block footer
-    include ../includes/footer.pug
+  include ../includes/footer.pug
 
 block header
-    include ../includes/header.pug
+  include ../includes/header.pug

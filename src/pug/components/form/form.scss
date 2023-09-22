@@ -1,9 +1,16 @@
 .form {
   display: flex;
-  gap: 20px;
+
   margin-top: 50px;
   align-items: center;
+  justify-content: space-between;
 }
+
+.inputs-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
 .form-field__input {
   width: 663px;
   padding: 46px 60px;
@@ -11,19 +18,29 @@
   background-color: transparent;
   color: $color-gray-2;
   font-size: 36px;
+
   &::placeholder {
     @include text-style-p;
     color: $color-white;
   }
 }
+
 .form__button {
   @extend .all-progress-link;
-  text-align: end;
+  justify-self: flex-end;
+
 }
+
 .form__button-svg {
   transform: translateY(50%) scale(1.25);
 }
+
 .input-placeholder {
   @include text-style-p;
   color: $color-white;
+}
+
+.submit-btn__text {
+  max-width: 300px;
+  text-align: end;
 }

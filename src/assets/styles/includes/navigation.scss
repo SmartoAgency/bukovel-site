@@ -4,19 +4,23 @@
   display: flex;
   gap: 134px;
 }
+
 .main-nav__list {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .main-nav__link {
   @include text-style-p;
   color: $color-gray-2;
 }
+
 .sub-nav__title {
   @include text-style-p;
   color: $color-gray-3;
 }
+
 .sub-nav__list {
   margin-top: 20px;
   display: flex;
@@ -28,12 +32,14 @@
   @include text-style-news-descr;
   color: $color-gray-2;
 }
+
 .third-block-nav {
   display: flex;
   flex-direction: column;
   gap: 60px;
   max-width: 320px;
 }
+
 .forth-block-nav {
   @extend .third-block-nav;
 }

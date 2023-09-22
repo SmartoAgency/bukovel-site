@@ -19,14 +19,13 @@ export const langDetect = () => {
   return lang;
 };
 
-
 export function useState(initialValue) {
   let value = initialValue;
   const subscribers = [];
 
   function setValue(newValue) {
     value = newValue;
-    subscribers.forEach((subscriber) => subscriber(value));
+    subscribers.forEach(subscriber => subscriber(value));
   }
 
   function getState() {
@@ -45,4 +44,3 @@ export function useState(initialValue) {
 
   return [getState, setValue, subscribe];
 }
-

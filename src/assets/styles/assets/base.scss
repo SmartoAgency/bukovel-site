@@ -14,20 +14,20 @@
   @include debug(rgba(0, 0, 0, 0.5), 1px solid #ff0);
 }
 
-.container {
-  @include wrapper();
+// .container {
+//   @include wrapper();
 
-  & ~ & {
-    margin-top: 150px;
-  }
+//   & ~ & {
+//     margin-top: 150px;
+//   }
 
-  &:last-child {
-    margin-bottom: 150px;
-  }
-}
+//   &:last-child {
+//     margin-bottom: 150px;
+//   }
+// }
 
 .tablet {
-  .container ~ .container {
+  .container~.container {
     margin-top: 80px;
   }
 
@@ -37,7 +37,7 @@
 }
 
 .mobile {
-  .container ~ .container {
+  .container~.container {
     margin-top: 60px;
   }
 
@@ -68,7 +68,7 @@ body textarea {
 }
 
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 12px;
 }
 
 /* Track */
@@ -163,7 +163,8 @@ select:hover {
   //background-image: url("../img/flag/flags.png");
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
   .iti-flag {
     //background-image: url("../img/flag/flags@2x.png");
   }
@@ -251,7 +252,7 @@ input[type='number']::-webkit-outer-spin-button {
     }
   }
 
-  & > :nth-child(n + 2) {
+  &> :nth-child(n + 2) {
     margin-left: 8px;
   }
 }

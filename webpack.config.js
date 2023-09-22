@@ -7,6 +7,7 @@ const config = {
     // 'immediate-loading': './src/assets/scripts/immediate-loading.js',
     notFound: './src/assets/scripts/notFound.js',
     home: './src/assets/scripts/home.js',
+    header: './src/assets/scripts/modules/header/header.js',
   },
   output: {
     filename: '[name].bundle.js',

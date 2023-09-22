@@ -54,6 +54,7 @@ $color-gray-4: #0d141f;
   font-weight: 500;
   color: $color-yellow;
 }
+
 @mixin text-style-link-underlined() {
   font-size: 36px;
   font-family: 'Gilroy';
@@ -62,6 +63,7 @@ $color-gray-4: #0d141f;
   color: $color-black;
   text-decoration: underline;
 }
+
 @mixin text-style-p() {
   font-size: 36px;
   font-family: 'Gilroy';
@@ -70,6 +72,7 @@ $color-gray-4: #0d141f;
   color: $color-white;
   text-transform: none;
 }
+
 @mixin text-style-date() {
   font-size: 36px;
   font-family: 'Gilroy';
@@ -78,20 +81,24 @@ $color-gray-4: #0d141f;
   font-weight: 500;
 }
 
-@mixin text-style-1920-h-5-regular() {
+@mixin text-style-general-style() {
   font-size: 24px;
-  font-family: 'Gilroy-Medium';
+  font-family: 'Gilroy';
   line-height: 120%;
   text-decoration: none;
   text-transform: none;
+  font-weight: 500;
 }
 
-@mixin text-style-1920-h-5-bold() {
+@mixin text-style-uppercaesed-btn() {
+  color: $color-yellow;
+  text-align: center;
+  font-family: 'Gilroy';
   font-size: 24px;
-  font-family: 'Gilroy-Bold';
+  font-weight: 500;
   line-height: 120%;
-  text-decoration: none;
-  text-transform: none;
+  text-decoration-line: underline;
+  text-transform: uppercase;
 }
 
 @mixin text-style-news-descr() {

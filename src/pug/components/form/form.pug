@@ -7,14 +7,15 @@ mixin form(attr)
 		form(data-form=attr autocomplete="off").form
 			//- .form-title.text-style-h-3.text-black Замовити дзвінок
 			//- .form-description.text-style-body Залишіть контактні дані і ми обов'язково зв'яжемося з вами
-			.form-field.form-field-input(data-field-input data-field-name data-status="field--inactive").first-offset
-				.input-title.text-style-h-4.text-gray Ваше Ім'я
-				input(type='text' name="name" placeholder="Ваше Ім'я").form-field__input
-				.input-message(data-input-message)
-			.form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
-				.input-title.text-style-h-4.text-gray Ваш номер телефону
-				input(type='text' name="phone" placeholder="Ваш номер телефону").form-field__input
-				.input-message(data-input-message)
+			.inputs-wrapper
+				.form-field.form-field-input(data-field-input data-field-name data-status="field--inactive").first-offset
+					.input-title.text-style-h-4.text-gray Ваше Ім'я
+					input(type='text' name="name" placeholder="Ваше Ім'я").form-field__input
+					.input-message(data-input-message)
+				.form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+					.input-title.text-style-h-4.text-gray Ваш номер телефону
+					input(type='text' name="phone" placeholder="Ваш номер телефону").form-field__input
+					.input-message(data-input-message)
 			//- .form-field.disabled.form-field-input(data-field-input data-field-email data-status="field--inactive")
 			//- 	.input-title.text-style-h-4.text-gray Email:
 			//- 	input(type='text' name="email" placeholder="Введіть email").form-field__input
@@ -24,5 +25,5 @@ mixin form(attr)
 			//- 	textarea(type='text' name="comment" placeholder="Введіть повідомлення").form-field__input.text-input
 			//- 	.input-message(data-input-message)
 			button( type="submit" data-btn-submit).button-30.form__button
-					span(data-btn-submit-text) Надіслати повідомлення
-					+svg("link-arrow").svg--link-arrow.form__button-svg
+				span(data-btn-submit-text).submit-btn__text Надіслати повідомлення
+				+svg("link-arrow").svg--link-arrow.form__button-svg

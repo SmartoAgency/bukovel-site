@@ -1,0 +1,274 @@
+.header {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+
+}
+
+.header-bg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5));
+  width: 100%;
+  height: 100px;
+}
+
+.blocks-wrap {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.logo {
+  width: 75.392px;
+  height: 67.259px;
+
+  & path {
+    fill: $color-yellow;
+  }
+}
+
+.header__call-btn {
+  @include text-style-uppercaesed-btn;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  & svg {
+    width: 28px;
+    height: 38px;
+
+  }
+
+
+}
+
+.language__list {
+  display: flex;
+  gap: 24px;
+}
+
+.language__item {
+  color: $color-white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 120%;
+  position: relative;
+
+  &~&::before {
+    content: "|";
+    color: rgba(255, 255, 255, 0.50);
+    position: absolute;
+    left: -13px;
+    font-size: 18px;
+  }
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__logo-name {
+  @include text-style-uppercaesed-btn;
+  text-transform: none;
+  text-decoration: none;
+  color: $color-white;
+}
+
+//modal Call us
+
+.call-us__modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: absolute;
+  padding: 40px 28px;
+  background-color: $color-white;
+  max-height: 500px;
+  transition: all 1s ease;
+  margin-top: 20px;
+  // overflow: hidden;
+
+  & .contacts__phone {
+    @include text-style-general-style;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  max-height: 0px;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 12px;
+  right: 11px;
+
+  & svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+
+
+.call-us__triangle-decor {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 24px;
+  height: 12px;
+}
+
+.order-call {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.order-call__title {
+  @include text-style-news-descr;
+  color: $color-black;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+
+  & span {
+    width: 64px;
+    height: 1px;
+    background-color: $color-gray-1;
+
+
+  }
+
+
+}
+
+.order-call__number {
+  width: 284px;
+  padding: 19px 20px;
+  border: none;
+  outline: none;
+  background-color: $color-gray-1;
+  margin-bottom: 12px;
+
+  &::placeholder {
+    @include text-style-news-descr;
+    color: $color-black
+  }
+}
+
+.order-call__submit-btn {
+  @include text-style-news-descr;
+  color: $color-white;
+  background-color: $color-black;
+  padding: 20px;
+  width: 100%
+}
+
+.menu-btn {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  @include text-style-general-style;
+  color: $color-white
+}
+
+.menu-btn__burger {
+  height: 3px;
+  width: 28px;
+  background-color: $color-white;
+  position: relative;
+
+  & .line-over {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 3px;
+    top: -6px;
+    left: 0;
+    width: 54%;
+    background-color: $color-white;
+  }
+
+  & .line-under {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 3px;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    background-color: $color-white;
+  }
+}
+
+//menu
+
+
+.menu__container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu__bg {
+  perspective: 1000px;
+  width: 100vw;
+  height: inherit;
+  background-color: transparent;
+
+}
+
+.menu__bg-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+
+  transform: scale(10);
+  opacity: 0;
+  // transform: translateZ(1000px);
+
+  // &:hover {
+  //   transform: translateZ(1000px);
+
+  //   .menu__bg {
+  //     background-color: #F8F8F8;
+  //   }
+  // }
+}
+
+.header__nav-container {
+  padding-top: 156px;
+  opacity: 0;
+
+
+  & .main-nav__link {
+    color: $color-gray-4;
+  }
+
+  & .sub-nav__title {
+    color: $color-gray-4;
+  }
+
+  & .sub-nav__link {
+    color: $color-gray-3;
+  }
+
+}

@@ -12,8 +12,10 @@
 @import './assets/breadcrubs'; // main style
 @import './assets/templates.scss';
 
+//atoms
+@import './atoms/backdrop.scss';
 // includes
-
+@import './header';
 @import './footer';
 @import './404';
 @import './includes/navigation.scss';
