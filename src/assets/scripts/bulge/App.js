@@ -2,7 +2,7 @@ import Background from './components/Background';
 
 import { gsap } from 'gsap';
 import { isTouch } from './utils/isTouch';
-import { initSmoothScrolling } from '../3DScroll';
+import { initSmoothScrolling } from '../modules/scroll/leniscroll';
 
 export default class App {
   #components;

@@ -1,0 +1,38 @@
+.purchse__info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 100px;
+  margin-top: 200px;
+
+  .bg-parallax-wrap {
+    position: static;
+    width: 1117px;
+    height: 700px;
+
+
+  }
+}
+
+.purchse__info-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:nth-child(2) {
+    flex-direction: row-reverse
+  }
+}
+
+.purchse__info-title {
+  @include text-style-date;
+  color: $color-black;
+
+}
+
+.purchse__info-descr {
+  @include text-style-general-style;
+  color: $color-black;
+  max-width: 549px;
+
+}

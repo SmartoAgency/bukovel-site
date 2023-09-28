@@ -29,9 +29,10 @@ $color-gray-4: #0d141f;
   color: $color-white;
 }
 
-@mixin text-style-1920-h-2() {
+@mixin text-style-page-title() {
   font-size: 180px;
-  font-family: 'Gilroy-Medium';
+  font-family: 'Gilroy';
+  font-weight: 500;
   line-height: 100%;
   text-decoration: none;
   text-transform: uppercase;

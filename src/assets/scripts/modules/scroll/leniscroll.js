@@ -1,16 +1,38 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-// import Lenis from '@studio-freight/lenis';
+import Lenis from '@studio-freight/lenis';
+import { gsap, ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger);
+// Define a variable that will store the Lenis smooth scrolling object
+let lenis;
 
-// export const lenis = new Lenis()
+let isInited = false;
+export const initSmoothScrolling = () => {
+  // Instantiate the Lenis object with specified properties
+  if (isInited) return lenis;
 
-// function raf(time) {
-//     lenis.raf(time)
-//     requestAnimationFrame(raf)
-// }
+  lenis = new Lenis({
+    lerp: 0.1,
+    infinite: false, // Lower values create a smoother scroll effect
+    smoothWheel: true, // Enables smooth scrolling for mouse wheel events
+  });
+  console.log(lenis);
+  // Update ScrollTrigger each time the user scrolls
+  lenis.on('scroll', () => ScrollTrigger.update());
+  window.lenis = lenis;
+  window.addEventListener('stop-scroll', () => {
+    lenis.stop();
+  });
+  window.addEventListener('start-scroll', () => {
+    lenis.start();
+  });
 
-// if (!document.documentElement.classList.contains('mobile')) {
-//     requestAnimationFrame(raf)
-// }
-// if (document.documentElement.classList.contains('mobile')) {
-//     lenis.destroy();
-// }
+  // Define a function to run at each animation frame
+  // const scrollFn = time => {
+  //   lenis.raf(time); // Run Lenis' requestAnimationFrame method
+  //   // requestAnimationFrame(scrollFn); // Recursively call scrollFn on each frame
+  // };
+  // // Start the animation frame loop
+  // requestAnimationFrame(scrollFn);
+  isInited = true;
+  return lenis;
+};

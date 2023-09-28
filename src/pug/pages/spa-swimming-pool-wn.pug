@@ -1,0 +1,43 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'spa-swimming-pool-wn'
+    var id_page = 'id-page-spa-swimming-pool-wn'
+    var class_page = 'class-page-spa-swimming-pool-wn'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/swimmingPoolWn.bundle.js')
+block content
+  section.secondory-page-hero
+    .secondory-page-hero__mask
+    .secondory-page__text-wrap.container
+      h1.secondory-page__title Басейн "Вище неба"
+      p.secondory-page__description Description
+    .swiper 
+      .swiper-wrapper
+        .swiper-slide 
+          +img("spa-pages/swimming-pool-wn.jpg")
+        .swiper-slide 
+          +img("spa-pages/swimming-pool-wn.jpg")
+      .swiper-button-prev
+      .swiper-button-next
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

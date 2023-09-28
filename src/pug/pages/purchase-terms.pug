@@ -1,0 +1,50 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'purchase-terms'
+    var id_page = 'id-page-purchase-terms'
+    var class_page = 'class-page-purchase-terms'
+    var headerCustomClass = 'type2' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/purchaseTerms.bundle.js')
+block content
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.about-bukovel.purchse
+    .container
+      h1.page-title Умови придбання 
+      .purchse__info-container 
+        .purchse__info-block 
+          .purchse__info-text 
+            h3.purchse__info-title 100% ОПЛАТА
+            p.purchse__info-descr За умови повної оплати ви можете отримати знижку від забудовника MBT Group. Наш відділ продажів із задоволенням розкаже про знижки та спеціальні пропозиції, і разом з вами знайде найвигідніший варіант планувань та умов придбання.
+          .bg-parallax-wrap
+            img(src="./assets/images/purchaseTerms/info1.jpg" alt="фото" img-paralax)
+        .purchse__info-block 
+          .purchse__info-text 
+            h3.purchse__info-title РОЗСТРОЧКА
+            p.purchse__info-descr Купуючи нерухомість у розстрочку, ви сплачуєте перший внесок у розмірі від 50% вартості, а залишок оплачуєте частинам до кінця терміну розстрочки. Деталі про оплату частинами та розрахунок розміру першого внеску ви можете дізнатись від наших менеджерів.
+          .bg-parallax-wrap
+            img(src="./assets/images/purchaseTerms/info2.jpg" alt="фото" img-paralax) 
+  include ../includes/chalet-section.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -4,6 +4,7 @@ block variable
   -
     var title_page = 'home'
     var id_page = 'id-page-home'
+    var headerCustomClass = 'type1'
     var class_page = 'class-page-home'
     var breadcrumbsSubitem = [
       {
@@ -173,10 +174,10 @@ block content
         //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/45.jpg)')
         //- .grid__item
         //-     .grid__item-inner(style='background-image:url(./assets/images/scroll3Dimg/48.jpg)')
-    h3.content__title.content__title--left.content__title--bottom
+    .content__title.content__title--left.content__title--bottom
       | Інфраструктура, 
       span яка  
-        span(style={color:"yellow"}) не лишить
+        span(class="title-accent") не лишить
           br 
           |   вас осторонь!
 
@@ -349,17 +350,7 @@ block content
               .text__words=card.text
               p.card__link Дізнатися більше
                 +svg("card-arrow").card__link--arrow
-  section
-    .section.chalet
-      .container
-        .section-title.spa-title 
-          span.section-title__first-row 
-            h2 Chalet
-            span.section-title__accent & 
-          h2.section-title__number(style="margin-top:0") Apartaments
-        .chalet__bottom-content 
-          p.chalet__text-block ОБЕРІТЬ АПАРТАМЕНТИ НА СВІЙ СМАК. ЗА ВСЕ ІНШЕ ПОДБАЄМО МИ.
-          include ../includes/invest-link.pug
+  include ../includes/chalet-section.pug
   section
     .section.building
       .container.building-padding

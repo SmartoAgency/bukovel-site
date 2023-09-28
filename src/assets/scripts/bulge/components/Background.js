@@ -58,10 +58,11 @@ export default class Backround {
       vertex,
       fragment,
       uniforms: {
-        uTime: { value: 2 },
+        uTime: { value: 1 },
         uScroll: { value: 0 },
-        uColor1: { value: new Color('#fdfaee') },
+        uColor1: { value: new Color('#faf1cd') },
         uColor2: { value: new Color('#d6abb4') },
+        uColor3: { value: new Color('#ccd4fc') },
 
         uResolution: { value: new Vec2(gl.canvas.offsetWidth, gl.canvas.offsetHeight) },
       },
@@ -79,7 +80,7 @@ export default class Backround {
   };
 
   scroll = s => {
-    this.#program.uniforms.uScroll.value = s * 8;
+    this.#program.uniforms.uScroll.value = s * 2;
   };
 
   resize = () => {

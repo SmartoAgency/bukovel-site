@@ -9,6 +9,7 @@ block variable
     var title_page = '${scriptName}'
     var id_page = 'id-page-${scriptName}'
     var class_page = 'class-page-${scriptName}'
+    var headerCustomClass = 'type1' 
     var breadcrumbsSubitem = [
       {
         label: 'About',
@@ -24,7 +25,6 @@ block head
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
-  script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/${scriptName}.js')
 block content

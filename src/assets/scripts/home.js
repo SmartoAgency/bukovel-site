@@ -5,6 +5,7 @@ import './3DScroll/index';
 import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
 import { newsCardArray } from './modules/news/newsCard';
 import './modules/helpers/imgParallax';
+import { chaletInvestBtnAnim } from './modules/section-anim/chalet';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 new App();
@@ -70,27 +71,8 @@ gsap
     fill: 'black',
     delay: 1,
   });
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: '.chalet',
-      start: '10% center',
-      end: '+=40%',
 
-      scrub: 1,
-    },
-  })
-  .to('.invest-link__text-wrap .logo-part__svg path', {
-    strokeDashoffset: 0,
-    strokeWidth: 2,
-    duration: 3,
-  })
-  .to('.invest-link__text-wrap .logo-part__svg path', {
-    fill: 'black',
-    delay: 1,
-    x: 20,
-    duration: 3,
-  });
+chaletInvestBtnAnim();
 
 document.querySelectorAll('.card--without-bulge').forEach(el => {
   gsap

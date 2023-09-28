@@ -1,57 +1,8 @@
 // Import the necessary function for preloading images
 import { preloadImages, getGrid } from './utils.js';
-import Lenis from '@studio-freight/lenis';
+
 import { gsap, ScrollTrigger } from 'gsap/all';
-
-// Define a variable that will store the Lenis smooth scrolling object
-let lenis;
-export const initSmoothScrolling = () => {
-  // Instantiate the Lenis object with specified properties
-  lenis = new Lenis({
-    lerp: 0.1,
-    infinite: false, // Lower values create a smoother scroll effect
-    smoothWheel: true, // Enables smooth scrolling for mouse wheel events
-  });
-
-  // Update ScrollTrigger each time the user scrolls
-  lenis.on('scroll', () => ScrollTrigger.update());
-
-  // Define a function to run at each animation frame
-  const scrollFn = time => {
-    lenis.raf(time); // Run Lenis' requestAnimationFrame method
-    requestAnimationFrame(scrollFn); // Recursively call scrollFn on each frame
-  };
-  // Start the animation frame loop
-  requestAnimationFrame(scrollFn);
-  return lenis;
-};
-// Function to initialize Lenis for smooth scrolling
-// const initSmoothScrolling = () => {
-//   // Instantiate the Lenis object with specified properties
-//   lenis = new Lenis({
-//     lerp: 0.1, // Lower values create a smoother scroll effect
-//     smoothWheel: true, // Enables smooth scrolling for mouse wheel events
-//   });
-
-//   // Update ScrollTrigger each time the user scrolls
-//   // lenis.on('scroll', () => ScrollTrigger.update());
-
-//   function raf(time) {
-//     lenis.raf(time);
-//     ScrollTrigger.update();
-//     requestAnimationFrame(raf);
-//   }
-
-//   requestAnimationFrame(raf);
-
-//   // Define a function to run at each animation frame
-//   // const scrollFn = time => {
-//   //   lenis.raf(time); // Run Lenis' requestAnimationFrame method
-//   //   requestAnimationFrame(scrollFn); // Recursively call scrollFn on each frame
-//   // };
-//   // Start the animation frame loop
-//   // requestAnimationFrame(scrollFn);
-// };
+import { initSmoothScrolling } from '../modules/scroll/leniscroll.js';
 
 // All elements with class .grid
 const grids = document.querySelectorAll('.grid');

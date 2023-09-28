@@ -8,6 +8,9 @@ const config = {
     notFound: './src/assets/scripts/notFound.js',
     home: './src/assets/scripts/home.js',
     header: './src/assets/scripts/modules/header/header.js',
+    aboutBukovel: './src/assets/scripts/gulp-modules/about-bukovel.js',
+    purchaseTerms: './src/assets/scripts/gulp-modules/purchase-terms.js',
+    swimmingPoolWn: './src/assets/scripts/gulp-modules/spa-swimming-pool-wn.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -43,6 +46,10 @@ const config = {
         test: /\.(glsl|vs|fs|vert|frag)$/,
         exclude: /node_modules/,
         use: ['raw-loader', 'glslify-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
