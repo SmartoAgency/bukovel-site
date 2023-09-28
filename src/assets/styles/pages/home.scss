@@ -32,7 +32,10 @@ body {
 
 .hero__bg {
   padding-top: 210px;
-  background-color: grey;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(180deg, #111111a6 0%, rgba(17, 17, 17, 0.00) 100%),
+    linear-gradient(90deg, #111111b2 0%, rgba(17, 17, 17, 0.00) 100%), url("../images/sectionsBg/sectionbg.jpg");
   position: relative;
   height: 100vh;
 }
@@ -530,7 +533,7 @@ body #cdawrap {
 .cards__container {
   display: flex;
   // height: 1000px;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
   padding-top: 210px;
   padding-bottom: 210px;

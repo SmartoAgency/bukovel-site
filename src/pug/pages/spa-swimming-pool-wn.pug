@@ -24,7 +24,7 @@ block scripts
   script(defer src='./assets/scripts/swimmingPoolWn.bundle.js')
 block content
   section.secondory-page-hero
-    .secondory-page-hero__mask
+
     .secondory-page__text-wrap.container
       h1.secondory-page__title Басейн "Вище неба"
       p.secondory-page__description Description
@@ -34,8 +34,17 @@ block content
           +img("spa-pages/swimming-pool-wn.jpg")
         .swiper-slide 
           +img("spa-pages/swimming-pool-wn.jpg")
-      .swiper-button-prev
-      .swiper-button-next
+      .secondory-page-hero__mask
+      .swiper-buttons-container
+        .swiper-button-prev
+          +svg('spa-slider-arrow')
+        .swiper-button-next
+          +svg('spa-slider-arrow')
+        .swiper__amount
+          .swiper__current
+            span(data-first-digit)
+          .swiper__divider /
+          .swiper__all(data-total)
 block footer
   include ../includes/footer.pug
 

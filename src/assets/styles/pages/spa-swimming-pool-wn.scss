@@ -43,16 +43,81 @@
     height: 100vh;
   }
 
-  & .swiper.swiper-button-prev {
+  & .swiper-buttons-container {
     position: absolute;
-    z-index: 3;
+    z-index: 5;
+    bottom: 60px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  & .swiper-slide {
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  & .swiper-button-prev {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     background-color: $color-yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 60%;
+      width: 60%;
+      stroke: $color-white;
+      stroke-width: 3.3333;
+      transform: rotate(180deg);
+      pointer-events: none;
+    }
+
+
 
     &::before {}
   }
 
-  & .swiper-button-prev {}
+  & .swiper-button-next {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $color-yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 60%;
+      width: 60%;
+      stroke: $color-white;
+      stroke-width: 3.3333;
+      pointer-events: none;
+    }
+
+  }
+
+  .swiper__amount {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 13px;
+  }
+
+  .swiper__current,
+  .swiper__divider,
+  .swiper__all {
+    color: $color-white;
+    @include text-style-general-style;
+  }
+
+  .swiper__divider {
+    opacity: 0.5;
+    font-size: 18px;
+  }
 }
