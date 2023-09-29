@@ -12,6 +12,8 @@ const config = {
     purchaseTerms: './src/assets/scripts/gulp-modules/purchase-terms.js',
     swimmingPoolWn: './src/assets/scripts/gulp-modules/spa-swimming-pool-wn.js',
     swimmingPoolLaguna: './src/assets/scripts/gulp-modules/spa-swimming-pool-laguna.js',
+    spaBanyaMolfara: './src/assets/scripts/gulp-modules/spa-banya-molfara.js',
+    spaPanoramaSS: './src/assets/scripts/gulp-modules/spa-panorama-ss.js',
   },
   output: {
     filename: '[name].bundle.js',
