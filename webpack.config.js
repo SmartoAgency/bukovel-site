@@ -11,6 +11,7 @@ const config = {
     aboutBukovel: './src/assets/scripts/gulp-modules/about-bukovel.js',
     purchaseTerms: './src/assets/scripts/gulp-modules/purchase-terms.js',
     swimmingPoolWn: './src/assets/scripts/gulp-modules/spa-swimming-pool-wn.js',
+    swimmingPoolLaguna: './src/assets/scripts/gulp-modules/spa-swimming-pool-laguna.js',
   },
   output: {
     filename: '[name].bundle.js',

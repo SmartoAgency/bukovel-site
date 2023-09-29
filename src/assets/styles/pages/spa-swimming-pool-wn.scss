@@ -35,6 +35,7 @@
 .secondory-page__description {
   @include text-style-general-style;
   color: $color-white;
+  max-width: 549px;
 }
 
 .secondory-page-hero {
@@ -120,4 +121,123 @@
     opacity: 0.5;
     font-size: 18px;
   }
+}
+
+.transition-page__container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.transtion-page__content-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.transtion-page__text-wrap {
+  width: 35%;
+  border-top: 3px solid $color-black;
+  border-bottom: 3px solid $color-black;
+  padding-top: 78px;
+  padding-bottom: 78px;
+}
+
+.transition-page__label {
+  @include text-style-tiny;
+  margin-bottom: 30px;
+}
+
+.transition-page__title-wrap {
+  span {
+    display: flex;
+    gap: 24px
+  }
+}
+
+.transition-page__title {
+  @include text-style-96;
+  color: $color-black;
+}
+
+.transition-page__title--decor {
+  @extend .transition-page__title;
+  -webkit-text-stroke: 3px $color-black;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.transtion-page__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100%;
+
+  &:hover .mask {
+    background-position-x: 100%;
+
+  }
+
+  &:hover .next-page__title {
+    transform: translate(-50%, -300%) scale(1.4);
+
+  }
+
+  &:hover img {
+    transform: scale(1.25);
+
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    transition: all 1s ease;
+  }
+}
+
+.transtion-page__img-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 60px;
+  position: relative;
+
+  .mask {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #111111ad 0%, #11111154 50%, #fffadd 51%, rgba(26, 25, 25, 0.329) 52%, rgba(59, 56, 39, 0.575) 100%);
+    transition: all 0.5s ease;
+    background-size: 204% 100%;
+  }
+}
+
+.link__arrow-decor--left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.link__arrow-decor--right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 2;
+  transform: translate(50%, -50%) rotate(180deg);
+
+}
+
+.next-page__title {
+  @include text-style-p;
+
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
 }

@@ -109,10 +109,11 @@ $color-gray-4: #0d141f;
   font-family: 'Gilroy';
 }
 
-@mixin text-style-1920-tiny() {
+@mixin text-style-tiny() {
   font-size: 14px;
-  font-family: 'Gilroy-Medium';
+  font-family: 'Gilroy';
   line-height: 120%;
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 500;
 }

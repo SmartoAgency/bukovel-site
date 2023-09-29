@@ -24,9 +24,8 @@ block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
-  script(defer src='./assets/scripts/index.bundle.js')
-  script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/${scriptName}.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/${scriptName}.bundle.js')
 block content
   h1 ${scriptName}
 block footer

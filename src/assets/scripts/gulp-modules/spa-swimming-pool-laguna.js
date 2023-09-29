@@ -1,10 +1,10 @@
-import Swiper from 'swiper';
-import { Navigation } from 'swiper';
-import 'swiper/css';
 import App from '../bulge/App';
 import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
 // import '../modules/helpers/imgParallax';
 
+import Swiper from 'swiper';
+import { Navigation } from 'swiper';
+import 'swiper/css';
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 new App();
