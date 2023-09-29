@@ -14,6 +14,10 @@ const config = {
     swimmingPoolLaguna: './src/assets/scripts/gulp-modules/spa-swimming-pool-laguna.js',
     spaBanyaMolfara: './src/assets/scripts/gulp-modules/spa-banya-molfara.js',
     spaPanoramaSS: './src/assets/scripts/gulp-modules/spa-panorama-ss.js',
+    spaJaponBanyaOfuro: './src/assets/scripts/gulp-modules/spa-japon-banya-ofuro.js',
+    spaBanyaMagichniKyli: './src/assets/scripts/gulp-modules/spa-banya-magichni-kyli.js',
+    spaMedutaciynaBanya: './src/assets/scripts/gulp-modules/spa-medutaciyna-banya.js',
+    spaTurkishHamam: './src/assets/scripts/gulp-modules/spa-turkish-hamam.js',
   },
   output: {
     filename: '[name].bundle.js',
