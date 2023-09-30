@@ -2,9 +2,9 @@
 extends ../layout/main
 block variable
   -
-    var title_page = 'spa-swimming-pool-wn'
-    var id_page = 'id-page-spa-swimming-pool-wn'
-    var class_page = 'class-page-spa-swimming-pool-wn'
+    var title_page = 'services-torgivelna-zona'
+    var id_page = 'id-page-services-torgivelna-zona'
+    var class_page = 'class-page-services-torgivelna-zona'
     var headerCustomClass = 'type1' 
     var breadcrumbsSubitem = [
       {
@@ -12,31 +12,31 @@ block variable
         link: pagesLink[0].about
       }
     ]
-
+  
 block meta
   title= title_page
-  meta(name='description' content='')
+  meta(name='description', content='')
 block head
-  link(rel='stylesheet' href="./assets/styles/main.min.css")
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/header.bundle.js')
-  script(defer src='./assets/scripts/swimmingPoolWn.bundle.js')
+  script(defer src='./assets/scripts/servicesTorgivelnaZona.bundle.js')
 block content
   .background
     canvas.background__canvas
   <div class="scroll is-visible"></div>
   section.secondory-page-hero
-
     .secondory-page__text-wrap.container
-      h1.secondory-page__title Басейн "Вище неба"
-      p.secondory-page__description Description
+      h1.secondory-page__title Торгівельна зона
+      p.secondory-page__description Магазини, в яких ви зможете придбати все необхідне, включно із спорядженням та спортивним одягом
+
     .swiper 
       .swiper-wrapper
         .swiper-slide 
-          +img("spa-pages/swimming-pool-wn.jpg")
+          +img("services-pages/services-torgivelna-zona.jpg")
         .swiper-slide 
-          +img("spa-pages/swimming-pool-wn.jpg")
+          +img("services-pages/services-torgivelna-zona.jpg")
       .secondory-page-hero__mask
       .swiper-buttons-container
         .swiper-button-prev
@@ -53,12 +53,12 @@ block content
       .transtion-page__text-wrap
         .transition-page__label Наступна сторінка з розділу
         .transition-page__title-wrap 
-          h2.transition-page__title Welness
+          h2.transition-page__title Hotel info
           span
             .transition-page__title--decor &
-            h2.transition-page__title Spa
-      a.transtion-page__link(href="spa-swimming-pool-laguna")
-        h3.next-page__title Басейн "Лагуна"
+            h2.transition-page__title Services
+      a.transtion-page__link(href="services-dutyacha-kimnata")
+        h3.next-page__title Дитяча кімната
         .link__arrow-decor--left
           <svg width="91" height="282" viewBox="0 0 91 282" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_937_63" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="91" height="282">
@@ -99,9 +99,7 @@ block content
           </svg>
         .transtion-page__img-wrap
           .mask  
-          +img("spa-pages/swimming-pool-laguna.jpg")
-
-
+          +img("services-pages/services-dutyacha-kimnata.jpg")
 block footer
   include ../includes/footer.pug
 

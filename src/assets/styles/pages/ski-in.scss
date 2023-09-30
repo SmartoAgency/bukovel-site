@@ -1,0 +1,16 @@
+.transtion-page__link {
+  &:hover .next-page__title-ski-in {
+    transform: translate(-40%, -200%) scale(1.4);
+  }
+}
+
+.next-page__title-ski-in {
+  @include text-style-p;
+
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
+}
