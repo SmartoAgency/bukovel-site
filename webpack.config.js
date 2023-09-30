@@ -18,6 +18,13 @@ const config = {
     spaBanyaMagichniKyli: './src/assets/scripts/gulp-modules/spa-banya-magichni-kyli.js',
     spaMedutaciynaBanya: './src/assets/scripts/gulp-modules/spa-medutaciyna-banya.js',
     spaTurkishHamam: './src/assets/scripts/gulp-modules/spa-turkish-hamam.js',
+    spaRumBanya: './src/assets/scripts/gulp-modules/spa-rum-banya.js',
+    spaProcedurniKimnatu: './src/assets/scripts/gulp-modules/spa-procedurni-kimnatu.js',
+    spaFitoKimnata: './src/assets/scripts/gulp-modules/spa-fito-kimnata.js',
+    spaKimnataRelax: './src/assets/scripts/gulp-modules/spa-kimnata-relax.js',
+    spaMasajniKimnatu: './src/assets/scripts/gulp-modules/spa-masajni-kimnatu.js',
+    spaVudovuiZal: './src/assets/scripts/gulp-modules/spa-vudovui-zal.js',
+    roofVip: './src/assets/scripts/gulp-modules/roof-vip.js',
   },
   output: {
     filename: '[name].bundle.js',
