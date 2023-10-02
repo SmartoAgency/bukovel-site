@@ -1,0 +1,107 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'services-bike-parking'
+    var id_page = 'id-page-services-bike-parking'
+    var class_page = 'class-page-services-bike-parking'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/servicesBikeParking.bundle.js')
+block content
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.secondory-page-hero
+    .secondory-page__text-wrap.container
+      h1.secondory-page__title Велопарковка під охороною
+      p.secondory-page__description Охороняєма стоянка для ваших байків та самокатів
+
+    .swiper 
+      .swiper-wrapper
+        .swiper-slide 
+          +img("services-pages/services-bike-parking.jpg")
+        .swiper-slide 
+          +img("services-pages/services-bike-parking.jpg")
+      .secondory-page-hero__mask
+      .swiper-buttons-container
+        .swiper-button-prev
+          +svg('spa-slider-arrow')
+        .swiper-button-next
+          +svg('spa-slider-arrow')
+        .swiper__amount
+          .swiper__current
+            span(data-first-digit)
+          .swiper__divider /
+          .swiper__all(data-total)
+  section.transition-page__container.container 
+    .transtion-page__content-wrap 
+      .transtion-page__text-wrap
+        .transition-page__label Наступна сторінка з розділу
+        .transition-page__title-wrap 
+          h2.transition-page__title Hotel info
+          span
+            .transition-page__title--decor &
+            h2.transition-page__title Services
+      a.transtion-page__link(href="services-car-parking")
+        h3.next-page__title Критий паркінг
+        .link__arrow-decor--left
+          <svg width="91" height="282" viewBox="0 0 91 282" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_937_63" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="91" height="282">
+              <rect x="91" width="282" height="91" transform="rotate(90 91 0)" fill="url(#paint0_linear_937_63)"/>
+            </mask>
+            <g mask="url(#mask0_937_63)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M42.4006 204.113C42.4006 204.113 42.4007 204.113 42.4007 204.113C42.4008 204.113 42.4008 204.113 42.4009 204.113L73.6273 177.313C95.8785 158.216 95.8785 123.781 73.6273 104.684L42.4009 77.8843C42.4008 77.8842 42.4008 77.8842 42.4007 77.8843C42.4007 77.8843 42.4006 77.8843 42.4006 77.8842L42.4006 0.656143C42.4006 0.293764 42.1068 -2.32233e-06 41.7444 -2.33979e-06C41.382 -2.35724e-06 41.0883 0.293761 41.0883 0.65614L41.0883 54.1336C41.0883 69.9245 34.1933 84.9283 22.2104 95.2125L20.659 96.544C-6.5799 119.922 -6.57988 162.076 20.6591 185.454L22.2098 186.784C34.1931 197.069 41.0883 212.073 41.0883 227.865L41.0883 281.344C41.0883 281.706 41.382 282 41.7444 282C42.1068 282 42.4006 281.706 42.4006 281.344L42.4006 204.113Z" fill="white"/>
+            </g>
+              <path d="M21 141.478L53 141.478M53 141.478L53 139.565L41 130M53 141.478L53 143.391L41 152" stroke="#111111" stroke-width="2"/>
+            <defs>
+              <linearGradient id="paint0_linear_937_63" x1="373" y1="91.0001" x2="91" y2="91.0001" gradientUnits="userSpaceOnUse">
+              <stop stop-opacity="0"/>
+              <stop offset="0.165322"/>
+              <stop offset="0.491207"/>
+              <stop offset="0.815634"/>
+              <stop offset="1" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        .link__arrow-decor--right
+          <svg width="91" height="282" viewBox="0 0 91 282" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_937_63" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="91" height="282">
+              <rect x="91" width="282" height="91" transform="rotate(90 91 0)" fill="url(#paint0_linear_937_63)"/>
+            </mask>
+            <g mask="url(#mask0_937_63)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M42.4006 204.113C42.4006 204.113 42.4007 204.113 42.4007 204.113C42.4008 204.113 42.4008 204.113 42.4009 204.113L73.6273 177.313C95.8785 158.216 95.8785 123.781 73.6273 104.684L42.4009 77.8843C42.4008 77.8842 42.4008 77.8842 42.4007 77.8843C42.4007 77.8843 42.4006 77.8843 42.4006 77.8842L42.4006 0.656143C42.4006 0.293764 42.1068 -2.32233e-06 41.7444 -2.33979e-06C41.382 -2.35724e-06 41.0883 0.293761 41.0883 0.65614L41.0883 54.1336C41.0883 69.9245 34.1933 84.9283 22.2104 95.2125L20.659 96.544C-6.5799 119.922 -6.57988 162.076 20.6591 185.454L22.2098 186.784C34.1931 197.069 41.0883 212.073 41.0883 227.865L41.0883 281.344C41.0883 281.706 41.382 282 41.7444 282C42.1068 282 42.4006 281.706 42.4006 281.344L42.4006 204.113Z" fill="white"/>
+            </g>
+              <path d="M21 141.478L53 141.478M53 141.478L53 139.565L41 130M53 141.478L53 143.391L41 152" stroke="#111111" stroke-width="2"/>
+            <defs>
+              <linearGradient id="paint0_linear_937_63" x1="373" y1="91.0001" x2="91" y2="91.0001" gradientUnits="userSpaceOnUse">
+              <stop stop-opacity="0"/>
+              <stop offset="0.165322"/>
+              <stop offset="0.491207"/>
+              <stop offset="0.815634"/>
+              <stop offset="1" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        .transtion-page__img-wrap
+          .mask  
+          +img("services-pages/services-car-parking.jpg")
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

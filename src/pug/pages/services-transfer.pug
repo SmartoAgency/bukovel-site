@@ -1,0 +1,56 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'services-transfer'
+    var id_page = 'id-page-services-transfer'
+    var class_page = 'class-page-services-transfer'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/servicesTransfer.bundle.js')
+block content
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.secondory-page-hero
+    .secondory-page__text-wrap.container
+      h1.secondory-page__title Трансфери та таксі 
+      p.secondory-page__description Description
+
+    .swiper 
+      .swiper-wrapper
+        .swiper-slide 
+          +img("services-pages/services-transfer.jpg")
+        .swiper-slide 
+          +img("services-pages/services-transfer.jpg")
+      .secondory-page-hero__mask
+      .swiper-buttons-container
+        .swiper-button-prev
+          +svg('spa-slider-arrow')
+        .swiper-button-next
+          +svg('spa-slider-arrow')
+        .swiper__amount
+          .swiper__current
+            span(data-first-digit)
+          .swiper__divider /
+          .swiper__all(data-total)
+  include ../includes/chalet-section.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

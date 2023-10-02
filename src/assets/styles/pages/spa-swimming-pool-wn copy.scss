@@ -1,0 +1,243 @@
+.secondory-page-hero {
+
+
+  position: relative;
+  height: 100vh;
+}
+
+
+.secondory-page-hero__mask {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(180deg, #111 0%, rgba(17, 17, 17, 0.00) 100%), linear-gradient(90deg, #111 0%, rgba(17, 17, 17, 0.00) 100%);
+  pointer-events: none;
+}
+
+.secondory-page__text-wrap {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%)
+}
+
+.secondory-page__title {
+  @include text-style-96;
+  color: $color-yellow;
+  max-width: 880px;
+  margin-bottom: 40px
+}
+
+.secondory-page__description {
+  @include text-style-general-style;
+  color: $color-white;
+  max-width: 549px;
+}
+
+.secondory-page-hero {
+  & .swiper {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  & .swiper-buttons-container {
+    position: absolute;
+    z-index: 5;
+    bottom: 60px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  & .swiper-slide {
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  & .swiper-button-prev {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $color-yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 60%;
+      width: 60%;
+      stroke: $color-white;
+      stroke-width: 3.3333;
+      transform: rotate(180deg);
+      pointer-events: none;
+    }
+
+
+
+    &::before {}
+  }
+
+  & .swiper-button-next {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $color-yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 60%;
+      width: 60%;
+      stroke: $color-white;
+      stroke-width: 3.3333;
+      pointer-events: none;
+    }
+
+  }
+
+  .swiper__amount {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 13px;
+  }
+
+  .swiper__current,
+  .swiper__divider,
+  .swiper__all {
+    color: $color-white;
+    @include text-style-general-style;
+  }
+
+  .swiper__divider {
+    opacity: 0.5;
+    font-size: 18px;
+  }
+}
+
+.transition-page__container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.transtion-page__content-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.transtion-page__text-wrap {
+  width: 35%;
+  border-top: 3px solid $color-black;
+  border-bottom: 3px solid $color-black;
+  padding-top: 78px;
+  padding-bottom: 78px;
+}
+
+.transition-page__label {
+  @include text-style-tiny;
+  margin-bottom: 30px;
+}
+
+.transition-page__title-wrap {
+  span {
+    display: flex;
+    gap: 24px
+  }
+}
+
+.transition-page__title {
+  @include text-style-96;
+  color: $color-black;
+}
+
+.transition-page__title--decor {
+  @extend .transition-page__title;
+  -webkit-text-stroke: 3px $color-black;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.transtion-page__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100%;
+
+  &:hover .mask {
+    background-position-x: 100%;
+
+  }
+
+  &:hover .next-page__title {
+    transform: translate(-50%, -100%) scale(1.1);
+
+  }
+
+  &:hover img {
+    transform: scale(1.2);
+
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    transition: all 1s ease;
+  }
+}
+
+.transtion-page__img-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 60px;
+  position: relative;
+
+  .mask {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #111111ad 0%, #11111154 35%, #fffadd7a 63%, rgba(26, 25, 25, 0.329) 82%, #1111113a 100%);
+    transition: all 0.5s ease;
+    background-size: 500% 100%;
+  }
+}
+
+.link__arrow-decor--left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.link__arrow-decor--right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 2;
+  transform: translate(50%, -50%) rotate(180deg);
+
+}
+
+.next-page__title {
+  @include text-style-p;
+
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
+}
