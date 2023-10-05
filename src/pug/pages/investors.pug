@@ -1,0 +1,51 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'investors'
+    var id_page = 'id-page-investors'
+    var class_page = 'class-page-investors'
+    var headerCustomClass = 'type2' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/investors.bundle.js')
+block content
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.about-bukovel.investors
+
+    .bg-parallax-wrap
+      img(src="./assets/images/sectionsBg/investors-bg.jpg" alt="фото" img-paralax)
+      .investors__bg-mask
+
+    .container
+      h1.page-title Інвесторам 
+      .investors__text-block-wrapper 
+        h2.investors__text-block-title Пасивний дохід
+        p Для інвесторів головна зручність у тому, що на усіх етапах, від будівництва до заселення гостів, забудовник та керуюча компанія беруть на себе всі питання — це супровід під ключ, коли інвестор отримує свої дивіденди та задоволення від співпраці. В залежності від заповненості готелю, дохід власників номерів може скласти 8-12% річних.
+      .investors__text-block-wrapper.advantages
+        h2.investors__text-block-title Чому це вигідно та зручно?
+        ul 
+          li Прозорі умови інвестування, мінімальна кількість документів, що потрібна для оформлення, та високі відсотки дохідності на рік — як від зростання вартості апартаментів, так і від гостів, що знімають ваші апартаменти та сплачують за відпочинок.
+          li Нас обирають за послугу «повного циклу» — клієнт делегує нашій управлінській компанії всі питання з експлуатацією об’єкту нерухомості. Всі турботи з управління ми беремо на себе.
+          li Нам довіряють, тому що ми працюємо на ринку нерухомості з 2006 року, та успішно реалізували проекти у Буковелі: готелі Mountain Residence Сhalet, перші два будинки Mountain Residence Apartments, BUKA Apart-Hotel та Beskid, SPA центр VODA CLUB та ресторани OSTERIA ITALIANA, REBRA BBQ, Whisky Bar, Lucky Bull, Veranda Bar&Lounge, Living Room, SALO, Kolyba, Filvarok, Plov, Panorama Lounge, Bugil Cafe.
+  include ../includes/chalet-section.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

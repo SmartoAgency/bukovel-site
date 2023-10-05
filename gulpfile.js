@@ -232,6 +232,19 @@ function svgSprite() {
         mode: 'symbols',
         preview: false,
         selector: 'icon-%f',
+        transform: [
+          {
+            svgo: {
+              plugins: [
+                { removeViewBox: false },
+                { removeUselessStrokeAndFill: false },
+                { cleanupIDs: false },
+                { mergePaths: false },
+                { removeUnknownsAndDefaults: false },
+              ],
+            },
+          },
+        ],
         svg: {
           symbols: 'symbol_sprite.php',
         },

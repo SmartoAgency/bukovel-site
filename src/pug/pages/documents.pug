@@ -5,25 +5,54 @@ block variable
     var title_page = 'documents'
     var id_page = 'id-page-documents'
     var class_page = 'class-page-documents'
-    var headerCustomClass = 'type1' 
+    var headerCustomClass = 'type2' 
     var breadcrumbsSubitem = [
       {
         label: 'About',
         link: pagesLink[0].about
       }
     ]
-  
+
 block meta
   title= title_page
-  meta(name='description', content='')
+  meta(name='description' content='')
 block head
-    link(rel='stylesheet', href="./assets/styles/main.min.css")
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/header.bundle.js')
   script(defer src='./assets/scripts/documents.bundle.js')
 block content
-  h1 documents
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.about-bukovel.document
+    .container
+      h1.page-title Документи 
+      .documents__text-wrap 
+        p У даному розділі знайдете 
+          span ключові дозвільні документи, 
+          | що слугують підставою для будівництва житлового комплексу 
+          span Mountain Residence WELLNESS & SPA. 
+          | Повний пакет документів для ознайомлення Ви можете отримати у наших менеджерів у відділі продажів.
+      ul.documents__link-wrap
+        li 
+          a(href="").documents__link
+            img(src="./assets/images/documents/permission.jpg" alt="permission")
+            p  Дозвіл на виконання будівельних робіт
+        li 
+          a(href="").documents__link
+            img(src="./assets/images/documents/license.jpg" alt="license")
+            p  Ліцензія на будівництво
+        li 
+          a(href="").documents__link
+            img(src="./assets/images/documents/permission-2.jpg" alt="permission-2")
+            p  Дозвіл на виконання будівельних робіт
+        li 
+          a(href="").documents__link
+            img(src="./assets/images/documents/license-2.jpg" alt="license-2")
+            p  Ліцензія на будівництво
+
 block footer
   include ../includes/footer.pug
 

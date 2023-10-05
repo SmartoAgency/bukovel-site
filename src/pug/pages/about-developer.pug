@@ -1,0 +1,157 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'about-developer'
+    var id_page = 'id-page-about-developer'
+    var class_page = 'class-page-about-developer'
+    var headerCustomClass = 'type2' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+    var projects = [
+      {
+        adress: "Буковель, урочище Щивки, 384", name: "Апарт-готель Beskyd Suites", ref: "", src: "aboutDeveloper/project1.jpg"
+      },
+        {
+          adress: "ТК Буковель, с. Поляниця, узбережжя великого озера Молодості", name: "Voda Club", ref: "", src: "aboutDeveloper/project2.jpg"
+      },
+        {
+          adress: "Івано-Франківська обл. с.Поляниця, урочище Щивки 3/1", name: "Buka Apart Hotel & Spa", ref: "", src: "aboutDeveloper/project3.jpg"
+      },
+        {
+          adress: "Івано-Франківська область,с. Поляниця, урочище Вишні, 421", name: "Mountain Residence Шале", ref: "", src: "aboutDeveloper/project4.jpg"
+      },
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/aboutDeveloper.bundle.js')
+block content
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.about-bukovel.about-developer
+    .container
+      h1.page-title Про забудовника 
+      .about-developer__text-block-wrapper
+        .about-developer__label-wrap
+          img(src="./assets/images/aboutDeveloper/mbtGroup.png" alt="developer logo")
+          .vertical-line-decor  
+          p.about-developer__label ОФІЦІЙНИЙ ПАРТНЕР 
+            br 
+            | ТК «БУКОВЕЛЬ»
+        .about-developer__text-wrap
+          p.about-developer__text Забудовник – «Modern Building Technologies GROUP» є офіційним партнером ТК «Буковель» та гарантує комплексний супровід від етапу укладання договорів до введення об’єктів в експлуатацію. 
+            span Компанія працює на курорті вже 17 років і спеціалізується на будівництві нерухомості комфорт-класу. 
+            | «MBT GROUP» дотримується високих стандартів будівництва та враховує особливості гірської місцевості при виконанні робіт. 
+            span Забудовник використовує лише матеріали найвищої якості 
+            | для того, щоб будинки були стійкими, екологічними та енергоефективними.
+          p.about-developer__text 
+            span Успішно реалізованими проектами стали готелі: 
+            | Mountain Residence Сhalet, Mountain Residence Apartments, BUKA Apart-Hotel та Beskid, СПА центр VODA CLUB та ресторани OSTERIA ITALIANA, REBRA BBQ, Whisky Bar, Lucky Bull, Veranda Bar&Lounge, Living Room, SALO, Kolyba, Filvarok, Plov, Panorama Lounge, Bugil Cafe та інші.
+  section.about-developer__bg-photo
+    +svg('tree-page').page__tree-logo
+    +svg('card-logo').bg-photo__card-logo 
+    .bg-parallax-wrap
+      img(src="./assets/images/sectionsBg/bg-about1.jpg" alt="фото" img-paralax)
+  section.ad-advantages
+    .container
+      .about-developer__text-block-wrapper
+        .about-developer__label-wrap
+          img(src="./assets/images/aboutDeveloper/mountres.png" alt="developer logo")
+          .vertical-line-decor  
+          .about-developer__label MOUNTAIN RESIDENCE
+            br 
+            | WELLNESS & SPA
+        .about-developer__text-wrap
+          .ad-advantades__wrap
+            h3.ad-advantades__title Апарт-готель в центрі Буковелю!
+            p.ad-advantades__descr Однією із основних переваг Mountain Residence Apartments є те, що об’єкти здають “під ключ”. Апартаменти обладнані усім необхідним для комфортного проживання:
+            ol.ad-advantades__list 
+              li.ad-advantades__item Дизайнерський ремонт
+              li.ad-advantades__item Зручні меблі
+              li.ad-advantades__item Сучасна технікаasd
+              li.ad-advantades__item Інтернет та телебачення
+              li.ad-advantades__item Підведена та розведена електрика
+              li.ad-advantades__item Тепла підлога в санвузлах
+              li.ad-advantades__item Автономне опалення
+              li.ad-advantades__item Підведена та розведена система водопостачання
+              li.ad-advantades__item Підведена та розведена каналізація
+              li.ad-advantades__item Пожежна та охоронна сигналізація
+    .ad-advantages__photos 
+      img(src="./assets/images/aboutDeveloper/residence1.jpg" alt="residence 1").first-photo
+      img(src="./assets/images/aboutDeveloper/residence2.jpg" alt="residence 2").socond-photo
+  section.projects.container 
+    .projects__title 
+      span Реалізовані
+      h2 проекти
+    ul.projects__list 
+      each project in projects 
+        li  
+          .transtion-page__content-wrap 
+            .transtion-page__text-wrap
+              .transition-page__label=project.adress
+              .transition-page__title-wrap 
+                h2.transition-page__title=project.name
+            a.transtion-page__link(href=project.ref)
+              h3.next-page__title Дивитися проєкт
+              .link__arrow-decor--left
+                <svg width="91" height="282" viewBox="0 0 91 282" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_937_63" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="91" height="282">
+                    <rect x="91" width="282" height="91" transform="rotate(90 91 0)" fill="url(#paint0_linear_937_63)"/>
+                  </mask>
+                  <g mask="url(#mask0_937_63)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M42.4006 204.113C42.4006 204.113 42.4007 204.113 42.4007 204.113C42.4008 204.113 42.4008 204.113 42.4009 204.113L73.6273 177.313C95.8785 158.216 95.8785 123.781 73.6273 104.684L42.4009 77.8843C42.4008 77.8842 42.4008 77.8842 42.4007 77.8843C42.4007 77.8843 42.4006 77.8843 42.4006 77.8842L42.4006 0.656143C42.4006 0.293764 42.1068 -2.32233e-06 41.7444 -2.33979e-06C41.382 -2.35724e-06 41.0883 0.293761 41.0883 0.65614L41.0883 54.1336C41.0883 69.9245 34.1933 84.9283 22.2104 95.2125L20.659 96.544C-6.5799 119.922 -6.57988 162.076 20.6591 185.454L22.2098 186.784C34.1931 197.069 41.0883 212.073 41.0883 227.865L41.0883 281.344C41.0883 281.706 41.382 282 41.7444 282C42.1068 282 42.4006 281.706 42.4006 281.344L42.4006 204.113Z" fill="white"/>
+                  </g>
+                    <path d="M21 141.478L53 141.478M53 141.478L53 139.565L41 130M53 141.478L53 143.391L41 152" stroke="#111111" stroke-width="2"/>
+                  <defs>
+                    <linearGradient id="paint0_linear_937_63" x1="373" y1="91.0001" x2="91" y2="91.0001" gradientUnits="userSpaceOnUse">
+                    <stop stop-opacity="0"/>
+                    <stop offset="0.165322"/>
+                    <stop offset="0.491207"/>
+                    <stop offset="0.815634"/>
+                    <stop offset="1" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              .link__arrow-decor--right
+                <svg width="91" height="282" viewBox="0 0 91 282" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_937_63" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="91" height="282">
+                    <rect x="91" width="282" height="91" transform="rotate(90 91 0)" fill="url(#paint0_linear_937_63)"/>
+                  </mask>
+                  <g mask="url(#mask0_937_63)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M42.4006 204.113C42.4006 204.113 42.4007 204.113 42.4007 204.113C42.4008 204.113 42.4008 204.113 42.4009 204.113L73.6273 177.313C95.8785 158.216 95.8785 123.781 73.6273 104.684L42.4009 77.8843C42.4008 77.8842 42.4008 77.8842 42.4007 77.8843C42.4007 77.8843 42.4006 77.8843 42.4006 77.8842L42.4006 0.656143C42.4006 0.293764 42.1068 -2.32233e-06 41.7444 -2.33979e-06C41.382 -2.35724e-06 41.0883 0.293761 41.0883 0.65614L41.0883 54.1336C41.0883 69.9245 34.1933 84.9283 22.2104 95.2125L20.659 96.544C-6.5799 119.922 -6.57988 162.076 20.6591 185.454L22.2098 186.784C34.1931 197.069 41.0883 212.073 41.0883 227.865L41.0883 281.344C41.0883 281.706 41.382 282 41.7444 282C42.1068 282 42.4006 281.706 42.4006 281.344L42.4006 204.113Z" fill="white"/>
+                  </g>
+                    <path d="M21 141.478L53 141.478M53 141.478L53 139.565L41 130M53 141.478L53 143.391L41 152" stroke="#111111" stroke-width="2"/>
+                  <defs>
+                    <linearGradient id="paint0_linear_937_63" x1="373" y1="91.0001" x2="91" y2="91.0001" gradientUnits="userSpaceOnUse">
+                    <stop stop-opacity="0"/>
+                    <stop offset="0.165322"/>
+                    <stop offset="0.491207"/>
+                    <stop offset="0.815634"/>
+                    <stop offset="1" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              .transtion-page__img-wrap
+                .mask  
+                +img(project.src)
+
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -74,6 +74,7 @@ body {
   @include text-style-general-style;
   max-width: 435px;
   align-self: flex-end;
+  padding-bottom: 25px;
 }
 
 .hero__invest-more-wrap {
@@ -468,8 +469,8 @@ body #cdawrap {
   top: 0;
   left: 0;
   z-index: -1;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 
   img {
     object-fit: cover;

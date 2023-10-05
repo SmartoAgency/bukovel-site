@@ -1,0 +1,68 @@
+.investors {
+  padding-bottom: 300px;
+  position: relative;
+
+  .bg-parallax-wrap {
+    height: 100%;
+
+  }
+}
+
+.investors__bg-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, #111111ee, transparent 50%);
+
+
+}
+
+.investors__text-block-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 585px;
+  margin-top: 100px;
+
+  p {
+    @include text-style-general-style;
+    max-width: calc(50% - 10px);
+  }
+}
+
+.investors__text-block-title {
+  @include text-style-96;
+  color: $color-black;
+  max-width: calc(50% - 10px);
+
+}
+
+.advantages {
+  margin-bottom: 0;
+
+  .investors__text-block-title {
+    color: $color-white;
+
+  }
+
+  p {
+
+    color: $color-white;
+  }
+
+  ul {
+    max-width: calc(50% - 10px);
+  }
+
+  li {
+    @include text-style-general-style;
+    margin-bottom: 28px;
+    color: $color-white;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+}
