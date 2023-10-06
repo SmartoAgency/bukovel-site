@@ -14,6 +14,8 @@ const config = {
     documents: './src/assets/scripts/gulp-modules/documents.js',
     investors: './src/assets/scripts/gulp-modules/investors.js',
     aboutDeveloper: './src/assets/scripts/gulp-modules/about-developer.js',
+    managementCompany: './src/assets/scripts/gulp-modules/management-company.js',
+    contacts: './src/assets/scripts/gulp-modules/contacts.js',
   },
   output: {
     filename: '[name].bundle.js',

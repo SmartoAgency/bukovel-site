@@ -1,0 +1,40 @@
+.progress {
+  .page-title {
+    margin-bottom: 115px;
+  }
+}
+
+.progress__filter-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 100px;
+
+}
+
+// .fiter__all {}
+.filter__button {
+  padding: 20px 16px;
+  text-align: center;
+  border-top: 3px solid $color-black;
+  border-bottom: 3px solid $color-black;
+  @include text-style-news-descr;
+  color: $color-black;
+  width: 207px;
+}
+
+.fiter__year {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.fiter__month {
+  @extend .fiter__year;
+}

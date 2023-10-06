@@ -1,0 +1,46 @@
+.company .about-developer__label-wrap .logo {
+  width: 110.971px;
+  height: 99px;
+  fill: $color-yellow;
+
+}
+
+.company-finance img {
+  position: absolute;
+  z-index: -1;
+}
+
+.company-finance__title {
+  @include text-style-96;
+  color: $color-black;
+  padding-top: 150px;
+  margin-bottom: 32vh;
+}
+
+.company-finance__descr-wrap {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  @include text-style-general-style;
+
+  p {
+    max-width: calc(50% - 10px);
+    color: $color-white
+  }
+}
+
+.company-relax .ad-advantades__list {
+  max-width: calc(50% - 10px);
+}
+
+.company-relax {
+  .company-finance__title {
+    margin-bottom: 40px;
+  }
+}
+
+.bg-parallax-wrap {
+  overflow: hidden;
+}

@@ -1,0 +1,46 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'progress'
+    var id_page = 'id-page-progress'
+    var class_page = 'class-page-progress'
+    var headerCustomClass = 'type2' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/progress.bundle.js')
+block content
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.about-bukovel.progress
+    .container
+      h1.page-title Хід будівництва 
+      .progress__filter-wrap 
+        button(type="button").fiter__all.filter__button Усі
+        button(type="button").fiter__year.filter__button 
+          p Рік
+          +svg("arrow-filter")
+        button(type="button").fiter__month.filter__button
+          p Місяць
+          +svg("arrow-filter")
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
