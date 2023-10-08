@@ -4,14 +4,18 @@ gsap.registerPlugin(EasePack);
 
 const header = document.querySelector('.header-bg');
 
-window.addEventListener('scroll', function headerSquosh() {
-  const scrollPosition = window.scrollY;
-  if (scrollPosition > 20) {
-    header.classList.add('scroll-down');
-  } else {
-    header.classList.remove('scroll-down');
-  }
-});
+window.addEventListener(
+  'scroll',
+  function headerSquosh() {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 20) {
+      header.classList.add('scroll-down');
+    } else {
+      header.classList.remove('scroll-down');
+    }
+  },
+  { passive: true },
+);
 //pop up call us
 document.body.addEventListener('click', function(evt) {
   const target = evt.target.closest('[data-call-us-modal-close]');
@@ -73,4 +77,23 @@ tl.reverse();
 
 openMenuBtn.addEventListener('click', () => {
   tl.reversed(!tl.reversed());
+});
+
+//Footer
+
+const titleWrap = document.querySelector('.sub-nav__title-wrap');
+const subNavList = document.querySelector('.sub-nav__list');
+// Додаємо обробник кліку на заголовок
+titleWrap.addEventListener('click', function() {
+  console.log('JavaScript loaded');
+
+  // Перевіряємо, чи підменю відкрите
+  const isOpen = subNavList.classList.contains('open');
+
+  // Відкриваємо або закриваємо підменю
+  if (isOpen) {
+    subNavList.classList.remove('open');
+  } else {
+    subNavList.classList.add('open');
+  }
 });

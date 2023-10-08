@@ -2,30 +2,74 @@
   width: 100vw;
   margin-bottom: 150px;
   display: flex;
-  gap: 134px;
+  flex-direction: column;
+  gap: 28px;
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @include laptop {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @include desktop {
+    // gap: 134px;
+  }
 }
 
 .main-nav__list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
+  @include tablet {
+    width: calc(50% - 14px);
+  }
+  @include laptop {
+    width: auto;
+  }
+  @include desktop {
+    gap: 20px;
+  }
 }
 
 .main-nav__link {
   @include text-style-p;
   color: $color-gray-2;
 }
-
+.sub-nav__title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: all;
+  svg {
+    width: 20px;
+    height: 20px;
+    @include tablet {
+      display: none;
+    }
+  }
+}
 .sub-nav__title {
   @include text-style-p;
-  color: $color-gray-3;
+  color: $color-white;
+  @include tablet {
+    color: $color-gray-3;
+  }
 }
 
 .sub-nav__list {
-  margin-top: 20px;
+  margin-top: 14px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  @include tablet {
+    margin-top: 16px;
+  }
+
+  @include desktop {
+    margin-top: 20px;
+    gap: 10px;
+  }
 }
 
 .sub-nav__link {
@@ -36,8 +80,18 @@
 .third-block-nav {
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  max-width: 320px;
+  gap: 28px;
+
+  @include tablet {
+    width: calc(50% - 14px);
+  }
+  @include laptop {
+    width: auto;
+  }
+  @include desktop {
+    gap: 60px;
+    max-width: 320px;
+  }
 }
 
 .forth-block-nav {
