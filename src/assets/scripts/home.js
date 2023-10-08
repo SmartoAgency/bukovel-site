@@ -7,7 +7,7 @@ import { newsCardArray } from './modules/news/newsCard';
 import './modules/helpers/imgParallax';
 import { chaletInvestBtnAnim } from './modules/section-anim/chalet';
 import Swiper from 'swiper';
-// import { Navigation } from 'swiper/modules';
+import { Navigation, EffectCoverflow } from 'swiper';
 // import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -82,7 +82,8 @@ chaletInvestBtnAnim();
 const swiperSpa = new Swiper('.swiper-spa', {
   // Optional parameters
   // modules: [Navigation],
-
+  // modules: [EffectCoverflow],
+  // effect: 'coverflow',
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
@@ -118,6 +119,7 @@ const swiperRooftop = new Swiper('.swiper-rooftop', {
   pagination: {
     el: '.swiper-pagination',
   },
+
   speed: 500,
   // Navigation arrows
   navigation: {
@@ -272,8 +274,6 @@ document.querySelectorAll(' .cards__container .card--without-bulge').forEach(el 
         trigger: el,
         start: 'top 90%',
         end: '0',
-
-        scrub: 1,
       },
     })
     .fromTo(

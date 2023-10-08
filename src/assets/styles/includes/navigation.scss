@@ -40,10 +40,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  pointer-events: all;
+
   svg {
     width: 20px;
     height: 20px;
+    transform: rotate(180deg);
+    stroke: $color-white;
+    stroke-width: 2px;
+    fill: none;
+    transition: transform 0.4s ease-in-out;
+    .is-visible & {
+      transform: rotate(0deg);
+    }
     @include tablet {
       display: none;
     }
@@ -58,17 +66,24 @@
 }
 
 .sub-nav__list {
+  max-height: 0px;
+  overflow: hidden;
   margin-top: 14px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  transition: max-height 0.4s ease-in-out;
   @include tablet {
     margin-top: 16px;
+    max-height: 1000px;
   }
 
   @include desktop {
     margin-top: 20px;
     gap: 10px;
+  }
+  .is-visible & {
+    max-height: 1000px;
   }
 }
 
