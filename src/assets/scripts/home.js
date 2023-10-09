@@ -6,6 +6,11 @@ import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
 import { newsCardArray } from './modules/news/newsCard';
 import './modules/helpers/imgParallax';
 import { chaletInvestBtnAnim } from './modules/section-anim/chalet';
+import Swiper from 'swiper';
+import { Navigation, EffectCoverflow } from 'swiper';
+// import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 new App();
@@ -74,15 +79,201 @@ gsap
 
 chaletInvestBtnAnim();
 
-document.querySelectorAll('.card--without-bulge').forEach(el => {
+const swiperSpa = new Swiper('.swiper-spa', {
+  // Optional parameters
+  // modules: [Navigation],
+  // modules: [EffectCoverflow],
+  // effect: 'coverflow',
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  speed: 500,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    360: {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 1.3,
+      spaceBetween: 40,
+    },
+  },
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+const swiperRooftop = new Swiper('.swiper-rooftop', {
+  // Optional parameters
+  // modules: [Navigation],
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  speed: 500,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    360: {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 1.3,
+      spaceBetween: 40,
+    },
+  },
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+const swiperSki = new Swiper('.swiper-ski', {
+  // Optional parameters
+  // modules: [Navigation],
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  speed: 500,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    360: {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 1.3,
+      spaceBetween: 40,
+    },
+  },
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+const swiperFood = new Swiper('.swiper-food', {
+  // Optional parameters
+  // modules: [Navigation],
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  speed: 500,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    360: {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 1.3,
+      spaceBetween: 40,
+    },
+  },
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+const swiperBusiness = new Swiper('.swiper-business', {
+  // Optional parameters
+  // modules: [Navigation],
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  speed: 500,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    360: {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 1.3,
+      spaceBetween: 40,
+    },
+  },
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+const swiperHotel = new Swiper('.swiper-hotel', {
+  // Optional parameters
+  // modules: [Navigation],
+  spaceBetween: -10,
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  speed: 500,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    360: {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 1.3,
+      spaceBetween: 40,
+    },
+  },
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+document.querySelectorAll(' .cards__container .card--without-bulge').forEach(el => {
   gsap
     .timeline({
       scrollTrigger: {
         trigger: el,
         start: 'top 90%',
         end: '0',
-
-        scrub: 1,
       },
     })
     .fromTo(

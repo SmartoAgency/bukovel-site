@@ -2,92 +2,224 @@
   position: fixed;
   z-index: 10;
   width: 100%;
-
 }
 
 .header-bg {
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
   background: rgba(17, 17, 17, 0);
   width: 100%;
-  height: 190px;
+  height: 80px;
   transition: all 0.3s ease-in-out;
-
   &.scroll-down {
     background: rgba(17, 17, 17, 0.5);
-    height: 100px;
+    height: 60px;
     transition: all 0.3s ease-in-out;
+    @include tablet {
+      height: 80px;
+    }
+    @include laptop {
+      height: 60px;
+    }
+    @include desktop {
+      height: 100px;
+    }
+  }
+  @include tablet {
+    height: 100px;
+  }
+  @include laptop {
+    height: 100px;
+    justify-content: space-between;
+  }
+  @include desktop {
+    height: 190px;
   }
 }
-
+.scroll-down {
+  background: rgba(17, 17, 17, 0.5);
+  height: 60px;
+  transition: all 0.3s ease-in-out;
+  @include tablet {
+    height: 80px;
+  }
+  @include laptop {
+    height: 60px;
+  }
+  @include desktop {
+    height: 100px;
+  }
+}
 .blocks-wrap {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 16px;
+  margin-left: auto;
+  & ~ & {
+    margin-left: 16px;
+  }
+  @include tablet {
+    gap: 32px;
+    & ~ & {
+      margin-left: 32px;
+    }
+  }
+  @include laptop {
+    margin-left: 0;
+    gap: 60px;
+    & ~ & {
+      margin-left: 0;
+    }
+  }
+  @include desktop {
+    gap: 60px;
+  }
 }
 
 .logo {
-  width: 75.392px;
-  height: 67.259px;
-
+  width: 38px;
+  height: 33.895px;
   & path {
     fill: $color-yellow;
+  }
+  @include tablet {
+    width: 58px;
+    height: 51.735px;
+  }
+  @include laptop {
+    width: 41px;
+    height: 37px;
+  }
+  @include desktop {
+    width: 75.392px;
+    height: 67.259px;
   }
 }
 
 .header__call-btn {
-  @include text-style-uppercaesed-btn;
+  border-radius: 50%;
+  background-color: $color-yellow;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
-  gap: 20px;
-
-  & svg {
-    width: 28px;
-    height: 38px;
-
+  justify-content: center;
+  p {
+    display: none;
   }
-
-
+  .svg--link-arrow {
+    display: none;
+  }
+  .svg--link-mobile {
+    width: 24px;
+    height: 24px;
+  }
+  @include tablet {
+    width: 60px;
+    height: 60px;
+  }
+  @include laptop {
+    p {
+      display: block;
+    }
+    .svg--link-mobile {
+      display: none;
+    }
+    .svg--link-arrow {
+      display: block;
+      width: 28px;
+      height: 38px;
+    }
+    @include text-style-uppercaesed-btn;
+    border-radius: none;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    gap: 20px;
+  }
 }
 
 .language__list {
   display: flex;
-  gap: 24px;
-}
-
-.language__item {
-  color: $color-white;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 120%;
-  position: relative;
-
-  &~&::before {
-    content: "|";
-    color: inherit;
-    opacity: 0.5;
-    position: absolute;
-    left: -13px;
-    bottom: 25%;
-    font-size: 18px;
+  flex-direction: column;
+  gap: 10px;
+  order: -1;
+  @include tablet {
+    flex-direction: row;
+    gap: 24px;
+  }
+  @include laptop {
+    order: 1;
+    gap: 24px;
   }
 }
 
-.header__logo {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.header__logo-name {
+.language__item {
+  text-align: center;
+  position: relative;
   @include text-style-uppercaesed-btn;
   text-transform: none;
   text-decoration: none;
   color: $color-white;
+  & ~ &::before {
+    content: '|';
+
+    transform: rotate(90deg);
+    color: inherit;
+    opacity: 0.5;
+    position: absolute;
+    left: 13px;
+    bottom: 60%;
+    font-size: 30px;
+  }
+  @include tablet {
+    flex-direction: row;
+    & ~ &::before {
+      transform: rotate(0deg);
+      left: -13px;
+      bottom: 25%;
+      font-size: 18px;
+    }
+  }
 }
 
+.header__logo {
+  order: -1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  @include tablet {
+    gap: 8px;
+  }
+  @include laptop {
+    order: 0;
+    gap: 12px;
+  }
+  @include desktop {
+    gap: 20px;
+  }
+}
+
+.header__logo-name {
+  display: none;
+  @include laptop {
+    display: block;
+    @include text-style-uppercaesed-btn;
+    text-transform: none;
+    text-decoration: none;
+    color: $color-white;
+  }
+}
+.header__logo-name--mobile {
+  @include text-style-uppercaesed-btn;
+  text-transform: none;
+  text-decoration: none;
+  color: $color-white;
+  @include laptop {
+    display: none;
+  }
+}
 //modal Call us
 
 .call-us__modal-container {
@@ -104,7 +236,6 @@
 
   & .contacts__phone {
     @include text-style-general-style;
-
   }
 }
 
@@ -126,8 +257,6 @@
   }
 }
 
-
-
 .call-us__triangle-decor {
   position: absolute;
   top: 0;
@@ -140,7 +269,6 @@
 .order-call {
   display: flex;
   flex-direction: column;
-
 }
 
 .order-call__title {
@@ -156,11 +284,7 @@
     width: 64px;
     height: 1px;
     background-color: $color-gray-1;
-
-
   }
-
-
 }
 
 .order-call__number {
@@ -173,7 +297,7 @@
 
   &::placeholder {
     @include text-style-news-descr;
-    color: $color-black
+    color: $color-black;
   }
 }
 
@@ -182,15 +306,29 @@
   color: $color-white;
   background-color: $color-black;
   padding: 20px;
-  width: 100%
+  width: 100%;
 }
 
 .menu-btn {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  @include text-style-general-style;
-  color: $color-white
+  p {
+    display: none;
+  }
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    p {
+      display: block;
+
+      @include text-style-general-style;
+      color: $color-white;
+    }
+  }
+  @include desktop {
+    gap: 20px;
+  }
 }
 
 .menu-btn__burger {
@@ -200,7 +338,7 @@
   position: relative;
 
   & .line-over {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     height: 3px;
@@ -211,7 +349,7 @@
   }
 
   & .line-under {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     height: 3px;
@@ -223,7 +361,6 @@
 }
 
 //menu
-
 
 .menu__container {
   position: fixed;
@@ -239,7 +376,6 @@
   width: 100vw;
   height: inherit;
   background-color: transparent;
-
 }
 
 .menu__bg-svg {
@@ -265,10 +401,10 @@
 }
 
 .header__nav-container {
-  padding-top: 156px;
+  padding-top: 80px;
   opacity: 0;
-
-
+  overflow-y: auto;
+  height: 100%;
   & .main-nav__link {
     color: $color-gray-4;
   }
@@ -280,41 +416,53 @@
   & .sub-nav__link {
     color: $color-gray-3;
   }
-
+  & .sub-nav__title-wrap svg {
+    stroke: $color-black;
+  }
+  @include tablet {
+    padding-top: 120px;
+  }
+  @include laptop {
+    overflow-y: hidden;
+    padding-top: 106px;
+  }
+  @include desktop {
+    padding-top: 156px;
+  }
 }
 
 .type2 {
   & .language__item {
-    color: $color-black
+    color: $color-black;
   }
 
   & .header__logo-name {
-    color: $color-black
+    color: $color-black;
   }
 
   & .menu-btn {
-    color: $color-black
+    color: $color-black;
   }
 
   & .menu-btn__burger {
-    background-color: $color-black
+    background-color: $color-black;
   }
 
   & .scroll-down {
     & .language__item {
-      color: $color-white
+      color: $color-white;
     }
 
     & .header__logo-name {
-      color: $color-white
+      color: $color-white;
     }
 
     & .menu-btn {
-      color: $color-white
+      color: $color-white;
     }
 
     & .menu-btn__burger {
-      background-color: $color-white
+      background-color: $color-white;
     }
   }
 }

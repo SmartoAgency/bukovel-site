@@ -39,7 +39,7 @@ document.body.addEventListener('click', function(evt) {
 //menu
 const openMenuBtn = document.querySelector('.menu-btn');
 const menuRef = document.querySelector('.menu__container');
-
+const headerBg = document.querySelector('.header-bg');
 const tl = gsap.timeline({ paused: true });
 tl.add(() => {
   window.dispatchEvent(new Event('start-scroll'));
@@ -47,9 +47,16 @@ tl.add(() => {
 tl.add(() => {
   window.dispatchEvent(new Event('stop-scroll'));
 });
-tl.to('.header-bg', { background: 'none', height: 100 });
+tl.add(() => {
+  headerBg.classList.add('scroll-down');
+});
+tl.add(() => {
+  headerBg.classList.remove('scroll-down');
+});
+
 tl.to('.language__item', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.header__logo-name', { color: 'rgba(17, 17, 17, 1)' }, '<');
+tl.to('.header__logo-name--mobile', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.menu-btn', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.menu-btn__burger', { backgroundColor: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.menu-btn__burger', { rotate: 45, duration: 0.5 }, '<');
@@ -74,3 +81,15 @@ tl.reverse();
 openMenuBtn.addEventListener('click', () => {
   tl.reversed(!tl.reversed());
 });
+
+//Footer
+
+const titleWrapSubNav = document.querySelectorAll('.sub-nav__title-wrap');
+const subNavList = document.querySelector('.sub-nav__list');
+
+titleWrapSubNav.forEach(el =>
+  el.addEventListener('click', () => {
+    console.log('click');
+    el.closest('.sub-nav').classList.toggle('is-visible');
+  }),
+);

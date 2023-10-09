@@ -21,12 +21,25 @@ $height: 18vw;
 }
 
 .text__words {
-  font-size: 36px;
+  font-size: 28px;
   color: $color-white;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 14px;
+  margin-top: 12px;
+  @include tablet {
+    font-size: 60px;
+    margin-top: 18px;
+  }
 
+  @include laptop {
+    font-size: 26px;
+    margin-top: 12px;
+  }
+
+  @include desktop {
+    font-size: 36px;
+    margin-top: 14px;
+  }
   // @include respond-to(smartphone) {
   //   font-size: 28px;
   // }
@@ -37,19 +50,59 @@ $height: 18vw;
   font-weight: 400;
   color: $color-white;
   text-align: center;
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include laptop {
+    font-size: 12px;
+  }
+
+  @include desktop {
+    font-size: 16px;
+  }
 }
 
 .card__link {
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 12px;
   font-weight: 400;
   line-height: 120%;
   color: $color-white;
   text-transform: uppercase;
   text-align: center;
+  @include tablet {
+    font-size: 18px;
+    margin-top: 18px;
+  }
+
+  @include laptop {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  @include desktop {
+    font-size: 14px;
+    margin-top: 18px;
+  }
 }
 
 .card__link--arrow {
-  width: 18px;
-  height: 14px;
+  width: 16px;
+  height: 20px;
+
+  @include tablet {
+    width: 17.267px;
+    height: 22.2px;
+  }
+
+  @include laptop {
+    width: 9.871px;
+    height: 12.692px;
+  }
+
+  @include desktop {
+    width: 18px;
+    height: 14px;
+  }
 }

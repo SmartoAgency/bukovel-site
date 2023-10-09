@@ -67,14 +67,16 @@ block content
             li 
               a(href="tel:+38 034 259 50 00" target="_blank" rel="noreferrer noopener nofollow") cartel restaurants 
 
-        span.section-title__first-row
+        span.section-title__first-row.second-row
           p.hero__text-block Продаж апартаментів в самому центрі Буковелю! Інвестиція, приречена на успіх!
           h2  Residence
       .hero__invest-more-wrap 
-        buttom.arrow-down__button 
-          <svg class="arrow-down__svg " viewBox="0 0 179 138" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M-2.55046e-06 71.6522L169 71.6522M169 71.6522L169 61.0435L105.625 7.99999M169 71.6522L169 82.2609L105.625 130" stroke="white" stroke-width="10" />
-          </svg>
+        .arrow-down__button-wrap
+          buttom.arrow-down__button 
+            <svg class="arrow-down__svg " viewBox="0 0 179 138" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-2.55046e-06 71.6522L169 71.6522M169 71.6522L169 61.0435L105.625 7.99999M169 71.6522L169 82.2609L105.625 130" stroke="white" stroke-width="10" />
+            </svg>
+          p Дізнатися більше
         include ../includes/invest-link.pug
   section.content.content--spacing
     .grid.grid--3
@@ -184,18 +186,20 @@ block content
 
   section.spa-section
     .spa.section
+      //- .section-bg__mask
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section1bg.jpg" alt="фото" img-paralax)
-      .container
-        div.section-title.spa-title 
-          span.section-title__first-row 
-            h2 WELNESS 
-            span.section-title__accent & 
-          h2.section-title__second-row SPA  
-          span.section-title__first-row
-            span.section-title__number 01
-              span.section-title__accent .
-            +svg("section-arrow").section__arrow
+      .section-bg__mask
+      
+      div.section-title.spa-title.container 
+        span.section-title__first-row 
+          h2 WELNESS 
+          span.section-title__accent & 
+        h2.section-title__second-row SPA  
+        span.section-title__first-row.bottom-row
+          span.section-title__number 01
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
   section.bulge 
     .container.cards__container
       each card in spaCards 
@@ -210,21 +214,37 @@ block content
               .text__words=card.text
               p.card__link Дізнатися більше
                 +svg("card-arrow").card__link--arrow
+    .swiper-spa.container
+      .swiper-wrapper
+         each card in spaCards 
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number #{card.num>9 ? card.num : "0"+card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
   section
     .section.rooftop
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section2bg.jpg" alt="фото" img-paralax)
-      .container
-        .section-title.spa-title 
-          span.section-title__first-row 
-            h2 Rooftop 
-            span.section-title__accent & 
-          h2.section-title__number(style="margin-top:0") Garden
-          h2.section-title__second-row Solarium  
-          span.section-title__first-row
-            span.section-title__number 02
-              span.section-title__accent .
-            +svg("section-arrow").section__arrow
+      .section-bg__mask
+      
+      .section-title.spa-title.container 
+        span.section-title__first-row 
+          h2 Rooftop 
+          span.section-title__accent & 
+        h2.section-title__number(style="margin-top:0") Garden
+        h2.section-title__second-row Solarium  
+        span.section-title__first-row.bottom-row
+          span.section-title__number 02
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
 
     .container.cards__container
       each card in rooftopCards 
@@ -239,21 +259,38 @@ block content
               .text__words=card.text
               p.card__link Дізнатися більше
                 +svg("card-arrow").card__link--arrow
+
+    .swiper-rooftop.container
+      .swiper-wrapper
+        each card in rooftopCards 
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${spaCards.length +card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number 0#{card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
   section
     .section.ski-fun
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section3bg.jpg" alt="фото" img-paralax)
-      .container
-        .section-title.spa-title 
-          span.section-title__first-row 
-            h2 Ski 
-            span.section-title__accent & 
-          h2.section-title__second-row Fun
+      .section-bg__mask
+      
+      .section-title.spa-title.container 
+        span.section-title__first-row 
+          h2 Ski 
+          span.section-title__accent & 
+        h2.section-title__second-row Fun
 
-          span.section-title__first-row
-            span.section-title__number 03
-              span.section-title__accent .
-            +svg("section-arrow").section__arrow
+        span.section-title__first-row.bottom-row
+          span.section-title__number 03
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
     .container.cards__container
       each card in skiFunCards
         .card--without-bulge
@@ -267,21 +304,37 @@ block content
               .text__words=card.text
               p.card__link Дізнатися більше
                 +svg("card-arrow").card__link--arrow
+    .swiper-ski.container
+      .swiper-wrapper
+        each card in skiFunCards 
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${spaCards.length+rooftopCards.length +card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number 0#{card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
   section
     .section.food
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section4bg.jpg" alt="фото" img-paralax)
-      .container
-        .section-title.spa-title 
-          span.section-title__first-row 
-            h2 Food
-            span.section-title__accent & 
-          h2.section-title__second-row Drinks
+      .section-bg__mask
+      
+      .section-title.spa-title.container 
+        span.section-title__first-row 
+          h2 Food
+          span.section-title__accent & 
+        h2.section-title__second-row Drinks
 
-          span.section-title__first-row
-            span.section-title__number 04
-              span.section-title__accent .
-            +svg("section-arrow").section__arrow
+        span.section-title__first-row.bottom-row
+          span.section-title__number 04
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
     .container.cards__container
       each card in foodCards 
         .card--without-bulge
@@ -295,21 +348,37 @@ block content
               .text__words=card.text
               p.card__link Дізнатися більше
                 +svg("card-arrow").card__link--arrow
+    .swiper-food.container
+      .swiper-wrapper
+        each card in foodCards 
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number 0#{card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
   section
     .section.business
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section5bg.jpg" alt="фото" img-paralax)
-      .container
-        .section-title.spa-title 
-          span.section-title__first-row 
-            h2 Business
-            span.section-title__accent & 
-          h2.section-title__second-row Meetings
+      .section-bg__mask
+      
+      .section-title.spa-title.container
+        span.section-title__first-row 
+          h2 Business
+          span.section-title__accent & 
+        h2.section-title__second-row Meetings
 
-          span.section-title__first-row
-            span.section-title__number 05
-              span.section-title__accent .
-            +svg("section-arrow").section__arrow
+        span.section-title__first-row.bottom-row
+          span.section-title__number 05
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
     .container.cards__container
       each card in businessCards 
         .card--without-bulge
@@ -323,21 +392,37 @@ block content
               .text__words=card.text
               p.card__link Дізнатися більше
                 +svg("card-arrow").card__link--arrow
+    .swiper-business.container
+      .swiper-wrapper
+        each card in businessCards 
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number 0#{card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
   section
     .section.hotel
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section6bg.jpg" alt="фото" img-paralax)
-      .container
-        .section-title.spa-title 
-          span.section-title__first-row 
-            h2 Hotel
-            span.section-title__accent & 
-          h2.section-title__number(style="margin-top:0") Info
-          h2.section-title__second-row Services 
-          span.section-title__first-row
-            span.section-title__number 06
-              span.section-title__accent .
-            +svg("section-arrow").section__arrow
+      .section-bg__mask
+      
+      .section-title.spa-title.container 
+        span.section-title__first-row 
+          h2 Hotel
+          span.section-title__accent & 
+        h2.section-title__number(style="margin-top:0") Info
+        h2.section-title__second-row Services 
+        span.section-title__first-row.bottom-row
+          span.section-title__number 06
+            span.section-title__accent .
+          +svg("section-arrow").section__arrow
     .container.cards__container
       each card in hotelCards 
         .card--without-bulge
@@ -351,6 +436,21 @@ block content
               .text__words=card.text
               p.card__link Дізнатися більше
                 +svg("card-arrow").card__link--arrow
+    .swiper-hotel.container
+      .swiper-wrapper
+        each card in hotelCards
+          .swiper-slide
+            .card--without-bulge
+              .card__content
+                +img(`scroll3Dimg/${spaCards.length+rooftopCards.length+skiFunCards.length+foodCards.length+businessCards.length +card.num}.jpg`).cardOut__img
+                .card__mask
+              +svg("card-logo").card__logo
+              .text
+                .text__content
+                  p.card__number 0#{card.num}.
+                  .text__words=card.text
+                  p.card__link Дізнатися більше
+                    +svg("card-arrow").card__link--arrow
   include ../includes/chalet-section.pug
   section
     .section.building
@@ -371,17 +471,20 @@ block content
             .progress-preview__date-wrap
               p.progress-preview__month Липень
               p.progress-preview__year 2023
-            .progress-preview__descr На сьогодні вже введені в експлуатацію, приймають гостей та приносять власникам пасивний дохід перші два будинки апарт-готелю.
-              br
-              | Зараз тривають роботи над зведенням третього будинку:
-              ul 
-                li Монолітний каркас вже залили на 80 відсотків.
-                li Зовнішні стіни виконали на 50%.
-                li Внутрішні стіни та перегородки влаштували на 15%
-                li Сходові марші та майданчики залиті до рівня восьмого поверху.
-                li В будинку розпочали влаштування металопластикових вікон.
-                li Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
+            .progress-preview__descr Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
+              //- br
+              //- | Зараз тривають роботи над зведенням третього будинку:
+              //- ul 
+              //-   li Монолітний каркас вже залили на 80 відсотків.
+              //-   li Зовнішні стіни виконали на 50%.
+              //-   li Внутрішні стіни та перегородки влаштували на 15%
+              //-   li Сходові марші та майданчики залиті до рівня восьмого поверху.
+              //-   li В будинку розпочали влаштування металопластикових вікон.
+              //-   li Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
             a(href="#" aria-label="move to building progress page").all-progress-link  
+              p Дивитися звіт
+              +svg("link-arrow").svg--link-arrow
+        a(href="#" aria-label="move to building progress page").all-progress-link.more 
               p Більше звітів
               +svg("link-arrow").svg--link-arrow
   section
@@ -393,7 +496,7 @@ block content
             span.section-title__accent & 
           span.section-title__first-row 
             a.all-progress-link.all-news-link
-              p Перейти до розділу
+              p На сторінку
               +svg("link-arrow").svg--link-arrow
             span Акції
         .news__container
@@ -409,15 +512,16 @@ block content
               a(href="#").all-progress-link.direction-link
                 p Прокласти маршрут
                 +svg("link-arrow").svg--link-arrow
-            .contacts__schedule
-              p.contacts__label Графік роботи:
-              p.contacts__schedule-info Пн-Нд 9:00-18:00
+            
             .contacts__phone
               p.contacts__label Відділ інвестицій:
               a(href="tel:+38 067 517 68 41").contacts__phone--invest +38 067 517 68 41
             .contacts__phone
               p.contacts__label Відділ бронювання:
               a(href="tel:+38 034 259 50 00").contacts__phone--booking +38 034 259 50 00
+            .contacts__schedule
+              p.contacts__label Графік роботи:
+              p.contacts__schedule-info Пн-Нд 9:00-18:00
             .contacts__email
               p.contacts__label E-mail:
               a(href="mailto:reservations@mountain-residence.com").contacts__email-link reservations@mountain-residence.com

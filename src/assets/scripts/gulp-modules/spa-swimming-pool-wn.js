@@ -23,10 +23,9 @@ const swiper = new Swiper('.swiper', {
 
 const currentSlideShow = [document.querySelector('[data-first-digit]')];
 
-currentSlideShow[0].textContent = swiper.realIndex + 1;
-document.querySelector('[data-total]').textContent = document.querySelectorAll(
-  '.swiper .swiper-slide:not(.swiper-slide-duplicate)',
-).length;
+currentSlideShow[0].textContent = '0' + (swiper.realIndex + 1);
+document.querySelector('[data-total]').textContent =
+  '0' + document.querySelectorAll('.swiper .swiper-slide:not(.swiper-slide-duplicate)').length;
 swiper.on('activeIndexChange', self => {
   const splitedIndex = self.realIndex + 1;
   const firstDigit = splitedIndex;
@@ -34,7 +33,7 @@ swiper.on('activeIndexChange', self => {
     .timeline()
     .fromTo(currentSlideShow[0], { yPercent: 0 }, { yPercent: 100 })
     .add(() => {
-      currentSlideShow[0].textContent = firstDigit;
+      currentSlideShow[0].textContent = '0' + firstDigit;
     })
     .fromTo(currentSlideShow[0], { yPercent: -100 }, { yPercent: 0 });
 });
