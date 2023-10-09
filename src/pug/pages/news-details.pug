@@ -1,0 +1,78 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'news-details'
+    var id_page = 'id-page-news-details'
+    var class_page = 'class-page-news-details'
+    var headerCustomClass = 'type2' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/newsDetails.bundle.js')
+block content
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.about-bukovel.news-details
+    .container
+      h1.page-title Випереджаємо терміни будівництва апарт-готелю Mountain Residence
+    .news-details__container 
+      button.btn-back
+        .arrow-down__button 
+          <svg class="arrow-down__svg " viewBox="0 0 179 138" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-2.55046e-06 71.6522L169 71.6522M169 71.6522L169 61.0435L105.625 7.99999M169 71.6522L169 82.2609L105.625 130" stroke="white" stroke-width="10" />
+          </svg>
+        p Назад
+      .news-card__date-type-wrap
+        p.news-card__date 04.08.2023
+        p.news-card__news-type Новина
+      img(src="./assets/images/sectionsBg/section1bg.jpg" alt="").news-details__img
+      .news-details__text-wrapper 
+        h3.news-details__list-title За умови повної оплати, в апарт-готелі Mountain Residence від MBT Group діє акція*:
+        ul.news-details__list
+          li.news-details__item За умови 100% оплати при купівлі апартаментів ексклюзивна знижка до 3750 грн/м2
+          li.news-details__item Акція діє з 1.09.2023 до 30.09.2023
+        p.news-details__text Чекаємо вас у відділі продажів за адресою: Івано-Франківська область, с. Поляниця, урочище Вишні, 421. Та головному офісі: м. Івано-Франківськ, вул. Української Перемоги, 23
+        p.news-details__text Mountain Residence — це апарт-готель преміум-класу в гірськолижному курорті Буковель, розташованому неподалік від села Поляниця Івано-Франківської області. Готель складається з трьох багатоповерхових будинків та 43 шале з власною інфраструктурою на великій території площею 50 га, навколо якої розкинулась неперевершена природа українських гір та лісів.
+      video.news-details__video
+        <source src="path" type="video/mp4">
+          | Відео не відтворюється на вашому браузері
+      .news-details__text-wrapper 
+        p.news-details__text На усіх етапах, від будівництва до заселення гостів, забудовник та керуюча компанія беруть на себе всі питання — це супровід під ключ, коли інвестор отримує свої дивіденди та задоволення від співпраці. В залежності від заповненості готелю, дохід власників номерів може скласти до 12% річних. Девелопер MBT Group подбав про те, аби апарт-готель був дуже комфортним, а його гості отримали задоволення та спогади на все життя від неперевершеного відпочинку в горах.
+        p.news-details__location Точна локація відділу продажів - 
+          a(href="https://goo.gl/maps/wLzdzrsdaejmP2f3kHW9").news-details__location-link  https://goo.gl/maps/wLzdzrsdaejmP2f3kHW9
+      a(href="").all-progress-link  
+        p Обрати квартиру
+        +svg("link-arrow").svg--link-arrow 
+  section.news-details__last-section.container
+    .news-details__last-container
+      h2.news-details__last-title Останні новини та акції
+      .news__container--last
+
+
+
+
+
+
+
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

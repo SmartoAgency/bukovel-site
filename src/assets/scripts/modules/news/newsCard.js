@@ -15,12 +15,12 @@
 //     </a>
 //     `;
 // }
-export function newsCard({ newsType, title, date, href, image } = {}) {
+export function newsCard({ type, title, date, href, image } = {}) {
   return `
   <div class="news-card">
     <div class="news-card__date-type-wrap">
         <p class="news-card__date">${date}</p>
-        <p class="news-card__news-type"> ${newsType}</p>
+        <p class="news-card__news-type"> ${type}</p>
     </div>
     <div class="news-card__img-wrap">
       <img class="news-card__img" src=${image} alt="photo" />
@@ -32,7 +32,7 @@ export function newsCard({ newsType, title, date, href, image } = {}) {
 }
 
 export function newsCardArray(newsArray) {
-  const newsCards = document.querySelector('.news__container');
+  const newsCards = document.querySelector('.news__container--last');
   newsArray.forEach(item => {
     newsCards.insertAdjacentHTML('afterbegin', newsCard(item));
   });

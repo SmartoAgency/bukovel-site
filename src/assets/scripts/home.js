@@ -290,7 +290,7 @@ document.querySelectorAll(' .cards__container .card--without-bulge').forEach(el 
           'custom',
           'M0,0 C0,0 0.06,0.126 0.102,0.22 0.156,0.318 0.175,0.376 0.22,0.456 0.264,0.534 0.282,0.564 0.322,0.634 0.356,0.694 0.425,0.797 0.474,0.86 0.508,0.904 0.617,1.034 0.664,1.078 0.704,1.116 0.746,1.134 0.798,1.148 0.844,1.16 0.892,1.14 0.928,1.108 0.954,1.084 1,1 1,1 ',
         ),
-        duration: 3,
+        duration: 0.7,
       },
     )
     .fromTo(
@@ -314,11 +314,11 @@ document.querySelectorAll(' .cards__container .card--without-bulge').forEach(el 
       el.querySelector('.card__logo'),
       {
         autoAlpha: 0,
-        scale: 0,
+        transformScale: 0,
       },
       {
         autoAlpha: 1,
-        scale: 1,
+        transformScale: 1,
 
         ease: CustomEase.create(
           'custom',
@@ -366,24 +366,24 @@ gsap
   .from('.svg-title__tree', { yPercent: 50, autoAlpha: 0, duration: 0.4 })
   .from('.svg-title__leave', { scale: 0, y: 40, x: 50, stagger: 0.1, delay: 0.2, duration: 0.4 });
 
-const newsArray = [
+export const newsArray = [
   {
     newsType: 'Акція',
-    title: 'Gро воаліи оваівоа воа ів валіво ваі ілвоар ',
+    title: 'Gро воалasdіи оваівоа воа ів валіво ваі ілвоар 1',
     date: '12.10.20',
     href: 'asdas',
     image: 'https://tympanus.net/Development/Scroll3DGrid/img/40.jpg',
   },
   {
     newsType: 'Акція',
-    title: 'Gро воаліи оваівоа воа ів валіво ваі ілвоар ',
+    title: 'Gро воаліи оваasdівоа воа ів валіво ваі ілвоар 2',
     date: '12.10.20',
     href: 'asdas',
     image: 'https://tympanus.net/Development/Scroll3DGrid/img/40.jpg',
   },
   {
     newsType: 'Акція',
-    title: 'Gро воаліи оваівоа воа ів валіво ваі ілвоар ',
+    title: 'Gро воаліи оваівоа воа ів валіво ваі ілвоар 3',
     date: '12.10.20',
     href: 'asdas',
     image: 'https://tympanus.net/Development/Scroll3DGrid/img/40.jpg',

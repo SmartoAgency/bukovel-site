@@ -38,3 +38,26 @@
 .fiter__month {
   @extend .fiter__year;
 }
+
+.progress__container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include tablet {
+    gap: 60px;
+  }
+
+  @include laptop {
+    gap: 20px;
+  }
+
+  @include desktop {
+    gap: 60px;
+  }
+}
+
+.active.filter__button {
+  border-color: $color-yellow;
+
+}

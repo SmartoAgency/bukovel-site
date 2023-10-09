@@ -6,23 +6,27 @@ $margin: 15vw;
   border-radius: 40px;
 
   position: relative;
+
   @include tablet {
     width: 538px;
     height: 720px;
     border-radius: 73.398px;
   }
+
   @include laptop {
     border-radius: 42px;
     width: 306px;
     height: 412px;
     margin: 15vh auto;
   }
+
   @include desktop {
     width: 435px;
     height: 585px;
     border-radius: 60px;
   }
 }
+
 .card--without-bulge {
   @extend .card;
   position: relative;
@@ -77,13 +81,16 @@ $margin: 15vw;
   z-index: 1;
 
   transition: transform 0.5s var(--ease-out-bounce) 0.3s;
+
   // background-image: linear-gradient(to top, #383535b0, transparent 30%);
   @include tablet {
     border-radius: 73.398px;
   }
+
   @include laptop {
     border-radius: 42px;
   }
+
   @include desktop {
     border-radius: 60px;
   }
@@ -102,21 +109,24 @@ $margin: 15vw;
   pointer-events: none;
   top: 0;
   left: 50%;
-  transform: translate(-50%, -53%) scale(0.7);
+  transform: translate(-50%, -54%) scale(0.7);
   z-index: 3;
   opacity: 1;
+
   @include tablet {
-    transform: translate(-50%, -53%) scale(1.2);
+    transform: translate(-50%, -54%) scale(1.2);
   }
+
   @include laptop {
-    transform: translate(-50%, -53%) scale(0);
+    transform: translate(-50%, -54%) scale(1);
 
     height: 64.164px;
 
     opacity: 0;
   }
+
   @include desktop {
-    transform: translate(-50%, -53%) scale(0);
+    transform: translate(-50%, -54%) scale(1.3);
     width: 198.839px;
     height: 64.164px;
 

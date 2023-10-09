@@ -57,7 +57,7 @@ tl.add(() => {
 tl.to('.language__item', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.header__logo-name', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.header__logo-name--mobile', { color: 'rgba(17, 17, 17, 1)' }, '<');
-tl.to('.menu-btn', { color: 'rgba(17, 17, 17, 1)' }, '<');
+tl.to('.menu-btn p', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.menu-btn__burger', { backgroundColor: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.menu-btn__burger', { rotate: 45, duration: 0.5 }, '<');
 tl.to('.menu-btn__burger .line-under', { rotate: -90, y: -6, duration: 0.5 }, '<');

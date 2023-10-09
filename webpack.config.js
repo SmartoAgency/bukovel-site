@@ -16,6 +16,9 @@ const config = {
     aboutDeveloper: './src/assets/scripts/gulp-modules/about-developer.js',
     managementCompany: './src/assets/scripts/gulp-modules/management-company.js',
     contacts: './src/assets/scripts/gulp-modules/contacts.js',
+    progress: './src/assets/scripts/gulp-modules/progress.js',
+    news: './src/assets/scripts/gulp-modules/news.js',
+    newsDetails: './src/assets/scripts/gulp-modules/news-details.js',
   },
   output: {
     filename: '[name].bundle.js',

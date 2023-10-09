@@ -5,25 +5,40 @@ block variable
     var title_page = 'news'
     var id_page = 'id-page-news'
     var class_page = 'class-page-news'
-    var headerCustomClass = 'type1' 
+    var headerCustomClass = 'type2' 
     var breadcrumbsSubitem = [
       {
         label: 'About',
         link: pagesLink[0].about
       }
     ]
-  
+
 block meta
   title= title_page
-  meta(name='description', content='')
+  meta(name='description' content='')
 block head
-    link(rel='stylesheet', href="./assets/styles/main.min.css")
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/header.bundle.js')
   script(defer src='./assets/scripts/news.bundle.js')
 block content
-  h1 news
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.about-bukovel.progress.news-page
+    .container
+      h1.page-title Новини та акції 
+      .progress__filter-wrap 
+        button(type="button" data-news-type-button="all").fiter__all.filter__button.active Усі
+        button(type="button" data-news-type-button="news").fiter__year.filter__button 
+          p Новини
+
+        button(type="button" data-news-type-button="promotion").fiter__month.filter__button
+          p Акції
+
+      .news__container
+      .pagination 
 block footer
   include ../includes/footer.pug
 

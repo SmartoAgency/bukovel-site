@@ -43,6 +43,7 @@ body {
   position: relative;
   height: 100vh;
   width: 100%;
+
   @include tablet {
     padding-top: 160px;
   }
@@ -51,6 +52,7 @@ body {
     padding-top: 210px;
   }
 }
+
 .section-bg__mask {
   position: absolute;
   z-index: -1;
@@ -60,6 +62,7 @@ body {
   width: 100%;
   background: linear-gradient(180deg, rgba(17, 17, 17, 0.2) 0%, rgba(17, 17, 17, 0.7) 100%);
 }
+
 .hero-section {
   overflow: hidden;
   width: 100vw;
@@ -76,20 +79,25 @@ body {
   @include text-style-general-style;
   color: $color-white;
   text-align: end;
+
   li:not(:last-child) {
     margin: 8px;
   }
+
   & a {
     @include text-style-general-style;
     color: $color-white;
     text-align: end;
   }
+
   @include tablet {
     bottom: -250px;
+
     li:not(:last-child) {
       margin: 0px;
     }
   }
+
   @include laptop {
     position: static;
   }
@@ -103,13 +111,16 @@ body {
   max-width: 163px;
   align-self: flex-end;
   padding-bottom: 25px;
+
   @include tablet {
     bottom: -165px;
     max-width: 310px;
   }
+
   @include laptop {
     position: static;
   }
+
   @include desktop {
     max-width: 435px;
   }
@@ -123,15 +134,17 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  @include tablet {
-  }
+
+  @include tablet {}
+
   @include laptop {
     flex-direction: row;
     justify-content: space-between;
   }
-  @include desktop {
-  }
+
+  @include desktop {}
 }
+
 .arrow-down__button-wrap {
   display: flex;
   align-items: center;
@@ -140,6 +153,7 @@ body {
   align-self: center;
   width: 100%;
   padding-left: 20px;
+
   p {
     @include text-style-general-style;
     color: $color-white;
@@ -148,18 +162,22 @@ body {
       display: none;
     }
   }
+
   @include tablet {
     padding-left: 24px;
   }
+
   @include laptop {
     width: auto;
     justify-self: flex-start;
     padding-left: 40px;
   }
+
   @include desktop {
     padding-left: 60px;
   }
 }
+
 .arrow-down__button {
   display: block;
   transform: rotate(90deg);
@@ -175,8 +193,9 @@ body {
     width: 100px;
     height: 100px;
   }
-  @include laptop {
-  }
+
+  @include laptop {}
+
   @include desktop {
     width: 150px;
     height: 150px;
@@ -436,8 +455,8 @@ body #cdawrap {
 
   height: 70vh;
   background-color: #000;
-  @include tablet {
-  }
+
+  @include tablet {}
 
   @include laptop {
     margin-bottom: 20vh;
@@ -445,8 +464,7 @@ body #cdawrap {
     height: 100vh;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .content--spacing {
@@ -470,14 +488,16 @@ body #cdawrap {
   color: $color-white;
   font-weight: 700;
   text-transform: uppercase;
+
   @include tablet {
     bottom: 30%;
   }
+
   @include laptop {
     bottom: 0;
   }
-  @include desktop {
-  }
+
+  @include desktop {}
 }
 
 .content__title--top {
@@ -595,16 +615,19 @@ body #cdawrap {
   background-position: right;
   padding-top: 60px;
   padding-bottom: 60px;
+
   @include tablet {
     padding-top: 100px;
     padding-bottom: 100px;
   }
+
   @include laptop {
     min-height: 100vh;
     height: auto;
     padding-top: 120px;
     padding-bottom: 120px;
   }
+
   @include desktop {
     padding-top: 160px;
     padding-bottom: 160px;
@@ -627,14 +650,16 @@ body #cdawrap {
 .section-title__accent {
   -webkit-text-stroke: 1px $color-yellow;
   -webkit-text-fill-color: transparent;
+
   @include tablet {
     -webkit-text-stroke: 2px $color-yellow;
   }
+
   @include laptop {
     -webkit-text-stroke: 3px $color-yellow;
   }
-  @include desktop {
-  }
+
+  @include desktop {}
 }
 
 .section-title {
@@ -658,15 +683,19 @@ body #cdawrap {
   // @include desktop {
   // }
 }
+
 .second-row {
   justify-content: flex-end;
+
   @include laptop {
     justify-content: space-between;
   }
 }
+
 .bottom-row {
   margin-top: auto;
 }
+
 .section-title__second-row {
   align-self: flex-end;
 }
@@ -680,14 +709,17 @@ body #cdawrap {
   height: 41px;
 
   align-self: flex-end;
+
   @include tablet {
     width: 55px;
     height: 90px;
   }
+
   @include laptop {
     width: 98px;
     height: 151px;
   }
+
   @include desktop {
     height: 221px;
     width: 138px;
@@ -696,6 +728,7 @@ body #cdawrap {
 
 .cards__container {
   display: none;
+
   @include laptop {
     display: flex;
     gap: 16px;
@@ -704,32 +737,41 @@ body #cdawrap {
     padding-bottom: 210px;
   }
 }
+
 .swiper-spa {
   padding-top: 80px;
   padding-bottom: 80px;
+
   @include tablet {
     padding-bottom: 150px;
     padding-top: 150px;
   }
+
   @include laptop {
     display: none;
   }
 }
+
 .swiper-rooftop {
   @extend .swiper-spa;
 }
+
 .swiper-ski {
   @extend .swiper-spa;
 }
+
 .swiper-food {
   @extend .swiper-spa;
 }
+
 .swiper-business {
   @extend .swiper-spa;
 }
+
 .swiper-hotel {
   @extend .swiper-spa;
 }
+
 .rooftop {
   position: relative;
   // background-image: linear-gradient(to bottom, #111111cb, transparent 40%),
@@ -765,14 +807,17 @@ body #cdawrap {
   line-height: 1;
   max-width: 210px;
   padding-left: 20px;
+
   @include tablet {
     max-width: 295px;
     padding-left: 24px;
   }
+
   @include laptop {
     padding-left: 0;
     max-width: 387px;
   }
+
   @include desktop {
     max-width: 435px;
   }
@@ -783,14 +828,15 @@ body #cdawrap {
   position: relative;
   background-image: linear-gradient(to bottom, #11111177, #1111115d),
     url('../images/sectionsBg/section7bg-mobile.jpg');
-  @include tablet {
-  }
+
+  @include tablet {}
+
   @include laptop {
     background-image: linear-gradient(to bottom, #11111177, #1111115d),
       url('../images/sectionsBg/section7bg.jpg');
   }
-  @include desktop {
-  }
+
+  @include desktop {}
 }
 
 .chalet__bottom-content {
@@ -804,13 +850,16 @@ body #cdawrap {
   justify-content: space-between;
 
   width: 100%;
+
   @include tablet {
     gap: 50px;
   }
+
   @include laptop {
     padding-left: 40px;
     flex-direction: row;
   }
+
   @include desktop {
     padding-left: 60px;
   }
@@ -818,6 +867,7 @@ body #cdawrap {
 
 .chalet__invest-link {
   display: flex;
+
   // width: 100%;
   @include laptop {
     width: auto;
@@ -832,11 +882,13 @@ body #cdawrap {
   z-index: 1;
   overflow: hidden;
   width: 80%;
+
   @include tablet {
     padding: 29px 40px;
   }
-  @include laptop {
-  }
+
+  @include laptop {}
+
   @include desktop {
     padding: 40px 60px;
   }
@@ -855,10 +907,11 @@ body #cdawrap {
   background-size: cover;
   background-repeat: no-repeat;
   width: 20%;
-  @include tablet {
-  }
-  @include laptop {
-  }
+
+  @include tablet {}
+
+  @include laptop {}
+
   @include desktop {
     padding-right: 50px;
   }
@@ -875,13 +928,15 @@ body #cdawrap {
   .chalet__invest-link:hover & {
     left: 0;
   }
+
   @include tablet {
     width: 92px;
     height: 119px;
     left: -20px;
   }
-  @include laptop {
-  }
+
+  @include laptop {}
+
   @include desktop {
     width: 179px;
     height: 138px;
@@ -898,6 +953,7 @@ body #cdawrap {
   overflow: visible;
   width: 40%;
   height: 100%;
+
   & path {
     stroke-dasharray: 2000;
     stroke-dashoffset: 2000;
@@ -916,6 +972,7 @@ body #cdawrap {
   background-color: $color-white;
   height: auto;
   padding-bottom: 100px;
+
   @include tablet {
     padding-bottom: 150px;
   }
@@ -927,12 +984,15 @@ body #cdawrap {
 
 .building-padding {
   padding-top: 60px;
+
   @include tablet {
     padding-top: 55px;
   }
+
   @include laptop {
     padding-top: 250px;
   }
+
   @include desktop {
     padding-top: 300px;
   }
@@ -955,18 +1015,21 @@ body #cdawrap {
   left: 0px;
   width: 320px;
   height: 128px;
+
   @include tablet {
     top: -140px;
     left: 0px;
     width: 720px;
     height: 289px;
   }
+
   @include laptop {
     top: -140px;
     left: 0px;
     width: 851px;
     height: 342px;
   }
+
   @include desktop {
     top: -200px;
     left: 55px;
@@ -985,18 +1048,21 @@ body #cdawrap {
   left: 22px;
   width: 19.52px;
   height: 38.038px;
+
   @include tablet {
     top: 15px;
     left: 45px;
     width: 43.919px;
     height: 85.882px;
   }
+
   @include laptop {
     top: 38px;
     left: 40px;
     width: 51.91px;
     height: 101.632px;
   }
+
   @include desktop {
     top: 70px;
     left: 80px;
@@ -1010,18 +1076,21 @@ body #cdawrap {
   left: 84px;
   width: 28.385px;
   height: 23.991px;
+
   @include tablet {
     top: 37px;
     left: 187px;
     width: 63.867px;
     height: 54.168px;
   }
+
   @include laptop {
     top: 70px;
     left: 218px;
     width: 75.487px;
     height: 64.102px;
   }
+
   @include desktop {
     top: 100px;
     left: 308px;
@@ -1035,18 +1104,21 @@ body #cdawrap {
   left: 154px;
   width: 15.45px;
   height: 54.052px;
+
   @include tablet {
     top: -5px;
     left: 347px;
     width: 34.763px;
     height: 122.04px;
   }
+
   @include laptop {
     top: 26px;
     left: 410px;
     width: 41.088px;
     height: 144.421px;
   }
+
   @include desktop {
     top: 30px;
     left: 573px;
@@ -1060,18 +1132,21 @@ body #cdawrap {
   left: 214px;
   width: 22.587px;
   height: 27.786px;
+
   @include tablet {
     top: 10px;
     left: 482px;
     width: 50.82px;
     height: 62.737px;
   }
+
   @include laptop {
     top: 44px;
     left: 570px;
     width: 60.066px;
     height: 74.242px;
   }
+
   @include desktop {
     top: 65px;
     left: 792px;
@@ -1085,18 +1160,21 @@ body #cdawrap {
   left: 280px;
   width: 18.624px;
   height: 41.3px;
+
   @include tablet {
     top: -37px;
     left: 630px;
     width: 41.905px;
     height: 93.247px;
   }
+
   @include laptop {
     top: -15px;
     left: 745px;
     width: 49.529px;
     height: 110.347px;
   }
+
   @include desktop {
     top: -20px;
     left: 1041px;
@@ -1115,10 +1193,12 @@ body #cdawrap {
   @include tablet {
     margin-top: 50px;
   }
+
   @include laptop {
     margin-top: 48px;
     flex-direction: row;
   }
+
   @include desktop {
     margin-top: 50px;
   }
@@ -1129,12 +1209,14 @@ body #cdawrap {
   height: calc((100vw - 40px) * 0.55);
   position: relative;
   z-index: 1;
-  @include tablet {
-  }
+
+  @include tablet {}
+
   @include laptop {
     width: 851px;
     height: 470px;
   }
+
   @include desktop {
     width: 1230px;
     height: 680px;
@@ -1147,14 +1229,17 @@ body #cdawrap {
   gap: 12px;
   width: 100%;
   margin-top: 20px;
+
   @include tablet {
     gap: 20px;
     margin-top: 35px;
   }
+
   @include laptop {
     margin-top: 0;
     width: 306px;
   }
+
   @include desktop {
     width: 435px;
     gap: 28px;
@@ -1192,6 +1277,7 @@ body #cdawrap {
     bottom: 0;
     background-color: $color-black;
   }
+
   @include tablet {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -1212,6 +1298,7 @@ body #cdawrap {
   display: flex;
   gap: 8px;
   text-transform: none;
+
   @include tablet {
     gap: 14px;
   }
@@ -1226,6 +1313,7 @@ body #cdawrap {
   height: 20px;
   stroke: $color-yellow;
   stroke-width: 3.33;
+
   @include tablet {
     width: 23px;
     height: 30px;
@@ -1236,6 +1324,7 @@ body #cdawrap {
     height: 38px;
   }
 }
+
 .more {
   display: flex;
   justify-content: flex-end;
@@ -1246,13 +1335,13 @@ body #cdawrap {
     stroke: $color-black;
     stroke-width: 3.33;
   }
+
   @include tablet {
     margin-top: 60px;
   }
 
   @include laptop {
-    width: 28px;
-    height: 38px;
+
     margin-top: auto;
   }
 }
@@ -1268,19 +1357,19 @@ body #cdawrap {
 .all-news-link {
   align-self: flex-end;
 
-  @include tablet {
-  }
+  @include tablet {}
 
   @include laptop {
     transform: translateY(-20px);
   }
 }
 
-.news__container {
+.news__container--last {
   display: flex;
   flex-direction: column;
   gap: 42px;
   margin-top: 40px;
+
   @include tablet {
     flex-direction: row;
     gap: 24px;
@@ -1294,6 +1383,7 @@ body #cdawrap {
 
 .news-card {
   width: 100%;
+
   @include tablet {
     width: calc(50% - 12px);
   }
@@ -1322,12 +1412,14 @@ body #cdawrap {
   border-radius: 100px;
   border: 2px solid $color-black;
 }
+
 .news-card__img-wrap {
   width: 100%;
   height: auto;
   margin-top: 8px;
   margin-bottom: 12px;
   overflow: hidden;
+
   @include tablet {
     margin-bottom: 20px;
   }
@@ -1336,6 +1428,7 @@ body #cdawrap {
     margin-bottom: 30px;
   }
 }
+
 .news-card__img {
   object-fit: cover;
 }
@@ -1350,13 +1443,16 @@ body #cdawrap {
   flex-direction: column;
   gap: 20px;
   margin-top: 20px;
+
   @include tablet {
     margin-top: 40px;
   }
+
   @include laptop {
     flex-direction: row;
     justify-content: space-between;
   }
+
   @include desktop {
     margin-top: 60px;
   }
@@ -1367,16 +1463,19 @@ body #cdawrap {
   flex-direction: column;
   gap: 16px;
   width: 100%;
+
   @include tablet {
     max-height: 275px;
     width: calc(50% - 12px);
     gap: 24px;
     flex-wrap: wrap;
   }
+
   @include laptop {
     width: 415px;
     flex-wrap: nowrap;
   }
+
   @include desktop {
     gap: 40px;
     width: 550px;
@@ -1420,13 +1519,16 @@ body #cdawrap {
   background-color: #907030;
   width: 100%;
   height: 390px;
+
   @include tablet {
     height: 468px;
   }
+
   @include laptop {
     width: 851px;
     height: 553px;
   }
+
   @include desktop {
     width: 1231px;
     height: 800px;

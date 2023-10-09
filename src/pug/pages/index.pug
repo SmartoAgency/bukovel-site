@@ -190,7 +190,7 @@ block content
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section1bg.jpg" alt="фото" img-paralax)
       .section-bg__mask
-      
+
       div.section-title.spa-title.container 
         span.section-title__first-row 
           h2 WELNESS 
@@ -216,7 +216,7 @@ block content
                 +svg("card-arrow").card__link--arrow
     .swiper-spa.container
       .swiper-wrapper
-         each card in spaCards 
+        each card in spaCards 
           .swiper-slide
             .card--without-bulge
               .card__content
@@ -234,7 +234,7 @@ block content
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section2bg.jpg" alt="фото" img-paralax)
       .section-bg__mask
-      
+
       .section-title.spa-title.container 
         span.section-title__first-row 
           h2 Rooftop 
@@ -280,7 +280,7 @@ block content
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section3bg.jpg" alt="фото" img-paralax)
       .section-bg__mask
-      
+
       .section-title.spa-title.container 
         span.section-title__first-row 
           h2 Ski 
@@ -324,7 +324,7 @@ block content
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section4bg.jpg" alt="фото" img-paralax)
       .section-bg__mask
-      
+
       .section-title.spa-title.container 
         span.section-title__first-row 
           h2 Food
@@ -368,7 +368,7 @@ block content
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section5bg.jpg" alt="фото" img-paralax)
       .section-bg__mask
-      
+
       .section-title.spa-title.container
         span.section-title__first-row 
           h2 Business
@@ -412,7 +412,7 @@ block content
       .bg-parallax-wrap
         img(src="./assets/images/sectionsBg/section6bg.jpg" alt="фото" img-paralax)
       .section-bg__mask
-      
+
       .section-title.spa-title.container 
         span.section-title__first-row 
           h2 Hotel
@@ -472,21 +472,13 @@ block content
               p.progress-preview__month Липень
               p.progress-preview__year 2023
             .progress-preview__descr Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
-              //- br
-              //- | Зараз тривають роботи над зведенням третього будинку:
-              //- ul 
-              //-   li Монолітний каркас вже залили на 80 відсотків.
-              //-   li Зовнішні стіни виконали на 50%.
-              //-   li Внутрішні стіни та перегородки влаштували на 15%
-              //-   li Сходові марші та майданчики залиті до рівня восьмого поверху.
-              //-   li В будинку розпочали влаштування металопластикових вікон.
-              //-   li Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
+
             a(href="#" aria-label="move to building progress page").all-progress-link  
               p Дивитися звіт
               +svg("link-arrow").svg--link-arrow
         a(href="#" aria-label="move to building progress page").all-progress-link.more 
-              p Більше звітів
-              +svg("link-arrow").svg--link-arrow
+          p Більше звітів
+          +svg("link-arrow").svg--link-arrow
   section
     .section.news
       .container 
@@ -499,7 +491,7 @@ block content
               p На сторінку
               +svg("link-arrow").svg--link-arrow
             span Акції
-        .news__container
+        .news__container--last
   section
     .section.building.contacts
       .container
@@ -512,7 +504,7 @@ block content
               a(href="#").all-progress-link.direction-link
                 p Прокласти маршрут
                 +svg("link-arrow").svg--link-arrow
-            
+
             .contacts__phone
               p.contacts__label Відділ інвестицій:
               a(href="tel:+38 067 517 68 41").contacts__phone--invest +38 067 517 68 41
