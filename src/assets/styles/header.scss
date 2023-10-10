@@ -41,7 +41,7 @@
   }
 
   @include desktop {
-    height: 190px;
+    height: 150px;
   }
 }
 
@@ -502,19 +502,23 @@
 
   & .scroll-down {
     & .language__item {
-      color: $color-white;
+      color: $color-white !important;
     }
 
     & .header__logo-name {
-      color: $color-white;
+      color: $color-white !important;
     }
 
-    & .menu-btn {
-      color: $color-white;
+    & .header__logo-name--mobile {
+      color: $color-white !important;
+    }
+
+    & .menu-btn p {
+      color: $color-white !important;
     }
 
     & .menu-btn__burger {
-      background-color: $color-white;
+      background-color: $color-white !important;
     }
   }
 }

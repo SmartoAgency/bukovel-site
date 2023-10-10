@@ -733,8 +733,18 @@ body #cdawrap {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
-    padding-top: 210px;
-    padding-bottom: 210px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  @media screen and (min-width: 1685px) and (max-width: 1919px) {
+    gap: 80px
+  }
+
+  @include desktop {
+
+    padding-top: 150px;
+    padding-bottom: 150px;
   }
 }
 

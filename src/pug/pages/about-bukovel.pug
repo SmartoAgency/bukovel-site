@@ -12,30 +12,30 @@ block variable
       }
     ]
     var headerCustomClass = 'type2'
-    var bukovelPhotos =[{num: 1, text: "Спортзали та спортивні майданчики"},
-    {num: 2, text: "Салон краси"},
-    {num: 3, text: "Бані/сауни"},
-    {num: 4, text: "Буковель налічує більшеніж 75 км лижних трас"},
-    {num: 5, text: "Сувенірний ринок"},
-    {num: 6, text: "Розважальні центри та нічні клуби"},
-    {num: 7, text: "Медичний центр та аптека"},
-    {num: 8, text: "Автомийка"},
-    {num: 9, text: "Велопарк та троллейна переправа"},
-    {num: 10, text: "Банька на дровах"},
-    {num: 11, text: "Ресторани"},
-    {num: 12, text: "Дитячі атракціони"},
-    {num: 13, text: "Ковзанка"},
-    {num: 14, text: "Озеро молодості"},
+    var bukovelPhotos =[
+    {num: 1, text: "Буковель налічує більшеніж 75 км лижних трас"},
+    {num: 2, text: "17 витягів"},
+    {num: 3, text: "Цілюще повітря"},
+    {num: 4, text: "Voda Club"},
+    {num: 5, text: "Ресторани"},
+    {num: 6, text: "Спортзали та спортивні майданчики"},
+    {num: 7, text: "Розважальні центри та нічні клуби"},
+    {num: 8, text: "Veranda Bar & Lounge"},
+    {num: 9, text: "Банька на дровах"},
+    {num: 10, text: "Медичний центр та аптека"},
+    {num: 11, text: "Дитячі атракціони"},
+    {num: 12, text: "Ковзанка"},
+    {num: 13, text: "Велосипедні маршрути"},
+    {num: 14, text: "Родельбан"},
     {num: 15, text: "Гуцул Ленд"},
-    {num: 16, text: "Пішохідні маршрути"},
-    {num: 17, text: "Велосипедні маршрути"},
-    {num: 18, text: "Понад 10 преміальних ресторанів"},
-    {num: 19, text: "Нічний клуб Veranda Bar & Lounge"},
-    {num: 20, text: "Родельбан"},
-    {num: 21, text: "Питна вода з крану"},
-    {num: 22, text: "Цілюще повітря"},
-    {num: 23, text: "Voda Club"},
-    {num: 24, text: "17 витягів"}]
+    {num: 16, text: "Озеро молодості"},
+    {num: 17, text: "Пішохідні маршрути"},
+    {num: 18, text: "Велопарк та троллейна переправа"},
+    {num: 19, text: "Питна вода з крану"},
+    {num: 20, text: "Автомийка"},
+    {num: 21, text: "Салон краси "},
+    {num: 22, text: "Сувенірний ринок"},
+    ]
 
 block meta
   title= title_page
@@ -73,18 +73,22 @@ block content
     .about-bukovel__winter-photos 
       img(src="./assets/images/aboutBukovel/1.jpg" alt="winter").big-photo
       .small-photos__container 
-        img(src="./assets/images/aboutBukovel/2.jpg" alt="winter").small-photo
-        img(src="./assets/images/aboutBukovel/3.jpg" alt="winter").small-photo
+        .small-photo__wrapper
+          img(src="./assets/images/aboutBukovel/2.jpg" alt="winter").small-photo
+        .small-photo__wrapper
+          img(src="./assets/images/aboutBukovel/3.jpg" alt="winter").small-photo
     .about-bukovel__summer-desc.container 
-      p.about-bukovel__left-block БУКОВЕЛЬ ВЛІТКУ –ВСЕСЕЗОННИЙ ВІДПОЧИНОК
+      p.about-bukovel__left-block БУКОВЕЛЬ ВЛІТКУ – ВСЕСЕЗОННИЙ ВІДПОЧИНОК
       p.about-bukovel__right-block  Літній сезон 2016 став рекордним за всю історію курорту та розпочав тенденцію до всесезонності відпочинку в «Буковелі», адже 
         span за три літні місяці курорт відвідало близько мільйона гостей. Для літнього відпочинку в Карпатах варто обрати узбережжя Озера Молодості та SPA-комплекс VODA club. 
         | Комплекс приймає до 2000 відвідувачів щодня. До ваших послуг басейни, джакузі, дитяча тераса, відкриті тераси, водний парк, унікальна плавуча сцена та інші розваги.
     .about-bukovel__summer-photos 
       img(src="./assets/images/aboutBukovel/1.jpg" alt="winter").big-photo
       .small-photos__container 
-        img(src="./assets/images/aboutBukovel/2.jpg" alt="winter").small-photo
-        img(src="./assets/images/aboutBukovel/3.jpg" alt="winter").small-photo
+        .small-photo__wrapper
+          img(src="./assets/images/aboutBukovel/2.jpg" alt="winter").small-photo
+        .small-photo__wrapper
+          img(src="./assets/images/aboutBukovel/3.jpg" alt="winter").small-photo
   include ../includes/chalet-section.pug
 
 block footer
