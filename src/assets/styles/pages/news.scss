@@ -2,9 +2,43 @@
   .fiter__year {
     justify-content: center;
   }
+
+  .page-title {
+    margin-bottom: 42px;
+
+    @include tablet {
+      margin-bottom: 62px;
+    }
+
+    @include laptop {
+      margin-bottom: 75px;
+    }
+
+    @include desktop {
+      margin-bottom: 114px;
+    }
+  }
 }
 
 .news__container {
   display: flex;
   flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+
+  @include tablet {
+    gap: 24px;
+    row-gap: 60px;
+    margin-bottom: 100px;
+  }
+
+  @include laptop {
+    column-gap: 20px;
+  }
+
+  @include desktop {
+    row-gap: 100px;
+    margin-bottom: 150px;
+  }
+
 }

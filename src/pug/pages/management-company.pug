@@ -74,7 +74,14 @@ block content
         p Управлінська компанія Mountain Residence Service обслуговує ваші апартаменти та самостійно сплачує комісійні витрати посередникам з продажу, здійснює комунальні платежі та надсилає звіти власникам апартаментів.
   section.about-developer__bg-photo.company-finance.company-relax
     .bg-parallax-wrap
-      img(src="./assets/images/sectionsBg/sectionbg-company2.jpg" alt="фото" img-paralax)
+      .company-relax__bg-img(img-paralax)
+      //- picture
+      //-   source(media='(min-width: 768px max-width: 1366px)' srcset='./assets/images/sectionsBg/sectionbg-company2.jpg' img-paralax)
+      //-   source(media='(min-width: 1366px max-width: 1919px)' srcset='./assets/images/sectionsBg/sectionbg-company2.jpg' img-paralax)
+      //-   source(media='(min-width: 1920px)' srcset='./assets/images/sectionsBg/sectionbg-company2.jpg' img-paralax)
+      //-   img(src='./assets/images/sectionsBg/sectionbg-company2--mobile.jpg' alt='Зображення' img-paralax) 
+
+      //- img(src="./assets/images/sectionsBg/sectionbg-company2.jpg" alt="фото" img-paralax)
     .container
       h2.company-finance__title Ви відпочиваєте - бізнес працює!
       .ad-advantades__wrap

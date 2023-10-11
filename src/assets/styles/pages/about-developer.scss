@@ -1,21 +1,37 @@
 .about-developer__text-block-wrapper {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-
-  margin-top: 70px;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
   margin-bottom: 100px;
+
+  @include tablet {
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 64px;
+  }
+
+  @include laptop {}
+
+  @include desktop {
+
+
+    margin-top: 70px;
+    margin-bottom: 100px;
+  }
 }
 
 .about-developer__label-wrap {
   display: flex;
   align-items: center;
-  gap: 40px;
-  height: 115px;
+  justify-content: center;
+  gap: 12px;
+
 
   img {
-    width: 270px;
-    height: 115px;
+    width: 154px;
+    height: 63px;
   }
 
   .vertical-line-decor {
@@ -30,21 +46,88 @@
     @include text-style-p;
     color: $color-black;
   }
+
+  @include tablet {
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: start;
+    flex-direction: column;
+
+    img {
+      width: 198px;
+      height: 83px;
+    }
+
+    .vertical-line-decor {
+      display: block;
+      width: 264px;
+      height: 2px;
+      background-color: $color-black;
+
+    }
+  }
+
+  @include laptop {
+    align-items: center;
+    flex-direction: row;
+    height: 83px;
+    gap: 40px;
+
+    .vertical-line-decor {
+
+      width: 2px;
+      height: 90%;
+      background-color: $color-black;
+
+    }
+  }
+
+  @include desktop {
+
+    height: 115px;
+
+    img {
+      width: 270px;
+      height: 115px;
+    }
+  }
+
 }
 
 .about-developer__text-wrap {
-  max-width: calc(50% - 10px);
+
 
   .about-developer__text {
     @include text-style-general-style;
 
     &:first-child {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
     span {
       font-weight: 700;
     }
+  }
+
+  @include tablet {
+    max-width: calc(60% - 10px);
+
+    .about-developer__text {
+      &:first-child {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  @include laptop {
+    max-width: calc(50% - 10px);
+  }
+
+  @include desktop {
+    gap: 40px;
+
+
+
   }
 }
 
@@ -61,29 +144,60 @@
     left: 50%;
     z-index: 2;
     transform: translate(-50%, -53%);
+    width: 200.631px;
+    height: 64.743px;
+
+
+    @include desktop {
+      width: 282px;
+      height: 91px;
+    }
 
   }
-
 }
 
 .page__tree-logo {
   position: absolute;
-  width: 60vw;
-  height: 25vw;
+  width: 100vw;
+  height: 40vw;
   z-index: -1;
   top: 0;
   left: 50%;
   transform: translate(-50%, -100%);
   opacity: 0.7;
+
+  @include tablet {}
+
+  @include laptop {
+
+    height: 25vw;
+  }
+
+  @include desktop {}
 }
 
 .ad-advantages {
   .about-developer__label-wrap {
-    padding-top: 50px;
+
 
     img {
-      height: 160px;
-      width: 250px;
+      height: 95px;
+      width: 154px;
+
+      @include tablet {
+        height: 110px;
+        width: 200px;
+      }
+
+      @include laptop {
+        margin-top: 50px;
+      }
+
+      @include desktop {
+        height: 160px;
+        width: 250px;
+      }
+
     }
   }
 }
@@ -92,10 +206,12 @@
   @include text-style-general-style;
 
   .ad-advantades__title {
-
     font-weight: 700;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
+    @include desktop {
+      margin-bottom: 40px;
+    }
   }
 
   .ad-advantades__descr {
@@ -139,20 +255,49 @@
 
 .ad-advantages__photos {
   display: flex;
+  flex-direction: column;
   gap: 2px;
   width: 100%;
-  margin-top: 100px;
-  margin-bottom: 150px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 
-  img {
+  .ad-advantages__photo-wrap {
     flex-grow: 1;
-    width: calc(50% - 1px);
-    height: calc(60vw / 2);
+    width: 100%;
+    height: calc(60vw);
+    margin-bottom: 2px;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
+
+    @include tablet {
+      width: calc(50% - 1px);
+      height: calc(60vw / 2);
+    }
   }
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  @include laptop {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @include desktop {
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
+
 }
 
 .projects {
   padding-bottom: 100px;
+
+
 }
 
 .projects__title {
@@ -161,33 +306,95 @@
   align-items: flex-end;
   @include text-style-page-title;
   color: $color-yellow;
-  margin-bottom: 100px;
+  margin-bottom: 44px;
 
   span {
     align-self: flex-start;
 
+  }
+
+  @include tablet {
+    margin-bottom: 52px;
+  }
+
+  @include laptop {
+    margin-bottom: 150px;
+  }
+
+  @include desktop {
+    margin-bottom: 100px;
   }
 }
 
 .projects__list {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 80px;
   width: 100%;
 
+  @include tablet {
+    gap: 40px;
+  }
+
+
+
+  @include desktop {
+    gap: 50px;
+  }
+
+  .transtion-page__content-wrap {
+
+
+
+    @include laptop {
+      height: 429px;
+    }
+
+    @include desktop {
+      height: 600px;
+    }
+  }
+
   .transtion-page__text-wrap {
-    width: calc(50% - 10px);
-    height: 600px;
+    width: 100%;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-top: 2px solid $color-black;
+    border-bottom: 2px solid $color-black;
 
     .transition-page__title {
       max-width: 800px;
+      justify-self: flex-start;
+    }
+
+    @include tablet {}
+
+    @include laptop {
+      width: calc(50% - 10px);
+      height: 429px;
+    }
+
+    @include desktop {
+      height: 600px;
+
     }
   }
 
   .transtion-page__link {
-    width: calc(50% - 10px);
+    width: 100%;
+
+
+    @include tablet {
+      height: 340px;
+    }
+
+    @include laptop {
+      height: 100%;
+      width: calc(50% - 10px);
+    }
+
+    @include desktop {}
   }
 }

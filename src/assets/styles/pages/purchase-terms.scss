@@ -1,38 +1,106 @@
-.purchse__info-container {
+.purchase {
+  padding-top: 100px;
+  padding-bottom: 60px;
+
+  @include tablet {
+    padding-bottom: 100px;
+    padding-top: 120px;
+  }
+
+  @include laptop {
+    padding-top: 140px;
+
+  }
+
+  @include desktop {
+    padding-top: 200px;
+  }
+}
+
+.purchase__info-container {
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  margin-bottom: 100px;
-  margin-top: 200px;
+  gap: 40px;
+  margin-top: 42px;
 
   .bg-parallax-wrap {
     position: static;
-    width: 1117px;
-    height: 700px;
+    width: 100%;
+  }
+
+  @include tablet {
+    margin-top: 64px;
+  }
+
+  @include laptop {
+    margin-top: 54px;
+    gap: 20px;
+
+    .bg-parallax-wrap {
+      position: static;
+      width: 1117px;
+      height: 700px;
 
 
+    }
+  }
+
+  @include desktop {
+    margin-top: 64px;
+    gap: 50px;
   }
 }
 
-.purchse__info-block {
+.purchase__info-block {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 12px;
 
-  &:nth-child(2) {
-    flex-direction: row-reverse
+
+  @include tablet {
+    gap: 40px;
   }
+
+  @include laptop {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &:nth-child(2) {
+      flex-direction: row-reverse
+    }
+  }
+
+  @include desktop {}
 }
 
-.purchse__info-title {
-  @include text-style-date;
+.purchase__info-title {
+  @include text-style-p;
   color: $color-black;
+  margin-bottom: 8px;
+
+  @include tablet {
+    margin-bottom: 20px;
+  }
+
+  @include desktop {
+    margin-bottom: 28px;
+  }
+
 
 }
 
-.purchse__info-descr {
+.purchase__info-descr {
   @include text-style-general-style;
   color: $color-black;
-  max-width: 549px;
+
+
+  @include laptop {
+    max-width: 415px;
+  }
+
+  @include desktop {
+    max-width: 549px;
+  }
 
 }

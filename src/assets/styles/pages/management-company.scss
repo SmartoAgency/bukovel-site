@@ -1,8 +1,30 @@
 .company .about-developer__label-wrap .logo {
-  width: 110.971px;
-  height: 99px;
+  width: 99px;
+  height: 88.32px;
   fill: $color-yellow;
 
+  @include tablet {
+    width: 110.971px;
+    height: 99px;
+  }
+
+
+}
+
+.company-finance {
+  height: 70vh;
+
+  @include tablet {
+    height: 100vh;
+  }
+}
+
+.company-relax {
+  height: 120vh;
+
+  @include tablet {
+    height: 100vh;
+  }
 }
 
 .company-finance img {
@@ -13,8 +35,23 @@
 .company-finance__title {
   @include text-style-96;
   color: $color-black;
-  padding-top: 150px;
-  margin-bottom: 32vh;
+  padding-top: 60px;
+  margin-bottom: 10vh;
+
+  @include tablet {
+    padding-top: 100px;
+    margin-bottom: 220px;
+  }
+
+  @include laptop {
+
+    margin-bottom: 32vh;
+  }
+
+  @include desktop {
+    padding-top: 150px;
+
+  }
 }
 
 .company-finance__descr-wrap {
@@ -26,21 +63,76 @@
   @include text-style-general-style;
 
   p {
-    max-width: calc(50% - 10px);
+
     color: $color-white
+  }
+
+  @include tablet {
+    p {
+      max-width: calc(50% - 10px);
+      color: $color-white
+    }
+  }
+
+  @include laptop {
+
+    margin-bottom: 32vh;
+  }
+
+  @include desktop {
+    padding-top: 150px;
+
   }
 }
 
 .company-relax .ad-advantades__list {
-  max-width: calc(50% - 10px);
+
+
+  @include tablet {
+    max-width: calc(50% - 10px);
+  }
+
+
 }
 
 .company-relax {
   .company-finance__title {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+
   }
+}
+
+.company-relax__bg-img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/sectionsBg/sectionbg-company2--mobile.jpg");
+  background-size: cover;
+  background-position: center;
+
+  @include tablet {
+    background-image: url("../images/sectionsBg/sectionbg-company2--tablet.jpg");
+  }
+
+  @include laptop {
+    background-image: url("../images/sectionsBg/sectionbg-company2.jpg");
+  }
+
+  @include desktop {}
 }
 
 .bg-parallax-wrap {
   overflow: hidden;
+
+  @include tablet {}
+
+  @include laptop {}
+
+  @include desktop {}
 }

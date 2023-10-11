@@ -15,13 +15,24 @@
 
 // .fiter__all {}
 .filter__button {
-  padding: 20px 16px;
+  padding: 10px 0px;
   text-align: center;
-  border-top: 3px solid $color-black;
-  border-bottom: 3px solid $color-black;
+  border-top: 2px solid $color-black;
+  border-bottom: 2px solid $color-black;
   @include text-style-news-descr;
   color: $color-black;
-  width: 207px;
+  width: 98px;
+
+  @include tablet {
+    width: 207px;
+  }
+
+  @include laptop {
+    padding: 20px 0px;
+    border-top: 3px solid $color-black;
+    border-bottom: 3px solid $color-black;
+  }
+
 }
 
 .fiter__year {

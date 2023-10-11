@@ -1,10 +1,20 @@
 .investors {
-  padding-bottom: 300px;
+  padding-bottom: 100px;
   position: relative;
 
   .bg-parallax-wrap {
     height: 100%;
 
+  }
+
+  @include tablet {
+    padding-bottom: 150px;
+  }
+
+  @include laptop {}
+
+  @include desktop {
+    padding-bottom: 300px;
   }
 }
 
@@ -21,20 +31,47 @@
 
 .investors__text-block-wrapper {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 585px;
-  margin-top: 100px;
+  flex-direction: column;
+
+  margin-bottom: 313px;
+  margin-top: 40px;
 
   p {
     @include text-style-general-style;
-    max-width: calc(50% - 10px);
+
+  }
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 343px;
+    margin-top: 60px;
+
+    p {
+
+      max-width: calc(50% - 10px);
+    }
+  }
+
+  @include laptop {
+    margin-bottom: 340px;
+    margin-top: 100px;
+  }
+
+  @include desktop {
+    margin-bottom: 585px;
   }
 }
 
 .investors__text-block-title {
   @include text-style-96;
   color: $color-black;
-  max-width: calc(50% - 10px);
+  margin-bottom: 20px;
+
+  @include tablet {
+    max-width: calc(50% - 10px);
+    margin-bottom: 0;
+  }
 
 }
 
@@ -51,9 +88,7 @@
     color: $color-white;
   }
 
-  ul {
-    max-width: calc(50% - 10px);
-  }
+
 
   li {
     @include text-style-general-style;
@@ -64,5 +99,11 @@
       margin-bottom: 0;
     }
 
+  }
+
+  @include tablet {
+    ul {
+      max-width: calc(50% - 10px);
+    }
   }
 }

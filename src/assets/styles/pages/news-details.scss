@@ -1,5 +1,18 @@
 .news-details {
-  padding-top: 190px;
+  padding-top: 102px;
+
+  @include tablet {
+    padding-top: 122px;
+  }
+
+  @include laptop {
+    padding-top: 142px;
+  }
+
+  @include desktop {
+    padding-top: 230px;
+
+  }
 
   .page-title {
     @include text-style-96;
@@ -11,17 +24,28 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 60px 288px;
+  padding: 20px 20px 60px 75px;
   margin-bottom: 40px;
   margin-top: 40px;
 
+  @include tablet {
+    padding: 40px 24px 60px 115px;
+  }
+
+  @include laptop {
+    padding: 60px 150px 100px 150px;
+  }
+
+  @include desktop {
+    padding: 60px 288px;
+  }
 
 }
 
 .btn-back {
   position: absolute;
-  top: 60px;
-  left: 100px;
+  top: 20px;
+  left: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,9 +53,21 @@
 
   .arrow-down__button {
     transform: rotateZ(180deg);
-    width: 94px;
-    height: 94px;
+    width: 43px;
+    height: 43px;
     border-color: $color-black;
+
+    @include tablet {
+      width: 70px;
+      height: 70px;
+    }
+
+    @include laptop {}
+
+    @include desktop {
+      width: 94px;
+      height: 94px;
+    }
 
     svg path {
       stroke: $color-black;
@@ -40,7 +76,25 @@
   }
 
   p {
+    display: none;
     @include text-style-general-style;
+
+  }
+
+  @include tablet {
+
+
+    p {
+      display: block;
+      @include text-style-general-style;
+    }
+  }
+
+  @include laptop {}
+
+  @include desktop {
+    top: 60px;
+    left: 100px;
   }
 }
 
