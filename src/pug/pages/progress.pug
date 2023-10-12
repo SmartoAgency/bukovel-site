@@ -30,12 +30,30 @@ block content
     .container
       h1.page-title Хід будівництва 
       .progress__filter-wrap 
-        button(type="button").fiter__all.filter__button Усі
-        button(type="button").fiter__year.filter__button 
-          p Рік
+        button(type="button").fiter__all.filter__button.active Усі
+        .fiter__year.filter__button(data-progress-filter-select)
+          p.filter__title Рік
           +svg("arrow-filter")
-        button(type="button").fiter__month.filter__button
-          p Місяць
+          .filter__popup.hidden
+            button(data-progress-year-button).filter__value 2023
+            button(data-progress-year-button).filter__value 2022
+            button(data-progress-year-button).filter__value 2021
+            button(data-progress-year-button).filter__value 2020
+        .fiter__month.filter__button.disabled(data-progress-filter-select)
+          .filter__popup.hidden()
+            button(data-progress-month-button).filter__value Січень
+            button(data-progress-month-button).filter__value Лютий
+            button(data-progress-month-button).filter__value Березень
+            button(data-progress-month-button).filter__value Квітень
+            button(data-progress-month-button).filter__value Травень
+            button(data-progress-month-button).filter__value Червень
+            button(data-progress-month-button).filter__value Липень
+            button(data-progress-month-button).filter__value Серпень
+            button(data-progress-month-button).filter__value Вересень
+            button(data-progress-month-button).filter__value Жовтень
+            button(data-progress-month-button).filter__value Листопад
+            button(data-progress-month-button).filter__value Грудень
+          p.filter__title Місяць
           +svg("arrow-filter")
       .progress__container
       .pagination 

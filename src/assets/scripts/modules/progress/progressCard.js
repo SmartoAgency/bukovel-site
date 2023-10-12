@@ -1,7 +1,7 @@
-export function progressCard({ video, month, year, text, id } = {}) {
+export function progressCard({ video, month, year, text, id, ref } = {}) {
   return `
-         <div class="progress-preview" data-id="${id}">
-        <video width="640" height="360" controls>
+      <div class="progress-preview" data-id="${id}">
+        <video width="640" height="360" controls class="progress-preview__video">
             <source src="${video}" type="video/mp4">
            Відео не відтворюється на вашому браузері
         </video>
@@ -15,9 +15,12 @@ export function progressCard({ video, month, year, text, id } = {}) {
             </div>
             <a class="all-progress-link" href="${ref}" aria-label="move to building progress page">
             <p>Дивитися звіт</p>
+            <svg class="svg--link-arrow" >
+            <use xlink:href="#icon-link-arrow" />
+            </svg>
             </a>
         </div>
-    </div>;
+      </div>
     `;
 
   // return `

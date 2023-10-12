@@ -1,0 +1,87 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'progress-details'
+    var id_page = 'id-page-progress-details'
+    var class_page = 'class-page-progress-details'
+    var headerCustomClass = 'type2' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/progressDetails.bundle.js')
+block content
+  .background
+    canvas.background__canvas
+  <div class="scroll is-visible"></div>
+  section.about-bukovel.news-details.progress-details
+    .container
+      h1.page-title СЕРПЕНЬ 2022
+    .news-details__container 
+      button.btn-back
+        .arrow-down__button 
+          <svg class="arrow-down__svg " viewBox="0 0 179 138" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-2.55046e-06 71.6522L169 71.6522M169 71.6522L169 61.0435L105.625 7.99999M169 71.6522L169 82.2609L105.625 130" stroke="white" stroke-width="10" />
+          </svg>
+        p Назад
+      //- .news-card__date-type-wrap
+      //-   p.news-card__date 04.08.2023
+      //-   p.news-card__news-type Новина
+      //- img(src="./assets/images/sectionsBg/section1bg.jpg" alt="").news-details__img
+      .news-details__text-wrapper 
+
+        p.news-details__text На сьогодні вже введені в експлуатацію, приймають гостей та приносять власникам пасивний дохід перші два будинки апарт-готелю.
+        h3.news-details__list-title Зараз тривають роботи над зведенням третього будинку:
+        ul.news-details__list
+          li.news-details__item Монолітний каркас вже залили на 80 відсотків.
+          li.news-details__item Зовнішні стіни виконали на 50%.
+          li.news-details__item Внутрішні стіни та перегородки влаштували на 15%
+          li.news-details__item Сходові марші та майданчики залиті до рівня восьмого поверху.
+          li.news-details__item В будинку розпочали влаштування металопластикових вікон.
+
+        p.news-details__text Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
+      .progress-details__swiper 
+        .swiper-buttons-container
+          .swiper-button-prev 
+            +svg('spa-slider-arrow')
+          .swiper-button-next
+            +svg('spa-slider-arrow')
+        .swiper-wrapper 
+          .swiper-slide 
+            img(src="./assets/images/sectionsBg/section1bg.jpg" alt="").news-details__img
+          .swiper-slide 
+            img(src="./assets/images/sectionsBg/section1bg.jpg" alt="").news-details__img
+      .news-details__text-wrapper
+        p.news-details__text Відеозвіт з будівництва
+      video.news-details__video
+        <source src="path" type="video/mp4">
+          | Відео не відтворюється на вашому браузері
+      .news-details__text-wrapper 
+        p.news-details__text На усіх етапах, від будівництва до заселення гостів, забудовник та керуюча компанія беруть на себе всі питання — це супровід під ключ, коли інвестор отримує свої дивіденди та задоволення від співпраці. В залежності від заповненості готелю, дохід власників номерів може скласти до 12% річних. Девелопер MBT Group подбав про те, аби апарт-готель був дуже комфортним, а його гості отримали задоволення та спогади на все життя від неперевершеного відпочинку в горах.
+        p.news-details__location Точна локація відділу продажів - 
+          a(href="https://goo.gl/maps/wLzdzrsdaejmP2f3kHW9").news-details__location-link  https://goo.gl/maps/wLzdzrsdaejmP2f3kHW9
+      a(href="").all-progress-link  
+        p Обрати квартиру
+        +svg("link-arrow").svg--link-arrow 
+  section.news-details__last-section.container
+    .news-details__last-container
+      h2.news-details__last-title Останні звіти
+      .progress__container--last
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -1,0 +1,104 @@
+.progress-details {
+  .btn-back {
+    top: 40px;
+
+    @include tablet {
+      top: 60px;
+    }
+
+    @include laptop {
+      top: 80px;
+    }
+
+    @include desktop {
+      top: 100px;
+      left: 100px;
+    }
+  }
+}
+
+
+
+.progress-details__swiper {
+  // overflow: hidden;
+  position: relative;
+  margin-bottom: 60px;
+
+  @include tablet {
+    margin-bottom: 100px;
+  }
+
+  .swiper-buttons-container {
+    position: absolute;
+    z-index: 5;
+    bottom: 0px;
+    transform: translate(-50%, 50%);
+    left: 50%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include tablet {}
+
+    @include laptop {}
+
+    .swiper-button-prev {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: $color-yellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        height: 50%;
+        width: 50%;
+        stroke: $color-white;
+        stroke-width: 3.3333;
+        transform: rotate(180deg);
+        pointer-events: none;
+      }
+
+      @include tablet {
+        width: 70px;
+        height: 70px;
+      }
+
+      @include desktop {
+        width: 94px;
+        height: 94px;
+      }
+    }
+
+    .swiper-button-next {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: $color-yellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      order: 2;
+
+      svg {
+        height: 50%;
+        width: 50%;
+        stroke: $color-white;
+        stroke-width: 3.3333;
+        pointer-events: none;
+      }
+
+
+      @include tablet {
+        width: 70px;
+        height: 70px;
+      }
+
+      @include desktop {
+        width: 94px;
+        height: 94px;
+      }
+    }
+  }
+}

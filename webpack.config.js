@@ -19,6 +19,7 @@ const config = {
     progress: './src/assets/scripts/gulp-modules/progress.js',
     news: './src/assets/scripts/gulp-modules/news.js',
     newsDetails: './src/assets/scripts/gulp-modules/news-details.js',
+    progressDetails: './src/assets/scripts/gulp-modules/progress-details.js',
   },
   output: {
     filename: '[name].bundle.js',

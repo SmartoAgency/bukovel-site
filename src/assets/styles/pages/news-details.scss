@@ -11,12 +11,23 @@
 
   @include desktop {
     padding-top: 230px;
-
   }
 
   .page-title {
     @include text-style-96;
     color: $color-yellow;
+
+    @include tablet {
+      font-size: 28px;
+    }
+
+    @include laptop {
+      font-size: 60px;
+    }
+
+    @include desktop {
+      font-size: 96px;
+    }
   }
 }
 
@@ -25,7 +36,7 @@
   flex-direction: column;
   position: relative;
   padding: 20px 20px 60px 75px;
-  margin-bottom: 40px;
+
   margin-top: 40px;
 
   @include tablet {
@@ -37,6 +48,7 @@
   }
 
   @include desktop {
+    margin-bottom: 40px;
     padding: 60px 288px;
   }
 
@@ -55,7 +67,8 @@
     transform: rotateZ(180deg);
     width: 43px;
     height: 43px;
-    border-color: $color-black;
+
+    border: 1px solid $color-black;
 
     @include tablet {
       width: 70px;
@@ -65,24 +78,22 @@
     @include laptop {}
 
     @include desktop {
+      border: 2px solid $color-black;
       width: 94px;
       height: 94px;
     }
 
     svg path {
       stroke: $color-black;
-
     }
   }
 
   p {
     display: none;
-    @include text-style-general-style;
-
   }
 
   @include tablet {
-
+    top: 40px;
 
     p {
       display: block;
@@ -90,7 +101,10 @@
     }
   }
 
-  @include laptop {}
+  @include laptop {
+    top: 60px;
+    left: 40px;
+  }
 
   @include desktop {
     top: 60px;
@@ -106,11 +120,21 @@
 .news-details__text-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   @include text-style-general-style;
   color: $color-black;
+
+  @include tablet {}
+
+  @include laptop {}
+
+  @include desktop {
+    gap: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .news-details__list-title {
@@ -128,28 +152,69 @@
 
 .news-details__video {
   width: 100%;
-  height: 743px;
+  height: calc((100vw - 95px) * 0.55);
+  background-color: #000;
+
+  @include tablet {
+    height: calc((100vw - 139px) * 0.55);
+  }
+
+  @include laptop {
+    height: calc((100vw - 300px) * 0.55);
+  }
+
+  @include desktop {
+    height: calc((100vw - 576px) * 0.55);
+  }
 
 }
 
 .news-details__location {
   .news-details__location-link {
+    overflow-wrap: break-word;
     text-decoration: underline;
     color: $color-yellow;
+
 
   }
 }
 
 .news-details__last-container {
   border-top: 2px solid $color-black;
-  padding-bottom: 100px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 
+  @include tablet {
+    padding-bottom: 100px;
+  }
+
+  @include laptop {
+    border-width: 3px;
+  }
+
+  @include desktop {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 }
 
 .news-details__last-title {
   @include text-style-96;
   color: $color-yellow;
-  margin-bottom: 40px;
-  padding-top: 100px;
+  margin-bottom: 22px;
+
+  @include tablet {
+    font-size: 28px;
+  }
+
+  @include laptop {
+    font-size: 60px;
+  }
+
+  @include desktop {
+    margin-bottom: 40px;
+    font-size: 96px;
+
+  }
 
 }
