@@ -96,7 +96,7 @@
     "headroom.js": "^0.12.0",
     "i18next": "^19.8.4",
     "imagesloaded": "^5.0.0",
-    "intl-tel-input": "^17.0.12",
+    "intl-tel-input": "^17.0.21",
     "jquery": "^3.7.0",
     "lil-gui": "^0.18.2",
     "locomotive-scroll": "^4.0.6",

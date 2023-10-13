@@ -1,4 +1,5 @@
 .footer__bg {
+  position: relative;
   background-image: linear-gradient($color-gray-4, $color-gray-4);
   background-repeat: repeat;
   width: 100vw;
@@ -6,18 +7,69 @@
   position: relative;
   z-index: 2;
   padding-top: 110px;
+
   @include tablet {
     padding-top: 165px;
   }
+
   @include laptop {
     padding-top: 70px;
   }
+
   @include desktop {
     padding-top: 150px;
   }
 }
 
-.noise-effect {
+.footer__breadcrambs {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+
+  @include tablet {
+    top: 80px;
+    left: 32px;
+  }
+
+  @include laptop {
+    top: 40px;
+    left: 50px;
+  }
+
+  @include desktop {
+    top: 100px;
+    left: 60px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+
+  }
+
+  .breadcrumbs-item {
+    a {
+      @include text-style-news-descr;
+
+      color: $color-gray-2;
+    }
+
+    svg {
+
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+  }
+
+  .breadcrumbs-item__current--color {
+    @include text-style-news-descr;
+    color: $color-gray-3;
+
+  }
+
+}
+
+.footer__breadcrambs .noise-effect {
   position: absolute;
   top: 0;
   left: 0;
@@ -27,20 +79,26 @@
   opacity: 0.05;
   pointer-events: none;
 }
+
 .form-section {
   margin-bottom: 100px;
+
   .section-title__first-row {
     position: relative;
     align-items: center;
   }
+
   .section-title {
     margin-bottom: 145px;
+
     @include tablet {
       margin-bottom: 154px;
     }
+
     @include laptop {
       margin-bottom: 57px;
     }
+
     @include desktop {
       margin-bottom: 60px;
     }
@@ -49,26 +107,32 @@
   @include tablet {
     margin-bottom: 150px;
   }
+
   @include laptop {
     margin-bottom: 100px;
   }
+
   @include desktop {
     margin-bottom: 150px;
   }
 }
+
 .form__logo-svg {
   position: absolute;
   top: 0px;
   width: 320px;
   height: 225px;
   z-index: -1;
+
   @include tablet {
     width: 476px;
     height: 334px;
   }
+
   @include laptop {
     top: 35px;
   }
+
   @include desktop {
     top: 50px;
     width: 658px;
@@ -88,4 +152,24 @@
   transform: rotateZ(-90deg) translate(45%, -65%) scale(0.9);
   top: 50%;
   left: 50%;
+}
+
+.footer__bottom-block {
+  display: flex;
+  justify-content: space-between;
+
+
+  .footer__license {
+    @include text-style-news-descr;
+    color: $color-gray-3;
+
+    @include laptop {
+      font-size: 16px;
+    }
+  }
+
+  .dev-logo svg {
+    width: 51px;
+    height: 55px;
+  }
 }

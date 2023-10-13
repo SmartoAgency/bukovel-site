@@ -4,13 +4,14 @@
   align-items: center;
   justify-content: space-between;
   gap: 60px;
-  @include tablet {
-  }
+
+  @include tablet {}
+
   @include laptop {
     flex-direction: row;
   }
-  @include desktop {
-  }
+
+  @include desktop {}
 }
 
 .inputs-wrapper {
@@ -18,13 +19,14 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  @include tablet {
-  }
+
+  @include tablet {}
+
   @include laptop {
     flex-direction: row;
   }
-  @include desktop {
-  }
+
+  @include desktop {}
 }
 
 .form-field__input {
@@ -41,13 +43,16 @@
 
     color: $color-gray-2;
   }
+
   @include tablet {
     padding: 32px 40px;
   }
+
   @include laptop {
     width: 470px;
     text-align: start;
   }
+
   @include desktop {
     width: 663px;
     padding: 46px 60px;
@@ -61,6 +66,7 @@
 
 .form__button-svg {
   transform: scale(1.25);
+
   @include laptop {
     transform: translateY(50%) scale(1.25);
   }
@@ -75,5 +81,16 @@
   @include laptop {
     max-width: 300px;
     text-align: end;
+  }
+}
+
+.iti__flag {
+  background-image: url("../../../assets/images/libs/flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url("../../../assets/images/libs/flags@2x.png");
   }
 }

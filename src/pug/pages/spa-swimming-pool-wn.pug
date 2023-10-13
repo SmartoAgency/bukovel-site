@@ -33,11 +33,23 @@ block content
       p.secondory-page__description Description
     .swiper 
       .swiper-wrapper
-        .swiper-slide 
-          +img("spa-pages/swimming-pool-wn.jpg")
-        .swiper-slide 
-          +img("spa-pages/swimming-pool-wn.jpg")
-      .secondory-page-hero__mask
+        .swiper-slide.section-test
+          .secondory-page-hero__mask
+          .block-style-column__info-wrapper.block-style-column__info-wrapper--mobile
+            input(type="range" name="aaaa")
+            include ../includes/block-style-column-mobile-image-scroller-svg.pug
+            div.block-style-column__mobile-scroller
+              img(src='./assets/images/spa-pages/swimming-pool-wn.jpg' alt='section-3-img')
+          +img("spa-pages/swimming-pool-wn.jpg").spa-sw-img-desktop
+        .swiper-slide.section-test 
+          .secondory-page-hero__mask
+          .block-style-column__info-wrapper.block-style-column__info-wrapper--mobile
+            input(type="range" name="aaaa")
+            include ../includes/block-style-column-mobile-image-scroller-svg.pug
+            div.block-style-column__mobile-scroller
+              img(src='./assets/images/spa-pages/swimming-pool-wn.jpg' alt='section-3-img')
+          +img("spa-pages/swimming-pool-wn.jpg").spa-sw-img-desktop
+
       .swiper-buttons-container
         .swiper-button-prev
           +svg('spa-slider-arrow')

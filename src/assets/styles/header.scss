@@ -162,6 +162,7 @@
     }
 
     @include text-style-uppercaesed-btn;
+    font-weight: 700;
     border-radius: none;
     background-color: transparent;
     width: auto;
@@ -265,20 +266,44 @@
 //modal Call us
 
 .call-us__modal-container {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+
   position: absolute;
   padding: 40px 28px;
   background-color: $color-white;
   max-height: 500px;
   transition: all 1s ease;
   margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
   // overflow: hidden;
+  @include tablet {
+    right: 100px;
+    left: auto;
+    transform: translateX(0%);
+  }
+
+  @include laptop {
+    left: 50px;
+    right: auto;
+  }
+
+  @include desktop {
+    left: 60px;
+
+  }
 
   & .contacts__phone {
     @include text-style-general-style;
   }
+}
+
+.call-us__content-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
 }
 
 .hidden {

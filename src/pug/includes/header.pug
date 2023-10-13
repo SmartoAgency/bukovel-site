@@ -18,19 +18,21 @@ header(class="header "+headerCustomClass)
           <svg class="call-us__triangle-decor" xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12" fill="none">
             <path d="M12 0L0 12H24L12 0Z" fill="white"/>
           </svg>
-          .contacts__phone.call-us__item
-            p.contacts__label Відділ інвестицій:
-            a(href="tel:+38 067 517 68 41").contacts__phone--invest +38 067 517 68 41
-          .contacts__phone.call-us__item
-            p.contacts__label Відділ бронювання:
-            a(href="tel:+38 034 259 50 00").contacts__phone--booking +38 034 259 50 00
-          form.order-call 
-            .order-call__title.call-us__item 
-              span
-              h4 Замовити дзвінок
-              span
-            input.order-call__number.call-us__item(placeholder=" Ваш номер телефону") 
-            button.order-call__submit-btn.call-us__item Надіслати повідомлення
+          .call-us__content-wrapper
+            .contacts__phone.call-us__item
+              p.contacts__label Відділ інвестицій:
+              a(href="tel:+38 067 517 68 41").contacts__phone--invest +38 067 517 68 41
+            .contacts__phone.call-us__item
+              p.contacts__label Відділ бронювання:
+              a(href="tel:+38 034 259 50 00").contacts__phone--booking +38 034 259 50 00
+            form.order-call 
+              .order-call__title.call-us__item 
+                span
+                h4 Замовити дзвінок
+                span
+              input.order-call__number.call-us__item(placeholder=" Ваше ім'я") 
+              input.order-call__number.call-us__item(placeholder=" Ваш номер телефону") 
+              button.order-call__submit-btn.call-us__item Надіслати повідомлення
 
       ul.language__list 
         li.language__item Ua

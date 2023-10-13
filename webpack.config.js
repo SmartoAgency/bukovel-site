@@ -8,6 +8,7 @@ const config = {
     notFound: './src/assets/scripts/notFound.js',
     home: './src/assets/scripts/home.js',
     header: './src/assets/scripts/modules/header/header.js',
+    footer: './src/assets/scripts/modules/footer/footer.js',
     aboutBukovel: './src/assets/scripts/gulp-modules/about-bukovel.js',
     purchaseTerms: './src/assets/scripts/gulp-modules/purchase-terms.js',
     swimmingPoolWn: './src/assets/scripts/gulp-modules/spa-swimming-pool-wn.js',

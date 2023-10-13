@@ -5,6 +5,7 @@ import App from '../bulge/App';
 import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
 import { getProgressList } from '../modules/progress/getProgress';
 import { progressCard } from '../modules/progress/progressCard';
+import '../loader';
 // import '../modules/helpers/imgParallax';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);

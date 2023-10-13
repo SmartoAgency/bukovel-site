@@ -51,7 +51,21 @@ body {
   @include desktop {
     padding-top: 210px;
   }
+
+  .section-title {
+    overflow: hidden;
+    height: auto;
+
+  }
+
+  .overflow-hidden,
+  .second-row,
+  .hero__invest-more-wrap {
+    overflow: hidden;
+  }
 }
+
+
 
 .section-bg__mask {
   position: absolute;

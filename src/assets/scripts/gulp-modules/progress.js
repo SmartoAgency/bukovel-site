@@ -3,6 +3,7 @@ import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
 import { useState } from '../modules/helpers/helpers';
 import { progressCard } from '../modules/progress/progressCard';
 import { getProgressList } from '../modules/progress/getProgress';
+import '../loader';
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 new App();

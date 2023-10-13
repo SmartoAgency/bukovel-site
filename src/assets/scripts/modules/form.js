@@ -66,19 +66,19 @@ forms.forEach(form => {
             valid: false,
             error: [],
           },
-          email: {
-            inputWrapper: new SexyInput({
-              animation: 'none',
-              $field: $form.querySelector('[data-field-email]'),
-            }),
-            rule: yup
-              .string()
-              .required(i18next.t('required'))
-              .trim(),
-            defaultMessage: i18next.t('email'),
-            valid: false,
-            error: [],
-          },
+          // email: {
+          //   inputWrapper: new SexyInput({
+          //     animation: 'none',
+          //     $field: $form.querySelector('[data-field-email]'),
+          //   }),
+          //   rule: yup
+          //     .string()
+          //     .required(i18next.t('required'))
+          //     .trim(),
+          //   defaultMessage: i18next.t('email'),
+          //   valid: false,
+          //   error: [],
+          // },
 
           phone: {
             inputWrapper: new SexyInput({

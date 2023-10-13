@@ -11,11 +11,74 @@ import { Navigation, EffectCoverflow } from 'swiper';
 // import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
+import './loader';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 new App();
 
-var tl = gsap.timeline();
+const tl = gsap.timeline();
+
+const heroTl = gsap.timeline();
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    heroTl
+      .from('.hero__bg h1', {
+        delay: 1,
+        translateY: 200,
+        duration: 1,
+        ease: 'power4.out',
+      })
+      .from(
+        '.header',
+        {
+          autoAlpha: 0,
+          translateY: -200,
+          duration: 1,
+          ease: 'power4.out',
+        },
+        '<',
+      )
+      .from(
+        '.hero__bg .hero__social-list li',
+        {
+          translateY: 200,
+          duration: 1,
+          ease: 'power4.out',
+          stagger: 0.1,
+        },
+        '<',
+      )
+      .from(
+        '.hero__bg h2',
+        {
+          translateY: 200,
+          duration: 1,
+          ease: 'power4.out',
+        },
+        '<',
+      )
+      .from(
+        '.hero__bg  .hero__text-block',
+        {
+          translateY: 200,
+          duration: 1,
+          ease: 'power4.out',
+        },
+        '<',
+      )
+      .from(
+        '.hero__bg  .hero__invest-more-wrap',
+        {
+          autoAlpha: 0,
+          translateY: 200,
+          duration: 1,
+          ease: 'power4.out',
+        },
+        '<0.2',
+      );
+  }, 1900);
+});
 
 gsap.fromTo(
   '.hero__bg',
@@ -316,11 +379,11 @@ document.querySelectorAll(' .cards__container .card--without-bulge').forEach(el 
       el.querySelector('.card__logo'),
       {
         autoAlpha: 0,
-        transformScale: 0,
+        scale: 0,
       },
       {
         autoAlpha: 1,
-        transformScale: 1,
+        scale: 1,
         duration: 0.5,
         ease: CustomEase.create(
           'custom',
