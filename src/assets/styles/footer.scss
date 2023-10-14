@@ -80,6 +80,7 @@
   pointer-events: none;
 }
 
+
 .form-section {
   margin-bottom: 100px;
 
@@ -117,12 +118,17 @@
   }
 }
 
+.form-wrapper {
+  position: relative;
+}
+
 .form__logo-svg {
   position: absolute;
   top: 0px;
   width: 320px;
   height: 225px;
   z-index: -1;
+  transform: translateY(-100%);
 
   @include tablet {
     width: 476px;
@@ -130,11 +136,9 @@
   }
 
   @include laptop {
-    top: 35px;
   }
 
   @include desktop {
-    top: 50px;
     width: 658px;
     height: 485px;
   }
@@ -152,6 +156,11 @@
   transform: rotateZ(-90deg) translate(45%, -65%) scale(0.9);
   top: 50%;
   left: 50%;
+  height: 50%;
+
+  @include to(1024px) {
+    height: 40%;
+  }
 }
 
 .footer__bottom-block {
@@ -172,4 +181,10 @@
     width: 51px;
     height: 55px;
   }
+}
+
+.smarto {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }

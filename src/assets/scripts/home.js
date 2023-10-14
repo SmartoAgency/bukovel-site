@@ -112,21 +112,23 @@ gsap.fromTo(
 //     .to(el, { yPercent: -20, scale: 1.25 });
 // });
 
-tl.fromTo(
-  '.spa',
-  { yPercent: 100, opacity: 0.2 },
-  {
-    scrollTrigger: {
-      trigger: '.spa-section',
-      start: 'top center',
-      end: '+=0%',
+if (document.documentElement.clientWidth > 1024) {
+  tl.fromTo(
+    '.spa',
+    { yPercent: 100, opacity: 0.2 },
+    {
+      scrollTrigger: {
+        trigger: '.spa-section',
+        start: 'top center',
+        end: '+=0%',
 
-      scrub: 2,
+        scrub: 2,
+      },
+      yPercent: 0,
+      opacity: 1,
     },
-    yPercent: 0,
-    opacity: 1,
-  },
-);
+  );
+}
 gsap
   .timeline()
   .to('.hero__invest-more-wrap .logo-part__svg path', {

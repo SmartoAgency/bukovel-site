@@ -167,6 +167,8 @@ body {
   align-self: center;
   width: 100%;
   padding-left: 20px;
+  cursor: pointer;
+  pointer-events: all;
 
   p {
     @include text-style-general-style;
@@ -221,9 +223,14 @@ body {
   transform: translate(-50%, -50%) scale(0.9);
   top: 50%;
   left: 50%;
+  height: 50%;
 
   & path {
     stroke-width: 15px;
+  }
+
+  @include to(1024px) {
+    height: 40%;
   }
 }
 
@@ -269,10 +276,10 @@ a {
   cursor: pointer;
 }
 
-a:hover {
-  color: var(--color-link-hover);
-  outline: none;
-}
+//a:hover {
+//  color: var(--color-link-hover);
+//  outline: none;
+//}
 
 /* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
 a:not(.card__image):focus {
@@ -485,6 +492,7 @@ body #cdawrap {
   // margin-bottom: 20vh;
   // position: relative;
   z-index: 2;
+  pointer-events: none;
 }
 
 .content__title {
@@ -630,6 +638,12 @@ body #cdawrap {
   padding-top: 60px;
   padding-bottom: 60px;
 
+  @include to(1024px) {
+    position: relative;
+    z-index: 2;
+  }
+
+
   @include tablet {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -721,6 +735,7 @@ body #cdawrap {
 .section__arrow {
   width: 25px;
   height: 41px;
+  cursor: pointer;
 
   align-self: flex-end;
 

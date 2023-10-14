@@ -2,6 +2,8 @@
   position: fixed;
   z-index: 10;
   width: 100%;
+
+
 }
 
 .header-bg {
@@ -225,18 +227,30 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  position: static;
+  transform: none;
 
   @include tablet {
     gap: 8px;
+    position: static;
+    transform: none;
   }
 
   @include laptop {
     order: 0;
     gap: 12px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   @include desktop {
     gap: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -454,6 +468,7 @@
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  pointer-events: none;
 
   transform: scale(10);
   opacity: 0;
@@ -471,8 +486,6 @@
 .header__nav-container {
   padding-top: 80px;
   opacity: 0;
-  overflow-y: auto;
-  height: 100%;
 
   & .main-nav__link {
     color: $color-gray-4;
@@ -501,6 +514,33 @@
 
   @include desktop {
     padding-top: 156px;
+  }
+  .main-nav__link {
+    transition: color .3s ease-in-out;
+  }
+
+  .main-nav__item {
+    @include from(1023px) {
+      &:hover {
+        .main-nav__link {
+          color: rgb(68, 75, 85, 0.5);
+          transition: color .3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .sub-nav__link {
+    transition: color .3s ease-in-out;
+  }
+
+  .sub-nav__item {
+    &:hover {
+      .sub-nav__link {
+        color: rgb(68, 75, 85, 0.5);
+        transition: color .3s ease-in-out;
+      }
+    }
   }
 }
 

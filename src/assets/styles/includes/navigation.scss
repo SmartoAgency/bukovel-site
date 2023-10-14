@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
+  overflow-y: scroll;
+  height: auto;
   @include tablet {
     flex-direction: row;
     flex-wrap: wrap;
@@ -35,6 +37,18 @@
 .main-nav__link {
   @include text-style-p;
   color: $color-gray-2;
+  transition: color .3s ease-in-out;
+}
+
+.main-nav__item {
+  @include from(1023px) {
+    &:hover {
+      .main-nav__link {
+        color: $wc;
+        transition: color .3s ease-in-out;
+      }
+    }
+  }
 }
 .sub-nav__title-wrap {
   display: flex;
@@ -90,6 +104,16 @@
 .sub-nav__link {
   @include text-style-news-descr;
   color: $color-gray-2;
+  transition: color .3s ease-in-out;
+}
+
+.sub-nav__item {
+  &:hover {
+    .sub-nav__link {
+      color: $wc;
+      transition: color .3s ease-in-out;
+    }
+  }
 }
 
 .third-block-nav {

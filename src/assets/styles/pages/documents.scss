@@ -84,11 +84,13 @@
     font-size: 18px;
   }
 
-  &:hover,
-  &:focus {
-    outline: 2px solid $color-yellow;
-    transform: scale(1.03);
+  @include from(1023px) {
+    &:hover,
+    &:focus {
+      outline: 2px solid $color-yellow;
+      transform: scale(1.03);
 
+    }
   }
 
   @include tablet {
