@@ -17,7 +17,7 @@
 // }
 export function newsCard({ type, title, date, href, image } = {}) {
   return `
-  <div class="news-card">
+  <a href=${href} class="news-card">
     <div class="news-card__date-type-wrap">
         <p class="news-card__date">${date}</p>
         <p class="news-card__news-type"> ${type}</p>
@@ -25,15 +25,15 @@ export function newsCard({ type, title, date, href, image } = {}) {
     <div class="news-card__img-wrap">
       <img class="news-card__img" src=${image} alt="photo" />
     </div>
-    <a class="news-card__link" href=${href}>
+    <div class="news-card__link" >
         <h3 class="news-card__title"> ${title}</h3>
-    </a>
-</div>`;
+    </div>
+</a>`;
 }
 
-export function newsCardArray(newsArray) {
-  const newsCards = document.querySelector('.news__container--last');
-  newsArray.forEach(item => {
-    newsCards.insertAdjacentHTML('afterbegin', newsCard(item));
-  });
-}
+// export function newsCardArray(newsArray) {
+//   const newsCards = document.querySelector('.news__container--last');
+//   newsArray.forEach(item => {
+//     newsCards.insertAdjacentHTML('afterbegin', newsCard(item));
+//   });
+// }

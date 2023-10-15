@@ -36,7 +36,6 @@ $margin: 15vw;
 
   @include desktop {
     position: relative;
-
   }
 }
 
@@ -61,6 +60,11 @@ $margin: 15vw;
 .card--without-bulge:nth-child(4n + 4) {
   @include laptop {
     transform: translateY(20%);
+  }
+}
+.card--without-bulge:nth-child(14) {
+  @include laptop {
+    transform: translateY(-10%);
   }
 }
 

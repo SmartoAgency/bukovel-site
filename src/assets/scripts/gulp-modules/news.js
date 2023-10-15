@@ -27,10 +27,11 @@ useNewsEffect(({ pending, container, type }) => {
 });
 document.querySelectorAll('.filter__button').forEach(el => {
   if (el.classList.contains('active')) {
-    getNews('promotion').then(res => {
+    getNews('all').then(res => {
+      console.log(res);
       setNews({
         ...news(),
-        data: [...res.data],
+        data: res.data.result,
       });
     });
   }
@@ -39,14 +40,17 @@ document.body.addEventListener('click', evt => {
   const target = evt.target.closest('[data-news-type-button]');
   const type = target.getAttribute('data-news-type-button');
   document.querySelectorAll('[data-news-type-button]').forEach(el => {
-    if (el === target) el.classList.add('active');
-    if (el !== target) el.classList.remove('active');
-    getNews(type).then(res => {
-      setNews({
-        ...news(),
-        data: [...res.data],
-        type,
+    if (el === target) {
+      el.classList.add('active');
+      getNews(type).then(res => {
+        console.log(res);
+        setNews({
+          ...news(),
+          data: res.data.result,
+          type,
+        });
       });
-    });
+    }
+    if (el !== target) el.classList.remove('active');
   });
 });

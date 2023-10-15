@@ -3,7 +3,7 @@ import './3DScroll/utils';
 import './3DScroll/imagesloaded.pkgd.min';
 import './3DScroll/index';
 import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
-import { newsCardArray } from './modules/news/newsCard';
+
 import './modules/helpers/imgParallax';
 import { chaletInvestBtnAnim } from './modules/section-anim/chalet';
 import Swiper from 'swiper';
@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
     heroTl
       .from('.hero__bg h1', {
         delay: 1,
-        translateY: 200,
+        yPercent: 100,
         duration: 1,
         ease: 'power4.out',
       })
@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
         '.header',
         {
           autoAlpha: 0,
-          translateY: -200,
+          yPercent: -100,
           duration: 1,
           ease: 'power4.out',
         },
@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
       .from(
         '.hero__bg .hero__social-list li',
         {
-          translateY: 200,
+          y: 300,
           duration: 1,
           ease: 'power4.out',
           stagger: 0.1,
@@ -52,16 +52,16 @@ window.addEventListener('load', () => {
       .from(
         '.hero__bg h2',
         {
-          translateY: 200,
+          yPercent: 100,
           duration: 1,
           ease: 'power4.out',
         },
         '<',
       )
       .from(
-        '.hero__bg  .hero__text-block',
+        '.hero__bg  .hero__text-block p',
         {
-          translateY: 200,
+          y: 300,
           duration: 1,
           ease: 'power4.out',
         },
@@ -71,7 +71,7 @@ window.addEventListener('load', () => {
         '.hero__bg  .hero__invest-more-wrap',
         {
           autoAlpha: 0,
-          translateY: 200,
+          yPercent: 100,
           duration: 1,
           ease: 'power4.out',
         },
@@ -433,28 +433,3 @@ gsap
   })
   .from('.svg-title__tree', { yPercent: 50, autoAlpha: 0, duration: 0.4 })
   .from('.svg-title__leave', { scale: 0, y: 40, x: 50, stagger: 0.1, delay: 0.2, duration: 0.4 });
-
-export const newsArray = [
-  {
-    newsType: 'Акція',
-    title: 'Gро воалasdіи оваівоа воа ів валіво ваі ілвоар 1',
-    date: '12.10.20',
-    href: 'asdas',
-    image: 'https://tympanus.net/Development/Scroll3DGrid/img/40.jpg',
-  },
-  {
-    newsType: 'Акція',
-    title: 'Gро воаліи оваasdівоа воа ів валіво ваі ілвоар 2',
-    date: '12.10.20',
-    href: 'asdas',
-    image: 'https://tympanus.net/Development/Scroll3DGrid/img/40.jpg',
-  },
-  {
-    newsType: 'Акція',
-    title: 'Gро воаліи оваівоа воа ів валіво ваі ілвоар 3',
-    date: '12.10.20',
-    href: 'asdas',
-    image: 'https://tympanus.net/Development/Scroll3DGrid/img/40.jpg',
-  },
-];
-newsCardArray(newsArray);

@@ -1,4 +1,4 @@
-// import '../form';
+import '../form';
 // import 'intl-tel-input/build/css/intlTelInput.css';
 // import intlTelInput from 'intl-tel-input';
 

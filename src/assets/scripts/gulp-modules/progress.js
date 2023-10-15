@@ -10,7 +10,7 @@ new App();
 
 const [progress, setProgressList, useProgressEffect] = useState({
   pending: false,
-  year: '',
+  year: 'last',
   month: 'all',
   container: document.querySelector('.progress__container'),
   data: [],
@@ -27,9 +27,11 @@ useProgressEffect(({ pending, container, type }) => {
 
   pending ? container.classList.add('loading') : container.classList.remove('loading');
 });
+
 document.querySelectorAll('.filter__button').forEach(el => {
   if (el.classList.contains('active')) {
     getProgressList({ year: 'last' }).then(res => {
+      console.log(res);
       setProgressList({
         ...progress(),
         data: [...res.data],
@@ -37,21 +39,21 @@ document.querySelectorAll('.filter__button').forEach(el => {
     });
   }
 });
+
 document.body.addEventListener('click', evt => {
   const selector = evt.target.closest('[data-progress-filter-select]'); //відкриття попапа
   const year = evt.target.closest('[data-progress-year-button]');
   const month = evt.target.closest('[data-progress-month-button]');
 
   if (year) {
-    getProgressList({ year: year.textContent }).then(res => {
+    getProgressList({ year: year.textContent, month: progress().month }).then(res => {
+      console.log(res);
       setProgressList({
         ...progress(),
         data: [...res.data],
         year: year.textContent,
       });
     });
-
-    // setProgressList({ ...progress(), year: year.textContent });
 
     year.closest('[data-progress-filter-select]').querySelector('.filter__title').innerHTML =
       year.textContent;
@@ -62,22 +64,21 @@ document.body.addEventListener('click', evt => {
   }
 
   if (month) {
-    getProgressList({ year: progress().year, month: month.textContent }).then(res => {
+    const monthNum = month.getAttribute('data-progress-month-button');
+
+    getProgressList({ year: progress().year, month: monthNum }).then(res => {
       setProgressList({
         ...progress(),
         data: [...res.data],
-        month: month.textContent,
+        month: monthNum,
       });
     });
-
-    // setProgressList({ ...progress(), month: month.textContent });
-
     month.closest('[data-progress-filter-select]').querySelector('.filter__title').innerHTML =
       month.textContent;
     document.querySelectorAll('.filter__popup').forEach(el => el.classList.add('hidden'));
     return;
   }
-  // const monthBtn = evt.target.closest('[data-progress-filter-select]');
+
   if (selector) {
     document.querySelectorAll('.filter__popup').forEach(el => {
       if (el !== selector.querySelector('.filter__popup')) {
@@ -88,16 +89,4 @@ document.body.addEventListener('click', evt => {
 
     return selector.querySelector('.filter__popup').classList.toggle('hidden');
   }
-
-  // document.querySelectorAll('[data-news-type-button]').forEach(el => {
-  //   if (el === target) el.classList.add('active');
-  //   if (el !== target) el.classList.remove('active');
-  //   getProgressList(type).then(res => {
-  //     setProgressList({
-  //       ...progress(),
-  //       data: [...res.data],
-  //       type,
-  //     });
-  //   });
-  // });
 });
