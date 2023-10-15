@@ -138,21 +138,21 @@ export default class SexyInput {
             break;
           case 'kz':
             maskPartForUkraine = 2;
-            
+
             break;
           case 'th':
             maskPartForUkraine = 3;
-            
+
             break;
           case 'de':
             maskPartForUkraine = 3;
-            
+
             break;
           case 'ae':
-              maskPartForUkraine = 4;
-              
+            maskPartForUkraine = 4;
+
             break;
-        
+
           default:
             break;
         }
