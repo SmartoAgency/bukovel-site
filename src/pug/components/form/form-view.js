@@ -11,7 +11,7 @@ const renderForm = (form, elements, toast) => {
   switch (form.status) {
     case 'renderErrorValidation':
       elementsParamFn.$btnSubmit.setAttribute('disabled', true);
-      fieldsKey.forEach((key) => {
+      fieldsKey.forEach(key => {
         const field = elementsParamFn.fields[key];
         if (field.valid) {
           field.inputWrapper.showSuccessStyle();
@@ -29,7 +29,7 @@ const renderForm = (form, elements, toast) => {
     case 'renderSuccessValidation':
       elementsParamFn.$btnSubmit.removeAttribute('disabled');
 
-      fieldsKey.forEach((key) => {
+      fieldsKey.forEach(key => {
         const field = elementsParamFn.fields[key];
         field.inputWrapper.showSuccessStyle();
         field.inputWrapper.writeMessage('');
@@ -37,36 +37,36 @@ const renderForm = (form, elements, toast) => {
       break;
 
     case 'loading':
-      fieldsKey.forEach((key) => {
+      fieldsKey.forEach(key => {
         const field = elementsParamFn.fields[key];
         field.inputWrapper.showLoadingStyle();
       });
 
       elementsParamFn.$btnSubmit.setAttribute('disabled', true);
-      elementsParamFn.$btnSubmit.querySelector('[data-btn-submit-text]').innerHTML = i18next.t(
-        'sending',
-      );
+      elementsParamFn.$btnSubmit.querySelector(
+        '[data-btn-submit-text="data-btn-submit-text"]',
+      ).innerHTML = i18next.t('sending');
 
       break;
     case 'successSand':
-      fieldsKey.forEach((key) => {
+      fieldsKey.forEach(key => {
         const field = elementsParamFn.fields[key];
         field.inputWrapper.showDefaultStyle();
         field.inputWrapper.removeSelectedStyle();
       });
       elementsParamFn.$form.reset();
       elementsParamFn.$btnSubmit.setAttribute('disabled', false);
-      elementsParamFn.$btnSubmit.querySelector('[data-btn-submit-text]').innerHTML = i18next.t(
-        'send',
-      );
+      elementsParamFn.$btnSubmit.querySelector(
+        '[data-btn-submit-text="data-btn-submit-text"]',
+      ).innerHTML = i18next.t('send');
       /*  */
       window.dispatchEvent(new Event('succesFormSend'));
       if (elementsParamFn.successAction === 'toster') {
-        toast.addToast({
-          type: 'success',
-          text: i18next.t('sendingSuccessText'),
-          title: i18next.t('sendingSuccessTitle'),
-        });
+        // toast.addToast({
+        //   type: 'success',
+        //   text: i18next.t('sendingSuccessText'),
+        //   title: i18next.t('sendingSuccessTitle'),
+        // });
       }
       if (typeof elementsParamFn.successAction === 'function') {
         elementsParamFn.successAction();
@@ -76,15 +76,15 @@ const renderForm = (form, elements, toast) => {
     case 'filling':
       break;
     case 'failed':
-      toast.addToast({
-        type: 'error',
-        text: i18next.t(form.serverError),
-        title: 'Bir hata oluştu',
-      });
+      // toast.addToast({
+      //   type: 'error',
+      //   text: i18next.t(form.serverError),
+      //   title: 'Bir hata oluştu',
+      // });
       elementsParamFn.$btnSubmit.removeAttribute('disabled');
-      elementsParamFn.$btnSubmit.querySelector('[data-btn-submit-text]').innerHTML = i18next.t(
-        'send',
-      );
+      elementsParamFn.$btnSubmit.querySelector(
+        '[data-btn-submit-text="data-btn-submit-text"]',
+      ).innerHTML = i18next.t('send');
       break;
 
     default:
@@ -92,18 +92,20 @@ const renderForm = (form, elements, toast) => {
   }
 };
 
-
 const initView = (state, elementsParamFn) => {
-  const toast = new MyToster({
-    $wrap: document.querySelector('[data-toast-wrapper]'),
-  });
+  // const toast = new MyToster({
+  //   $wrap: document.querySelector('[data-toast-wrapper]'),
+  // });
 
   // window.toast = toast;
+  // const mapping = {
+  //   status: () => renderForm(state, elementsParamFn, toast),
+  // };
   const mapping = {
-    status: () => renderForm(state, elementsParamFn, toast),
+    status: () => renderForm(state, elementsParamFn),
   };
 
-  const watchedState = onChange(state, (path) => {
+  const watchedState = onChange(state, path => {
     if (mapping[path]) {
       mapping[path]();
     }
