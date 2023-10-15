@@ -5,8 +5,6 @@
     height: 100%;
     top: 0;
     left: 0;
-    visibility: hidden;
-    opacity: 0;
     transition: ease-in visibility 0s, opacity 0.3s linear;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 15000;
@@ -19,7 +17,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
   }
 
   &__text {
@@ -30,28 +27,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    img {
-      width: 64px;
-      height: 64px;
+    gap: 10px;
+    svg {
+      fill: green;
     }
   }
 
-  &__title {
+  & .thank-you-popup__title {
     margin-bottom: 20px;
+    @include text-style-link;
+    color: $color-gray-3;
   }
 
-  &__descr {
+  & .thank-you-popup__descr {
+    @include text-style-general-style;
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
   }
 
-  &__button {
+  & .thank-you-popup__button {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: fit-content;
+    gap: 20px;
+    .submit-btn__text {
+      @include text-style-general-style;
+      color: $color-yellow;
+    }
   }
 }
 .overlay {

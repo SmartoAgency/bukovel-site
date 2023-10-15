@@ -77,7 +77,7 @@ window.addEventListener('load', () => {
         },
         '<0.2',
       );
-  }, 1900);
+  }, 1500);
 });
 
 gsap.fromTo(

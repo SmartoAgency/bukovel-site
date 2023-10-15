@@ -309,7 +309,6 @@
 }
 
 .call-us__content-wrapper {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -346,7 +345,7 @@
 .order-call {
   display: flex;
   flex-direction: column;
-  gap: 0!important;
+  gap: 0 !important;
   .inputs-wrapper {
     gap: 0;
     flex-direction: column;
@@ -380,7 +379,6 @@
   border: none;
   outline: none;
   background-color: $color-gray-1;
-  margin-bottom: 12px;
 
   &::placeholder {
     @include text-style-news-descr;

@@ -5,13 +5,15 @@
   justify-content: space-between;
   gap: 60px;
 
-  @include tablet {}
+  @include tablet {
+  }
 
   @include laptop {
     flex-direction: row;
   }
 
-  @include desktop {}
+  @include desktop {
+  }
 }
 
 .inputs-wrapper {
@@ -20,13 +22,15 @@
   gap: 20px;
   width: 100%;
 
-  @include tablet {}
+  @include tablet {
+  }
 
   @include laptop {
     flex-direction: row;
   }
 
-  @include desktop {}
+  @include desktop {
+  }
 }
 
 .form-field__input {
@@ -41,7 +45,7 @@
   &::placeholder {
     @include text-style-p;
 
-    color: $color-gray-2;
+    color: $color-white;
   }
 
   @include tablet {
@@ -85,17 +89,29 @@
 }
 
 .iti__flag {
-  background-image: url("../../../3d/assets/images/libs/flags.png");
+  background-image: url('../../../3d/assets/images/libs/flags.png');
 }
 
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .iti__flag {
-    background-image: url("../../../3d/assets/images/libs/flags@2x.png");
+    background-image: url('../../../3d/assets/images/libs/flags@2x.png');
   }
 }
 
 .input-message {
   color: $color-yellow;
-
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+.footer .iti--allow-dropdown input {
+  padding-left: 0;
+  padding-right: 0;
+  @include laptop {
+    padding-left: 56px;
+    padding-right: 20px;
+  }
+}
+.iti__country-list {
+  bottom: 0;
+  left: 0;
 }

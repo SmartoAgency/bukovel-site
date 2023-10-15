@@ -17,8 +17,6 @@
   }
 }
 
-
-
 .progress-details__swiper {
   // overflow: hidden;
   position: relative;
@@ -38,9 +36,11 @@
     align-items: center;
     gap: 16px;
 
-    @include tablet {}
+    @include tablet {
+    }
 
-    @include laptop {}
+    @include laptop {
+    }
 
     .swiper-button-prev {
       width: 48px;
@@ -50,6 +50,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
 
       svg {
         height: 50%;
@@ -80,7 +82,8 @@
       justify-content: center;
       align-items: center;
       order: 2;
-
+      transition: opacity 0.3s ease;
+      cursor: pointer;
       svg {
         height: 50%;
         width: 50%;
@@ -88,7 +91,6 @@
         stroke-width: 3.3333;
         pointer-events: none;
       }
-
 
       @include tablet {
         width: 70px;
@@ -99,6 +101,10 @@
         width: 94px;
         height: 94px;
       }
+    }
+    .swiper-button-disabled {
+      opacity: 0.5;
+      cursor: no-drop;
     }
   }
 }
