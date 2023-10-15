@@ -2,8 +2,6 @@
   position: fixed;
   z-index: 10;
   width: 100%;
-
-
 }
 
 .header-bg {
@@ -71,14 +69,14 @@
   gap: 16px;
   margin-left: auto;
 
-  &~& {
+  & ~ & {
     margin-left: 16px;
   }
 
   @include tablet {
     gap: 32px;
 
-    &~& {
+    & ~ & {
       margin-left: 32px;
     }
   }
@@ -87,7 +85,7 @@
     margin-left: 0;
     gap: 60px;
 
-    &~& {
+    & ~ & {
       margin-left: 0;
     }
   }
@@ -198,7 +196,7 @@
   text-decoration: none;
   color: $color-white;
 
-  &~&::before {
+  & ~ &::before {
     content: '|';
 
     transform: rotate(90deg);
@@ -213,7 +211,7 @@
   @include tablet {
     flex-direction: row;
 
-    &~&::before {
+    & ~ &::before {
       transform: rotate(0deg);
       left: -13px;
       bottom: 25%;
@@ -280,7 +278,6 @@
 //modal Call us
 
 .call-us__modal-container {
-
   position: absolute;
   padding: 40px 28px;
   background-color: $color-white;
@@ -304,7 +301,6 @@
 
   @include desktop {
     left: 60px;
-
   }
 
   & .contacts__phone {
@@ -468,7 +464,6 @@
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  pointer-events: none;
 
   transform: scale(10);
   opacity: 0;
@@ -486,6 +481,8 @@
 .header__nav-container {
   padding-top: 80px;
   opacity: 0;
+  overflow: auto;
+  height: 100%;
 
   & .main-nav__link {
     color: $color-gray-4;
@@ -516,7 +513,7 @@
     padding-top: 156px;
   }
   .main-nav__link {
-    transition: color .3s ease-in-out;
+    transition: color 0.3s ease-in-out;
   }
 
   .main-nav__item {
@@ -524,21 +521,21 @@
       &:hover {
         .main-nav__link {
           color: rgb(68, 75, 85, 0.5);
-          transition: color .3s ease-in-out;
+          transition: color 0.3s ease-in-out;
         }
       }
     }
   }
 
   .sub-nav__link {
-    transition: color .3s ease-in-out;
+    transition: color 0.3s ease-in-out;
   }
 
   .sub-nav__item {
     &:hover {
       .sub-nav__link {
         color: rgb(68, 75, 85, 0.5);
-        transition: color .3s ease-in-out;
+        transition: color 0.3s ease-in-out;
       }
     }
   }
