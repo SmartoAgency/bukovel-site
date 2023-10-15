@@ -1,5 +1,6 @@
 import { gsap } from 'gsap/all';
 import { EasePack } from 'gsap/EasePack';
+import '../footer/footer';
 
 gsap.registerPlugin(EasePack);
 
