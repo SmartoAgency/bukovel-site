@@ -27,7 +27,11 @@ const initFooter = () => {
       });
     });
   }
-  contactFormFooter(document.querySelector('.form'));
+
+  const createFormValidRef = document.querySelectorAll('[contact-form-js]');
+  createFormValidRef.forEach(el => {
+    contactFormFooter(el);
+  });
 };
 
 if (footer) {

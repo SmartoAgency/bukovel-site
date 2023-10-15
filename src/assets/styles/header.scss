@@ -346,6 +346,16 @@
 .order-call {
   display: flex;
   flex-direction: column;
+  gap: 0!important;
+  .inputs-wrapper {
+    gap: 0;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+
+  .input-message {
+    font-size: 9px;
+  }
 }
 
 .order-call__title {
