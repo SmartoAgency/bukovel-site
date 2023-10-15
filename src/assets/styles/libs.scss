@@ -5,9 +5,8 @@
 .iti {
     width: 100%;
 }
-.iti__flag {background-image: url("../images/libs/flags.png");}
+.iti__flag {background-image: url("../../../3d/assets/images/libs/flags.png");}
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .iti__flag {background-image: url("../images/libs/flags@2x.png");}
+  .iti__flag {background-image: url("../../../3d/assets/images/libs/flags@2x.png");}
 }
-
