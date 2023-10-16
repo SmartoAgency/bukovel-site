@@ -3,7 +3,7 @@ import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
 import { useState } from '../modules/helpers/helpers';
 import { progressCard } from '../modules/progress/progressCard';
 import { getProgressList } from '../modules/progress/getProgress';
-import '../loader';
+
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 new App();
@@ -17,7 +17,10 @@ const [progress, setProgressList, useProgressEffect] = useState({
 });
 
 useProgressEffect(({ data, container }) => {
-  console.log('data:', data);
+  if (!data) {
+    container.innerHTML = `<p class="progress__no-result">На жаль, новин за вказаний період не знайдено.</p>`;
+    return;
+  }
   container.innerHTML = data.map(el => progressCard(el)).join('');
 });
 useProgressEffect(({ pending, container, type }) => {
@@ -34,7 +37,7 @@ document.querySelectorAll('.filter__button').forEach(el => {
       console.log(res);
       setProgressList({
         ...progress(),
-        data: [...res.data],
+        data: res.data,
       });
     });
   }
@@ -50,7 +53,7 @@ document.body.addEventListener('click', evt => {
       console.log(res);
       setProgressList({
         ...progress(),
-        data: [...res.data],
+        data: res.data,
         year: year.textContent,
       });
     });
@@ -69,7 +72,7 @@ document.body.addEventListener('click', evt => {
     getProgressList({ year: progress().year, month: monthNum }).then(res => {
       setProgressList({
         ...progress(),
-        data: [...res.data],
+        data: res.data,
         month: monthNum,
       });
     });

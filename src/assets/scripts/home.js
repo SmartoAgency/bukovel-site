@@ -11,7 +11,6 @@ import { Navigation, EffectCoverflow } from 'swiper';
 // import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import './loader';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 new App();
@@ -24,7 +23,7 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     heroTl
       .from('.hero__bg h1', {
-        delay: 1,
+        delay: 0.5,
         yPercent: 100,
         duration: 1,
         ease: 'power4.out',
@@ -77,7 +76,7 @@ window.addEventListener('load', () => {
         },
         '<0.2',
       );
-  }, 1500);
+  }, 800);
 });
 
 gsap.fromTo(

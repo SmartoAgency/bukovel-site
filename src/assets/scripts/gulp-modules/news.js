@@ -3,7 +3,7 @@ import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
 import getNews from '../modules/news/getNews';
 import { useState } from '../modules/helpers/helpers.js';
 import { newsCard } from '../modules/news/newsCard';
-import '../loader';
+
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 new App();

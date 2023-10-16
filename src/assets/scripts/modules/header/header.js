@@ -1,65 +1,8 @@
 import { gsap } from 'gsap/all';
 import { EasePack } from 'gsap/EasePack';
 import '../footer/footer';
-
+import '../../loader';
 gsap.registerPlugin(EasePack);
-
-const preloaderRef = document.querySelector('.loader-wrap');
-export const preloader = {
-  el: preloaderRef,
-  subscribers: [],
-  animate() {
-    gsap
-      .timeline()
-      .to('.loader__gradient', {
-        yPercent: -100,
-
-        duration: 1.4,
-        ease: 'power4.out',
-      })
-      .to('.loader__logo-container', {
-        autoAlpha: 0,
-        duration: 0.5,
-        ease: 'power4.out',
-      })
-      .to(
-        '.loader__bg',
-        { backgroundColor: 'transparent', duration: 0.7, ease: 'power4.in' },
-        '<0.1',
-      )
-      .to(
-        '.loader__bg-svg',
-        {
-          translateZ: 1000,
-          duration: 0.7,
-          ease: 'sine.out',
-        },
-        '<0.3',
-      );
-  },
-  remove() {
-    if (preloaderRef) {
-      gsap.to(preloaderRef, {
-        opacity: 0,
-        duration: 0.5,
-        onComplete: () => {
-          this.subscribers.forEach(fn => fn());
-          this.el.remove();
-        },
-      });
-    }
-  },
-  onRemove(fn) {
-    this.subscribers.push(fn);
-  },
-};
-
-window.addEventListener('load', () => {
-  preloader.animate();
-  setTimeout(() => {
-    preloader.remove();
-  }, 2500);
-});
 
 const header = document.querySelector('.header-bg');
 

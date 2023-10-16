@@ -44,8 +44,8 @@
   }
 
   @include laptop {
-
-    margin-bottom: 32vh;
+    max-width: 60%;
+    margin-bottom: 20vh;
   }
 
   @include desktop {
