@@ -145,16 +145,14 @@ body {
   left: 0;
   width: 100%;
 
-  @include tablet {
-  }
+  @include tablet {}
 
   @include laptop {
     flex-direction: row;
     justify-content: space-between;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .arrow-down__button-wrap {
@@ -208,8 +206,7 @@ body {
     height: 100px;
   }
 
-  @include laptop {
-  }
+  @include laptop {}
 
   @include desktop {
     width: 150px;
@@ -476,8 +473,7 @@ body #cdawrap {
   height: 70vh;
   background-color: #000;
 
-  @include tablet {
-  }
+  @include tablet {}
 
   @include laptop {
     margin-bottom: 20vh;
@@ -485,8 +481,7 @@ body #cdawrap {
     height: 100vh;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .content--spacing {
@@ -520,8 +515,7 @@ body #cdawrap {
     bottom: 0;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .content__title--top {
@@ -688,8 +682,7 @@ body #cdawrap {
     -webkit-text-stroke: 3px $color-yellow;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .section-title {
@@ -869,16 +862,14 @@ body #cdawrap {
   background-image: linear-gradient(to bottom, #11111177, #1111115d),
     url('../images/sectionsBg/section7bg-mobile.jpg');
 
-  @include tablet {
-  }
+  @include tablet {}
 
   @include laptop {
     background-image: linear-gradient(to bottom, #11111177, #1111115d),
       url('../images/sectionsBg/section7bg.jpg');
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .chalet__bottom-content {
@@ -929,8 +920,7 @@ body #cdawrap {
     padding: 29px 40px;
   }
 
-  @include laptop {
-  }
+  @include laptop {}
 
   @include desktop {
     padding: 40px 60px;
@@ -951,11 +941,9 @@ body #cdawrap {
   background-repeat: no-repeat;
   width: 20%;
 
-  @include tablet {
-  }
+  @include tablet {}
 
-  @include laptop {
-  }
+  @include laptop {}
 
   @include desktop {
     padding-right: 50px;
@@ -980,8 +968,7 @@ body #cdawrap {
     left: -20px;
   }
 
-  @include laptop {
-  }
+  @include laptop {}
 
   @include desktop {
     width: 179px;
@@ -1256,8 +1243,7 @@ body #cdawrap {
   position: relative;
   z-index: 1;
 
-  @include tablet {
-  }
+  @include tablet {}
 
   @include laptop {
     width: 851px;
@@ -1393,14 +1379,13 @@ body #cdawrap {
   background-color: $color-white;
   padding-top: 0;
   padding-bottom: 0;
-  height: auto;
+  min-height: auto;
 }
 
 .all-news-link {
   align-self: flex-end;
 
-  @include tablet {
-  }
+  @include tablet {}
 
   @include laptop {
     transform: translateY(-20px);
@@ -1481,6 +1466,8 @@ body #cdawrap {
 }
 
 //Contacts
+
+
 .contacts__content-map-wrap {
   display: flex;
   flex-direction: column;

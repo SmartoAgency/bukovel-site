@@ -259,7 +259,7 @@
   gap: 2px;
   width: 100%;
   margin-top: 60px;
-  margin-bottom: 60px;
+
 
   .ad-advantages__photo-wrap {
     flex-grow: 1;
@@ -284,20 +284,29 @@
 
   @include laptop {
     margin-top: 100px;
-    margin-bottom: 100px;
+
   }
 
   @include desktop {
     margin-top: 100px;
-    margin-bottom: 150px;
+
   }
 
 }
 
 .projects {
   padding-bottom: 100px;
+  padding-top: 40px;
 
+  @include tablet {
+    padding-top: 60px;
 
+  }
+
+  @include desktop {
+    padding-top: 150px;
+
+  }
 }
 
 .projects__title {
@@ -307,6 +316,7 @@
   @include text-style-page-title;
   color: $color-yellow;
   margin-bottom: 44px;
+  position: relative;
 
   span {
     align-self: flex-start;
@@ -323,6 +333,141 @@
 
   @include desktop {
     margin-bottom: 100px;
+  }
+}
+
+.projects__bottom-tree-wrap {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  width: 360px;
+  height: 164px;
+
+
+  @include tablet {
+    top: -60px;
+    width: 598px;
+    height: 272px;
+  }
+
+  @include laptop {
+    top: -100px;
+    width: 960px;
+    height: 436px;
+  }
+
+  @include desktop {
+    top: -150px;
+    width: 1231px;
+    height: 559px;
+  }
+}
+
+.projects__leaves-wrap {
+  @extend .projects__bottom-tree-wrap;
+  z-index: 2;
+}
+
+.projects__bottom-tree {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+
+}
+
+.svg-title__leave--project {
+  position: absolute;
+  z-index: 200;
+  top: 100px;
+  left: 0;
+  opacity: 0.8;
+
+}
+
+.svg-title__leave1--project {
+  width: 32.879px;
+  height: 27.612px;
+  left: 3px;
+  top: 60px;
+
+  @include tablet {
+    left: 3px;
+    top: 105px;
+    width: 54.615px;
+    height: 45.795px;
+  }
+
+  @include laptop {
+    left: 3px;
+    top: 160px;
+    width: 87.677px;
+    height: 73.407px;
+  }
+
+  @include desktop {
+    left: 3px;
+    top: 220px;
+    width: 112.427px;
+    height: 94.116px;
+  }
+}
+
+.svg-title__leave2--project {
+  width: 48.556px;
+  height: 24.783px;
+  left: 89px;
+  top: 78px;
+
+  @include tablet {
+    left: 142px;
+    top: 131px;
+    width: 80.657px;
+    height: 41.104px;
+
+  }
+
+  @include laptop {
+    left: 231px;
+    top: 211px;
+    width: 129.482px;
+    height: 65.887px;
+  }
+
+  @include desktop {
+    left: 290px;
+    top: 261px;
+    width: 166.034px;
+    height: 84.474px;
+  }
+}
+
+.svg-title__leave3--project {
+  width: 46.362px;
+  height: 29.468px;
+  left: 209px;
+  top: 65px;
+
+  @include tablet {
+    top: 110px;
+    left: 348px;
+    width: 77.013px;
+    height: 48.873px;
+  }
+
+  @include laptop {
+    top: 180px;
+    left: 558px;
+    width: 123.632px;
+    height: 78.341px;
+  }
+
+  @include desktop {
+    top: 230px;
+    left: 730px;
+    width: 158.533px;
+    height: 100.442px;
   }
 }
 

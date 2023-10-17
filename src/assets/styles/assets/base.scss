@@ -33,25 +33,9 @@
 //   }
 // }
 
-.tablet {
-  .container~.container {
-    margin-top: 80px;
-  }
 
-  .container:last-child {
-    margin-bottom: 80px;
-  }
-}
 
-.mobile {
-  .container~.container {
-    margin-top: 60px;
-  }
 
-  .container:last-child {
-    margin-bottom: 60px;
-  }
-}
 
 html {
   font-size: 14px;

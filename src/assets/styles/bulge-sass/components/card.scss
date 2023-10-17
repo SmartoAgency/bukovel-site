@@ -1,12 +1,13 @@
 $margin: 15vw;
 
 .card {
-  width: 289px;
+  display: block;
+  width: 100%;
   height: 386px;
   border-radius: 40px;
 
   @include tablet {
-    width: 538px;
+    width: 100%;
     height: 720px;
     border-radius: 73.398px;
   }
@@ -62,6 +63,7 @@ $margin: 15vw;
     transform: translateY(20%);
   }
 }
+
 .card--without-bulge:nth-child(14) {
   @include laptop {
     transform: translateY(-10%);
@@ -159,5 +161,5 @@ $margin: 15vw;
   z-index: 1;
   top: 0;
   pointer-events: none;
-  background-image: linear-gradient(to top, #383535c7, transparent 40%);
+  background-image: linear-gradient(to top, #383535d7, transparent 60%);
 }

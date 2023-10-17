@@ -208,11 +208,13 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+
   flex-direction: column;
 
   @include tablet {}
 
   @include laptop {
+    align-items: center;
     flex-direction: row;
   }
 
@@ -291,7 +293,7 @@
   color: $color-black;
   text-align: center;
 
-  @include desktop {
+  @include laptop {
     text-align: start;
   }
 }
@@ -501,18 +503,14 @@
 
   input {
     position: absolute;
-
-
     left: 10px;
-    height: auto;
+    height: 50px;
     z-index: 400;
     width: calc(100% - 20px);
-    left: 20px;
     bottom: 30px;
-    // transform: scaleY(1.5);
     opacity: 0;
 
-    margin-bottom: -10px;
+
 
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
@@ -525,6 +523,12 @@
       box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
       /* Add cool effects to your sliders! */
     }
+
+    @include tablet {
+      height: 100px;
+    }
+
+
   }
 
   @include laptop {
