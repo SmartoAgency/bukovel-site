@@ -7,11 +7,21 @@
 .header-bg {
   display: flex;
 
+
   align-items: center;
   background: rgba(17, 17, 17, 0);
   width: 100%;
   height: 80px;
   transition: all 0.3s ease-in-out;
+  background-size: cover;
+
+  &.menuOpen {
+    @media screen and (max-width: 1365px) {
+      background: linear-gradient(180deg, #fff 80%, #ffffff00);
+
+
+    }
+  }
 
   &.scroll-down {
     background: rgba(17, 17, 17, 0.5);
@@ -69,14 +79,14 @@
   gap: 16px;
   margin-left: auto;
 
-  & ~ & {
+  &~& {
     margin-left: 16px;
   }
 
   @include tablet {
     gap: 32px;
 
-    & ~ & {
+    &~& {
       margin-left: 32px;
     }
   }
@@ -85,7 +95,7 @@
     margin-left: 0;
     gap: 60px;
 
-    & ~ & {
+    &~& {
       margin-left: 0;
     }
   }
@@ -196,7 +206,7 @@
   text-decoration: none;
   color: $color-white;
 
-  & ~ &::before {
+  &~&::before {
     content: '|';
 
     transform: rotate(90deg);
@@ -211,7 +221,7 @@
   @include tablet {
     flex-direction: row;
 
-    & ~ &::before {
+    &~&::before {
       transform: rotate(0deg);
       left: -13px;
       bottom: 25%;
@@ -346,6 +356,7 @@
   display: flex;
   flex-direction: column;
   gap: 0 !important;
+
   .inputs-wrapper {
     gap: 0;
     flex-direction: column;
@@ -373,6 +384,30 @@
   }
 }
 
+.order-call__select {
+  @include text-style-news-descr;
+  margin-bottom: 10px;
+  border: 1px solid $color-yellow;
+  padding: 10px;
+  width: 100%;
+
+  option {
+    @include text-style-news-descr;
+    width: fit-content;
+
+
+    &:hover {
+      background-color: $color-yellow;
+
+    }
+  }
+
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .order-call__number {
   width: 284px;
   padding: 19px 20px;
@@ -380,9 +415,20 @@
   outline: none;
   background-color: $color-gray-1;
 
+
+
   &::placeholder {
     @include text-style-news-descr;
     color: $color-black;
+  }
+
+  &:disabled {
+
+
+    &::placeholder {
+
+      opacity: 0.5;
+    }
   }
 }
 
@@ -520,6 +566,7 @@
   @include desktop {
     padding-top: 156px;
   }
+
   .main-nav__link {
     transition: color 0.3s ease-in-out;
   }

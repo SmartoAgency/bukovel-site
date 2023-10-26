@@ -233,7 +233,9 @@ export default class FormMonster {
       if (this.watchedState.error === false) {
         try {
           this.watchedState.status = 'loading';
+
           const formData = new FormData(this.elements.$form);
+
           formData.append('action', 'app');
 
           /* eslint-disable-next-line */

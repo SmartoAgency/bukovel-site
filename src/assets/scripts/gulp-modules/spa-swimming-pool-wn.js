@@ -15,6 +15,11 @@ const swiper = new Swiper('.swiper', {
   speed: 1000,
   spaceBetween: 0,
   effect: 'fade',
+  // on: {
+  //   slideChange: function() {
+  //     console.log('Слайд був змінений');
+  //   },
+  // },
   // Navigation arrows
   slidesPerView: 1,
   navigation: {
@@ -59,7 +64,7 @@ function handleMobileBlockImageHorizontalScroll(el) {
   const slideSvgButtonRadius = +slideSvgButton.querySelector('circle').getAttribute('r');
   const imageScrollContainer = parent.querySelector('.block-style-column__mobile-scroller');
   const sliderSvgWidth = sliderSvg.getAttribute('viewBox').split(' ')[2];
-
+  let swipeXoffset;
   slider.value = 0;
   slider.setAttribute('max', imageScrollContainer.scrollWidth);
 
@@ -68,21 +73,14 @@ function handleMobileBlockImageHorizontalScroll(el) {
       left: evt.target.value - window.innerWidth / 2,
     });
 
-    const swipeXoffset = gsap.utils.mapRange(
+    swipeXoffset = gsap.utils.mapRange(
       0,
       evt.target.getAttribute('max'),
       slideSvgButtonRadius * 2,
       sliderSvgWidth,
       evt.target.value,
     );
-    // sliderSvg.insertAdjacentHTML(
-    //   'afterbegin',
-    //   `
-    //   <circle cx="40" cy="40" r="39.5" stroke="#fff"  stroke-dasharray="1 10" class="Ellipse 83"></circle>
-    //   <path  stroke="#fff" stroke-dasharray="2 20" stroke-width=".5" d="M80.25 39.75h443.5v.5H80.25z" class="Rectangle 4074"/>
-    //   <circle cx="564" cy="40" r="39.5" stroke="#fff"  stroke-dasharray="1 10" class="Ellipse 83"/>
-    // `,
-    // );
+
     slideSvgButton.setAttribute(
       'transform',
       `translate(${swipeXoffset - slideSvgButtonRadius * 2} ,0)`,
@@ -91,4 +89,16 @@ function handleMobileBlockImageHorizontalScroll(el) {
 
   slider.value = imageScrollContainer.scrollWidth / 2;
   slider.dispatchEvent(new Event('input'));
+
+  swiper.on('slideChange', function() {
+    // Ваш код, який виконується після перемикання слайду
+    imageScrollContainer.scrollTo({
+      left: imageScrollContainer.scrollWidth / 2 - window.innerWidth / 2,
+    });
+    console.log(window.innerWidth);
+    slideSvgButton.setAttribute(
+      'transform',
+      `translate(${sliderSvgWidth / 2 - slideSvgButtonRadius} ,0)`,
+    );
+  });
 }

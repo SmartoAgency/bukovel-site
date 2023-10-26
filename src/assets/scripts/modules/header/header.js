@@ -14,6 +14,7 @@ window.addEventListener('scroll', function headerSquosh() {
     header.classList.remove('scroll-down');
   }
 });
+
 //pop up call us
 document.body.addEventListener('click', function(evt) {
   const target = evt.target.closest('[data-call-us-modal-close]');
@@ -38,7 +39,16 @@ document.body.addEventListener('click', function(evt) {
     return document.querySelector('[data-call-us-modal]').classList.add('hidden');
   }
 });
-
+const select = document.querySelector('.order-call__select');
+const inputs = document.querySelectorAll('.order-call__number');
+select.addEventListener('change', function() {
+  if (select.value === 'investment' || select.value === 'reservation') {
+    inputs.forEach(inp => (inp.disabled = false));
+  } else {
+    inputs.forEach(inp => (inp.disabled = true));
+  }
+  return;
+});
 //menu
 const openMenuBtn = document.querySelector('.menu-btn');
 const menuRef = document.querySelector('.menu__container');
@@ -55,6 +65,12 @@ tl.add(() => {
 });
 tl.add(() => {
   headerBg.classList.remove('scroll-down');
+});
+tl.add(() => {
+  headerBg.classList.remove('menuOpen');
+});
+tl.add(() => {
+  headerBg.classList.add('menuOpen');
 });
 
 tl.to('.language__item', { color: 'rgba(17, 17, 17, 1)' }, '<');
@@ -93,7 +109,6 @@ const subNavList = document.querySelector('.sub-nav__list');
 
 titleWrapSubNav.forEach(el =>
   el.addEventListener('click', () => {
-    console.log('click');
     el.closest('.sub-nav').classList.toggle('is-visible');
   }),
 );

@@ -774,6 +774,56 @@ body #cdawrap {
 .swiper-spa {
   padding-top: 80px;
   padding-bottom: 80px;
+  position: relative;
+
+  &-button-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
+
+  &-button-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+    transition: opacity 300 ease-in-out;
+
+    svg {
+      transform: rotate(180deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
+
+  .swiper-button-disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
 
   @include tablet {
     padding-bottom: 150px;
@@ -783,26 +833,247 @@ body #cdawrap {
   @include laptop {
     display: none;
   }
+
 }
 
 .swiper-rooftop {
   @extend .swiper-spa;
+
+  &-button-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
+
+  &-button-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+    transition: opacity 300 ease-in-out;
+
+    svg {
+      transform: rotate(180deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
 }
 
 .swiper-ski {
   @extend .swiper-spa;
+
+  &-button-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
+
+  &-button-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+    transition: opacity 300 ease-in-out;
+
+    svg {
+      transform: rotate(180deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
 }
 
 .swiper-food {
   @extend .swiper-spa;
+
+  &-button-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
+
+  &-button-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+    transition: opacity 300 ease-in-out;
+
+    svg {
+      transform: rotate(180deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
 }
 
 .swiper-business {
   @extend .swiper-spa;
+
+  &-button-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
+
+  &-button-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+    transition: opacity 300 ease-in-out;
+
+    svg {
+      transform: rotate(180deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
 }
 
 .swiper-hotel {
   @extend .swiper-spa;
+
+  &-button-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
+
+  &-button-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+    transition: opacity 300 ease-in-out;
+
+    svg {
+      transform: rotate(180deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
 }
 
 .rooftop {
@@ -1527,6 +1798,20 @@ body #cdawrap {
 
 .direction-link {
   margin-top: 12px;
+  align-items: center;
+
+  p {
+    width: 200px;
+
+    @include tablet {
+      width: 260px;
+    }
+
+    @include desktop {
+      width: 350px;
+    }
+  }
+
 }
 
 .contacts__schedule {

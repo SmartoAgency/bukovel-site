@@ -10,7 +10,6 @@ import Swiper from 'swiper';
 import { Navigation, EffectCoverflow } from 'swiper';
 // import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 new App();
@@ -145,7 +144,7 @@ chaletInvestBtnAnim();
 
 const swiperSpa = new Swiper('.swiper-spa', {
   // Optional parameters
-  // modules: [Navigation],
+  modules: [Navigation],
   // modules: [EffectCoverflow],
   // effect: 'coverflow',
   // If we need pagination
@@ -153,10 +152,11 @@ const swiperSpa = new Swiper('.swiper-spa', {
     el: '.swiper-pagination',
   },
   speed: 500,
+  mousewheel: true,
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-spa-button-next',
+    prevEl: '.swiper-spa-button-prev',
   },
   breakpoints: {
     // when window width is >= 320px
@@ -177,7 +177,7 @@ const swiperSpa = new Swiper('.swiper-spa', {
 });
 const swiperRooftop = new Swiper('.swiper-rooftop', {
   // Optional parameters
-  // modules: [Navigation],
+  modules: [Navigation],
 
   // If we need pagination
   pagination: {
@@ -187,8 +187,8 @@ const swiperRooftop = new Swiper('.swiper-rooftop', {
   speed: 500,
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-rooftop-button-next',
+    prevEl: '.swiper-rooftop-button-prev',
   },
   breakpoints: {
     // when window width is >= 320px
@@ -209,7 +209,7 @@ const swiperRooftop = new Swiper('.swiper-rooftop', {
 });
 const swiperSki = new Swiper('.swiper-ski', {
   // Optional parameters
-  // modules: [Navigation],
+  modules: [Navigation],
 
   // If we need pagination
   pagination: {
@@ -218,8 +218,8 @@ const swiperSki = new Swiper('.swiper-ski', {
   speed: 500,
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-ski-button-next',
+    prevEl: '.swiper-ski-button-prev',
   },
   breakpoints: {
     // when window width is >= 320px
@@ -240,7 +240,7 @@ const swiperSki = new Swiper('.swiper-ski', {
 });
 const swiperFood = new Swiper('.swiper-food', {
   // Optional parameters
-  // modules: [Navigation],
+  modules: [Navigation],
 
   // If we need pagination
   pagination: {
@@ -249,8 +249,8 @@ const swiperFood = new Swiper('.swiper-food', {
   speed: 500,
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-food-button-next',
+    prevEl: '.swiper-food-button-prev',
   },
   breakpoints: {
     // when window width is >= 320px
@@ -271,7 +271,7 @@ const swiperFood = new Swiper('.swiper-food', {
 });
 const swiperBusiness = new Swiper('.swiper-business', {
   // Optional parameters
-  // modules: [Navigation],
+  modules: [Navigation],
 
   // If we need pagination
   pagination: {
@@ -280,8 +280,8 @@ const swiperBusiness = new Swiper('.swiper-business', {
   speed: 500,
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-business-button-next',
+    prevEl: '.swiper-business-button-prev',
   },
   breakpoints: {
     // when window width is >= 320px
@@ -302,7 +302,7 @@ const swiperBusiness = new Swiper('.swiper-business', {
 });
 const swiperHotel = new Swiper('.swiper-hotel', {
   // Optional parameters
-  // modules: [Navigation],
+  modules: [Navigation],
   spaceBetween: -10,
   // If we need pagination
   pagination: {
@@ -311,8 +311,8 @@ const swiperHotel = new Swiper('.swiper-hotel', {
   speed: 500,
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-hotel-button-next',
+    prevEl: '.swiper-hotel-button-prev',
   },
   breakpoints: {
     // when window width is >= 320px

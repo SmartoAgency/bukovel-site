@@ -30,8 +30,12 @@ header(class="header "+headerCustomClass)
                 span
                 h4 Замовити дзвінок
                 span
-              input.order-call__number.call-us__item(placeholder="Ваше ім'я") 
-              input.order-call__number.call-us__item(placeholder="Ваш номер телефону") 
+              select.order-call__select.call-us__item(name="select")
+                option( value="" ) -- Оберіть відділ --
+                option(value="investment") Відділ інвестицій
+                option(value="reservation") Відділ бронювання
+              input.order-call__number.call-us__item(placeholder="Ваше ім'я" disabled) 
+              input.order-call__number.call-us__item(placeholder="Ваш номер телефону" disabled) 
               button.order-call__submit-btn.call-us__item Надіслати повідомлення
 
       ul.language__list 
