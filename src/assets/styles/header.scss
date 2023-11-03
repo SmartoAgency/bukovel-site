@@ -7,7 +7,6 @@
 .header-bg {
   display: flex;
 
-
   align-items: center;
   background: rgba(17, 17, 17, 0);
   width: 100%;
@@ -18,8 +17,6 @@
   &.menuOpen {
     @media screen and (max-width: 1365px) {
       background: linear-gradient(180deg, #fff 80%, #ffffff00);
-
-
     }
   }
 
@@ -79,14 +76,14 @@
   gap: 16px;
   margin-left: auto;
 
-  &~& {
+  & ~ & {
     margin-left: 16px;
   }
 
   @include tablet {
     gap: 32px;
 
-    &~& {
+    & ~ & {
       margin-left: 32px;
     }
   }
@@ -95,7 +92,7 @@
     margin-left: 0;
     gap: 60px;
 
-    &~& {
+    & ~ & {
       margin-left: 0;
     }
   }
@@ -206,7 +203,7 @@
   text-decoration: none;
   color: $color-white;
 
-  &~&::before {
+  & ~ &::before {
     content: '|';
 
     transform: rotate(90deg);
@@ -221,7 +218,7 @@
   @include tablet {
     flex-direction: row;
 
-    &~&::before {
+    & ~ &::before {
       transform: rotate(0deg);
       left: -13px;
       bottom: 25%;
@@ -291,7 +288,7 @@
   position: absolute;
   padding: 40px 28px;
   background-color: $color-white;
-  max-height: 500px;
+  max-height: 800px;
   transition: all 1s ease;
   margin-top: 20px;
   left: 50%;
@@ -395,13 +392,10 @@
     @include text-style-news-descr;
     width: fit-content;
 
-
     &:hover {
       background-color: $color-yellow;
-
     }
   }
-
 }
 
 .overflow-hidden {
@@ -415,18 +409,13 @@
   outline: none;
   background-color: $color-gray-1;
 
-
-
   &::placeholder {
     @include text-style-news-descr;
     color: $color-black;
   }
 
   &:disabled {
-
-
     &::placeholder {
-
       opacity: 0.5;
     }
   }

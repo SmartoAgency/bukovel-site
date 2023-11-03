@@ -34,7 +34,6 @@ useProgressEffect(({ pending, container, type }) => {
 document.querySelectorAll('.filter__button').forEach(el => {
   if (el.classList.contains('active')) {
     getProgressList({ year: 'last' }).then(res => {
-      console.log(res);
       setProgressList({
         ...progress(),
         data: res.data,
@@ -47,7 +46,7 @@ document.body.addEventListener('click', evt => {
   const selector = evt.target.closest('[data-progress-filter-select]'); //відкриття попапа
   const year = evt.target.closest('[data-progress-year-button]');
   const month = evt.target.closest('[data-progress-month-button]');
-
+  const all = evt.target.closest('.fiter__all');
   if (year) {
     getProgressList({ year: year.textContent, month: progress().month }).then(res => {
       console.log(res);
@@ -57,7 +56,7 @@ document.body.addEventListener('click', evt => {
         year: year.textContent,
       });
     });
-
+    document.querySelector('.fiter__all').classList.remove('active');
     year.closest('[data-progress-filter-select]').querySelector('.filter__title').innerHTML =
       year.textContent;
     document.querySelector('.fiter__month').classList.remove('disabled');
@@ -81,7 +80,15 @@ document.body.addEventListener('click', evt => {
     document.querySelectorAll('.filter__popup').forEach(el => el.classList.add('hidden'));
     return;
   }
-
+  if (all) {
+    document.querySelector('.fiter__all').classList.add('active');
+    getProgressList({ year: 'last' }).then(res => {
+      setProgressList({
+        ...progress(),
+        data: res.data,
+      });
+    });
+  }
   if (selector) {
     document.querySelectorAll('.filter__popup').forEach(el => {
       if (el !== selector.querySelector('.filter__popup')) {

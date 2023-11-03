@@ -164,9 +164,17 @@ const swiperSpa = new Swiper('.swiper-spa', {
       slidesPerView: 1.2,
       spaceBetween: 20,
     },
+    480: {
+      slidesPerView: 1.4,
+      spaceBetween: 20,
+    },
     // when window width is >= 480px
     768: {
-      slidesPerView: 1.3,
+      slidesPerView: 1.6,
+      spaceBetween: 40,
+    },
+    900: {
+      slidesPerView: 2,
       spaceBetween: 40,
     },
   },
@@ -196,9 +204,17 @@ const swiperRooftop = new Swiper('.swiper-rooftop', {
       slidesPerView: 1.2,
       spaceBetween: 20,
     },
+    480: {
+      slidesPerView: 1.4,
+      spaceBetween: 20,
+    },
     // when window width is >= 480px
     768: {
-      slidesPerView: 1.3,
+      slidesPerView: 1.6,
+      spaceBetween: 40,
+    },
+    900: {
+      slidesPerView: 2,
       spaceBetween: 40,
     },
   },
@@ -227,9 +243,17 @@ const swiperSki = new Swiper('.swiper-ski', {
       slidesPerView: 1.2,
       spaceBetween: 20,
     },
+    480: {
+      slidesPerView: 1.4,
+      spaceBetween: 20,
+    },
     // when window width is >= 480px
     768: {
-      slidesPerView: 1.3,
+      slidesPerView: 1.6,
+      spaceBetween: 40,
+    },
+    900: {
+      slidesPerView: 2,
       spaceBetween: 40,
     },
   },
@@ -258,9 +282,17 @@ const swiperFood = new Swiper('.swiper-food', {
       slidesPerView: 1.2,
       spaceBetween: 20,
     },
+    480: {
+      slidesPerView: 1.4,
+      spaceBetween: 20,
+    },
     // when window width is >= 480px
     768: {
-      slidesPerView: 1.3,
+      slidesPerView: 1.6,
+      spaceBetween: 40,
+    },
+    900: {
+      slidesPerView: 2,
       spaceBetween: 40,
     },
   },
@@ -289,9 +321,17 @@ const swiperBusiness = new Swiper('.swiper-business', {
       slidesPerView: 1.2,
       spaceBetween: 20,
     },
+    480: {
+      slidesPerView: 1.4,
+      spaceBetween: 20,
+    },
     // when window width is >= 480px
     768: {
-      slidesPerView: 1.3,
+      slidesPerView: 1.6,
+      spaceBetween: 40,
+    },
+    900: {
+      slidesPerView: 2,
       spaceBetween: 40,
     },
   },
@@ -320,9 +360,17 @@ const swiperHotel = new Swiper('.swiper-hotel', {
       slidesPerView: 1.2,
       spaceBetween: 20,
     },
+    480: {
+      slidesPerView: 1.4,
+      spaceBetween: 20,
+    },
     // when window width is >= 480px
     768: {
-      slidesPerView: 1.3,
+      slidesPerView: 1.6,
+      spaceBetween: 40,
+    },
+    900: {
+      slidesPerView: 2,
       spaceBetween: 40,
     },
   },

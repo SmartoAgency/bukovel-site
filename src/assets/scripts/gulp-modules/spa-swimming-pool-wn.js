@@ -15,11 +15,7 @@ const swiper = new Swiper('.swiper', {
   speed: 1000,
   spaceBetween: 0,
   effect: 'fade',
-  // on: {
-  //   slideChange: function() {
-  //     console.log('Слайд був змінений');
-  //   },
-  // },
+
   // Navigation arrows
   slidesPerView: 1,
   navigation: {
@@ -28,7 +24,16 @@ const swiper = new Swiper('.swiper', {
   },
   allowTouchMove: false,
 });
-
+hideNavigation();
+function hideNavigation() {
+  const countSlides = document.querySelectorAll(
+    '.swiper .swiper-slide:not(.swiper-slide-duplicate)',
+  ).length;
+  if (countSlides === 1) {
+    document.querySelector('.swiper-buttons-container').style.display = 'none';
+  }
+  return;
+}
 const currentSlideShow = [document.querySelector('[data-first-digit]')];
 
 currentSlideShow[0].textContent = '0' + (swiper.realIndex + 1);

@@ -50,7 +50,11 @@ $screen-height: 720;
     @content;
   }
 }
-
+@mixin tablet-hor() {
+  @media screen and (min-width: 1000px) {
+    @content;
+  }
+}
 @mixin laptop() {
   @media screen and (min-width: 1366px) {
     @content;

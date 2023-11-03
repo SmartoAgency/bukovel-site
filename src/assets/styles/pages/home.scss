@@ -759,7 +759,16 @@ body #cdawrap {
 
 .cards__container {
   display: none;
-
+  @include tablet-hor {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    padding-bottom: 100px;
+  }
+  @media screen and (min-width: 1230px) and (max-width: 1366px) {
+    gap: 60px;
+  }
   @include laptop {
     display: flex;
     gap: 16px;
@@ -835,7 +844,7 @@ body #cdawrap {
     padding-top: 150px;
   }
 
-  @include laptop {
+  @include tablet-hor {
     display: none;
   }
 }
