@@ -76,14 +76,14 @@
   gap: 16px;
   margin-left: auto;
 
-  & ~ & {
+  &~& {
     margin-left: 16px;
   }
 
   @include tablet {
     gap: 32px;
 
-    & ~ & {
+    &~& {
       margin-left: 32px;
     }
   }
@@ -92,7 +92,7 @@
     margin-left: 0;
     gap: 60px;
 
-    & ~ & {
+    &~& {
       margin-left: 0;
     }
   }
@@ -203,7 +203,7 @@
   text-decoration: none;
   color: $color-white;
 
-  & ~ &::before {
+  &~&::before {
     content: '|';
 
     transform: rotate(90deg);
@@ -218,7 +218,7 @@
   @include tablet {
     flex-direction: row;
 
-    & ~ &::before {
+    &~&::before {
       transform: rotate(0deg);
       left: -13px;
       bottom: 25%;
