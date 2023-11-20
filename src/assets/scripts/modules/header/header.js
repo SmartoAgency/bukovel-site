@@ -81,7 +81,7 @@ tl.to('.menu-btn__burger', { backgroundColor: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.menu-btn__burger', { rotate: 45, duration: 0.5 }, '<');
 tl.to('.menu-btn__burger .line-under', { rotate: -90, y: -6, duration: 0.5 }, '<');
 tl.to('.menu-btn__burger .line-over', { y: 20, x: 20, rotate: -45, duration: 0.5 }, '<');
-
+tl.to('.svg--link-mobile path', { stroke: '#000' }, '<');
 tl.to(
   menuRef,
   {
@@ -101,8 +101,6 @@ tl.reverse();
 openMenuBtn.addEventListener('click', () => {
   tl.reversed(!tl.reversed());
 });
-
-//Footer
 
 const titleWrapSubNav = document.querySelectorAll('.sub-nav__title-wrap');
 const subNavList = document.querySelector('.sub-nav__list');

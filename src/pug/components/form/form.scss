@@ -6,14 +6,16 @@
   gap: 60px;
 
   @include tablet {
-  }
-
-  @include laptop {
+    gap: 30px;
     flex-direction: row;
   }
 
-  @include desktop {
+  @include laptop {
+    gap: 60px;
   }
+
+  // @include desktop {
+  // }
 }
 
 .inputs-wrapper {
@@ -23,14 +25,15 @@
   width: 100%;
 
   @include tablet {
-  }
-
-  @include laptop {
     flex-direction: row;
   }
 
-  @include desktop {
-  }
+  // @include laptop {
+  //   flex-direction: row;
+  // }
+
+  // @include desktop {
+  // }
 }
 
 .form-field__input {
@@ -92,7 +95,8 @@
   background-image: url('../../../3d/assets/images/libs/flags.png');
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
   .iti__flag {
     background-image: url('../../../3d/assets/images/libs/flags@2x.png');
   }
@@ -103,14 +107,17 @@
   margin-bottom: 10px;
   margin-top: 5px;
 }
+
 .footer .iti--allow-dropdown input {
   padding-left: 0;
   padding-right: 0;
+
   @include laptop {
     padding-left: 56px;
     padding-right: 20px;
   }
 }
+
 .iti__country-list {
   bottom: 0;
   left: 0;

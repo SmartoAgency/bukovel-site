@@ -77,7 +77,7 @@
   margin-left: auto;
 
   &~& {
-    margin-left: 16px;
+    margin-left: 12px;
   }
 
   @include tablet {
@@ -128,9 +128,9 @@
 
 .header__call-btn {
   border-radius: 50%;
-  background-color: $color-yellow;
-  width: 48px;
-  height: 48px;
+
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,12 +146,57 @@
   .svg--link-mobile {
     width: 24px;
     height: 24px;
+
+    path {
+      stroke: $color-white;
+    }
   }
 
   @include tablet {
     width: 60px;
     height: 60px;
+
+    .svg--link-mobile {
+      width: 30px;
+      height: 30px;
+
+
+    }
   }
+
+  @include laptop {
+    p {
+      display: block;
+    }
+
+    .header__apartments-main-btn,
+    .svg--link-mobile {
+      display: none;
+    }
+
+    .svg--link-arrow {
+      display: block;
+      width: 28px;
+      height: 38px;
+    }
+
+    @include text-style-uppercaesed-btn;
+    font-weight: 700;
+    border-radius: none;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    gap: 20px;
+  }
+}
+
+.header__apartments {
+  border-radius: 100px;
+  background-color: $color-yellow;
+  width: auto;
+  padding-right: 12px;
+
+  @include tablet {}
 
   @include laptop {
     p {
@@ -175,6 +220,32 @@
     width: auto;
     height: auto;
     gap: 20px;
+  }
+}
+
+.header__apartments-main-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  span {
+    @include text-style-general-style;
+    color: $color-black;
+  }
+}
+
+.header__apartments-main-btn-svg {
+  width: 36px;
+  height: 36px;
+  background-color: #DE1343;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -276,6 +347,7 @@
   text-transform: none;
   text-decoration: none;
   color: $color-white;
+  font-size: 14px;
 
   @include laptop {
     display: none;
