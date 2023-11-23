@@ -37,6 +37,7 @@
 
 .secondory-page__title {
   @include text-style-96;
+  line-height: 120%;
   color: $color-yellow;
 
   margin-bottom: 12px;

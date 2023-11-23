@@ -44,24 +44,29 @@
 @font-face {
   font-family: 'Gilroy';
   src: local('Gilroy Regular'), local('Gilroy-Regular'),
-    url('../fonts/Gilroy-Regular.woff') format('woff'),
-    url('../fonts/Gilroy-Regular.woff2') format('woff2');
+    url('../fonts/Gilroy-Regular.otf') format('otf'),
+    url('../fonts/Gilroy-Regular.ttf') format('ttf'),
+    url('../fonts/Gilroy-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Gilroy';
   src: local('Gilroy Medium'), local('Gilroy-Medium'),
-    url('../fonts/Gilroy-Medium.woff') format('woff'),
-    url('../fonts/Gilroy-Medium.woff2') format('woff2');
+    url('../fonts/Gilroy-Medium.otf') format('otf'),
+    url('../fonts/Gilroy-Medium.ttf') format('ttf'),
+    url('../fonts/Gilroy-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gilroy';
-  src: local('Gilroy Bold'), local('Gilroy-Bold'), url('../fonts/Gilroy-Bold.woff') format('woff'),
-    url('../fonts/Gilroy-Bold.woff2') format('woff2');
+  src: local('Gilroy Bold'), local('Gilroy-Bold'),
+    url('../fonts/Gilroy-Bold.otf') format('otf'),
+    url('../fonts/Gilroy-Bold.ttf') format('ttf'),
+    url('../fonts/Gilroy-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
