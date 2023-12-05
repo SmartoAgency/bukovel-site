@@ -238,7 +238,7 @@ export default class FormMonster {
 
           formData.append('action', 'app');
           formData.append('url', `${window.location.href}`);
-
+          console.log('sandForm');
           /* eslint-disable-next-line */
           const { error, code_error } = await sendForm(formData);
 

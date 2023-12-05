@@ -7,7 +7,7 @@ import MyToster from '../toster/toster';
 const renderForm = (form, elements, toast) => {
   const elementsParamFn = elements;
   const fieldsKey = Object.keys(elements.fields);
-
+  console.log(form.status);
   switch (form.status) {
     case 'renderErrorValidation':
       elementsParamFn.$btnSubmit.setAttribute('disabled', true);

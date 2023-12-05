@@ -8,11 +8,13 @@
     transition: ease-in visibility 0s, opacity 0.3s linear;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 15000;
+
     &.modal-open {
       visibility: visible;
       opacity: 1;
     }
   }
+
   .popup {
     display: flex;
     align-items: center;
@@ -20,6 +22,7 @@
   }
 
   &__text {
+    position: relative;
     width: fit-content;
     padding: 80px 40px;
     background: #f6f6f6;
@@ -28,8 +31,9 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+
     svg {
-      fill: green;
+      fill: $color-yellow;
     }
   }
 
@@ -47,17 +51,17 @@
   }
 
   & .thank-you-popup__button {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: fit-content;
-    gap: 20px;
-    .submit-btn__text {
-      @include text-style-general-style;
-      color: $color-yellow;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    svg {
+
+      fill: $color-black;
     }
   }
 }
+
 .overlay {
   position: fixed;
   width: 100%;
@@ -69,6 +73,7 @@
   transition: ease-in visibility 0s, opacity 0.3s linear;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1500;
+
   &.modal-open {
     visibility: visible;
     opacity: 1;
