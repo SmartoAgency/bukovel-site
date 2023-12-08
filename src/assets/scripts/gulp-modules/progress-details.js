@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger, CustomEase);
 new App();
 
 const swiper = new Swiper('.progress-details__swiper', {
+  autoHeight: true,
   modules: [Navigation],
   speed: 1000,
   spaceBetween: 20,

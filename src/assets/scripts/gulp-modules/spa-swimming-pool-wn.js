@@ -1,6 +1,8 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper';
+import { Navigation, EffectCards } from 'swiper';
+
 import 'swiper/css';
+import 'swiper/css/effect-cards';
 import App from '../bulge/App';
 import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
 const device = require('current-device').default;
@@ -24,6 +26,31 @@ const swiper = new Swiper('.swiper', {
   },
   allowTouchMove: false,
 });
+
+const swiperNext = new Swiper('.swiper-next', {
+  modules: [Navigation, EffectCards],
+  speed: 500,
+  spaceBetween: 0,
+  direction: 'vertical',
+
+  effect: 'cards',
+  cardsEffect: {
+    borderRadius: 40,
+    perSlideOffset: 8,
+    perSlideRotate: 4,
+    slideShadows: true,
+  },
+  breakpoints: {
+    768: { direction: 'horizontal', autoHeight: false },
+  },
+
+  // Navigation arrows
+  slidesPerView: 1,
+  navigation: {
+    prevEl: '.link__arrow-decor--left',
+    nextEl: '.link__arrow-decor--right',
+  },
+});
 hideNavigation();
 function hideNavigation() {
   const countSlides = document.querySelectorAll(
@@ -34,6 +61,7 @@ function hideNavigation() {
   }
   return;
 }
+
 const currentSlideShow = [document.querySelector('[data-first-digit]')];
 
 currentSlideShow[0].textContent = '0' + (swiper.realIndex + 1);
@@ -107,6 +135,7 @@ function handleMobileBlockImageHorizontalScroll(el) {
     );
   });
 }
+
 //Popup vr sphere
 class Popup {
   constructor(href) {

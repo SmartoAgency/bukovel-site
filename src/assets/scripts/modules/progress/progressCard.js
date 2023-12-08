@@ -1,12 +1,16 @@
-export function progressCard({ video, month, year, text, id, ref } = {}) {
+export function progressCard({ video, month, year, text, id, ref, img } = {}) {
   return `
-      <div class="progress-preview" data-id="${id}">
-        <iframe class="progress-preview__video" width="560" height="315" 
+      <div class="progress-preview" data-id="${id}">${
+    video
+      ? `<iframe class="progress-preview__video" width="560" height="315" 
         src="${video}" 
         title="YouTube video player" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; 
         encrypted-media; gyroscope; picture-in-picture; 
-        web-share"allowfullscreen=""></iframe>
+        web-share"allowfullscreen=""></iframe>`
+      : `<img class="progress-preview__video" src="${img}" alt="progress details"/>`
+  }
+        
         <div class="progress-preview__text-wrap">
             <div class="progress-preview__date-wrap">
             <p class="progress-preview__month">${month}</p>

@@ -69,8 +69,7 @@ block content
           span
             .transition-page__title--decor &
             h2.transition-page__title Spa
-      a.transtion-page__link(href="spa-swimming-pool-laguna")
-        h3.next-page__title Басейн "Лагуна"
+      .swiper-container 
         .link__arrow-decor--left
           <svg xmlns="http://www.w3.org/2000/svg" width="65" height="202" viewBox="0 0 65 202" fill="none">
             <mask id="mask0_966_9845" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-1" y="0" width="67" height="202">
@@ -109,9 +108,33 @@ block content
               </linearGradient>
             </defs>
           </svg>
-        .transtion-page__img-wrap
-          .mask  
-          +img("spa-pages/swimming-pool-laguna.jpg")
+        .swiper-next 
+          .swiper-wrapper
+            a.transtion-page__link(href="spa-swimming-pool-laguna").swiper-slide
+              h3.next-page__title Басейн "Лагуна"
+              .transtion-page__img-wrap
+                .mask  
+                +img("spa-pages/swimming-pool-laguna.jpg")
+            a.transtion-page__link(href="spa-swimming-pool-laguna").swiper-slide
+              h3.next-page__title Басейн "Лагуна"
+              .transtion-page__img-wrap
+                .mask  
+                +img("spa-pages/banya-magichni-kyli.jpg")
+            a.transtion-page__link(href="spa-swimming-pool-laguna").swiper-slide
+              h3.next-page__title Басейн "Лагуна"
+              .transtion-page__img-wrap
+                .mask  
+                +img("spa-pages/swimming-pool-wn.jpg")
+            a.transtion-page__link(href="spa-swimming-pool-laguna").swiper-slide
+              h3.next-page__title Басейн "Лагуна"
+              .transtion-page__img-wrap
+                .mask  
+                +img("spa-pages/medutaciyna-banya.jpg")
+            a.transtion-page__link(href="spa-swimming-pool-laguna").swiper-slide
+              h3.next-page__title Басейн "Лагуна"
+              .transtion-page__img-wrap
+                .mask  
+                +img("spa-pages/swimming-pool-laguna.jpg")
 
 
 block footer
