@@ -1,10 +1,11 @@
 import Swiper from 'swiper';
 import { Navigation, EffectCards } from 'swiper';
-
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import App from '../bulge/App';
 import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
+import { getNextPageList } from '../modules/nextPage/getNextPageList';
+import { nextPageCard } from '../modules/nextPage/nextPageCard';
 const device = require('current-device').default;
 // import '../modules/helpers/imgParallax';
 
@@ -51,6 +52,28 @@ const swiperNext = new Swiper('.swiper-next', {
     nextEl: '.link__arrow-decor--right',
   },
 });
+
+getNextPageList().then(res => {
+  console.log(document.querySelector('.page__content').dataset.id);
+
+  const currentGroup = res.data.find(
+    card => +card.id === +document.querySelector('.page__content').dataset.id,
+  ).group;
+  console.log(currentGroup);
+  res.data.forEach(page => {
+    if (
+      page.group === currentGroup &&
+      +page.id !== +document.querySelector('.page__content').dataset.id
+    ) {
+      document
+        .querySelector('.swiper-next .swiper-wrapper')
+        .insertAdjacentHTML('beforeend', nextPageCard(page));
+    }
+  });
+  swiperNext.update();
+  // swiperNext.activeIndex(res.currentPage);
+});
+
 hideNavigation();
 function hideNavigation() {
   const countSlides = document.querySelectorAll(
