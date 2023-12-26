@@ -76,14 +76,14 @@
   gap: 16px;
   margin-left: auto;
 
-  &~& {
+  & ~ & {
     margin-left: 12px;
   }
 
   @include tablet {
     gap: 32px;
 
-    &~& {
+    & ~ & {
       margin-left: 32px;
     }
   }
@@ -92,7 +92,7 @@
     margin-left: 0;
     gap: 60px;
 
-    &~& {
+    & ~ & {
       margin-left: 0;
     }
   }
@@ -125,7 +125,49 @@
     height: 67.259px;
   }
 }
+.mode--mobile {
+  @include laptop {
+    display: none;
+  }
+}
+.contacts__phone--header {
+  @extend .contacts__phone;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header__call-btn-wrap {
+  display: none;
+  @include laptop {
+    display: flex;
+    gap: 20px;
+  }
 
+  .contacts__phone--booking,
+  .contacts__phone--invest {
+    @include text-style-general-style;
+    color: $color-white;
+  }
+}
+.call-us__modal-container {
+  .contacts__phone--booking,
+  .contacts__phone--invest {
+    @include text-style-general-style;
+    color: $color-white;
+  }
+}
+.contacts__label--header {
+  @extend .contacts__label;
+  color: $color-yellow;
+  font-size: 12px;
+  @media screen and (min-width: 768px) and (max-width: 1365px) {
+    font-size: 14px;
+  }
+  @include desktop {
+    font-size: 14px;
+  }
+}
 .header__call-btn {
   border-radius: 50%;
 
@@ -134,9 +176,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  p {
-    display: none;
+  &.header__apartments {
+    p {
+      display: none;
+    }
   }
 
   .svg--link-arrow {
@@ -159,14 +202,14 @@
     .svg--link-mobile {
       width: 30px;
       height: 30px;
-
-
     }
   }
 
   @include laptop {
-    p {
-      display: block;
+    &.header__apartments {
+      p {
+        display: block;
+      }
     }
 
     .header__apartments-main-btn,
@@ -196,7 +239,8 @@
   width: auto;
   padding-right: 12px;
 
-  @include tablet {}
+  @include tablet {
+  }
 
   @include laptop {
     p {
@@ -237,7 +281,7 @@
 .header__apartments-main-btn-svg {
   width: 36px;
   height: 36px;
-  background-color: #DE1343;
+  background-color: #de1343;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -274,7 +318,7 @@
   text-decoration: none;
   color: $color-white;
 
-  &~&::before {
+  & ~ &::before {
     content: '|';
 
     transform: rotate(90deg);
@@ -289,7 +333,7 @@
   @include tablet {
     flex-direction: row;
 
-    &~&::before {
+    & ~ &::before {
       transform: rotate(0deg);
       left: -13px;
       bottom: 25%;
@@ -358,28 +402,29 @@
 
 .call-us__modal-container {
   position: absolute;
-  padding: 40px 28px;
-  background-color: $color-white;
-  max-height: 800px;
+  backdrop-filter: blur(5px);
+  padding: 8px 16px;
+  background: rgba(17, 17, 17, 0.5);
+  max-height: 500px;
   transition: all 1s ease;
-  margin-top: 20px;
+  margin-top: 15px;
   left: 50%;
+  top: 100%;
   transform: translateX(-50%);
-
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
   // overflow: hidden;
   @include tablet {
-    right: 100px;
+    gap: 16px;
     left: auto;
-    transform: translateX(0%);
+    transform: translateX(-35%);
   }
 
   @include laptop {
-    left: 50px;
-    right: auto;
-  }
-
-  @include desktop {
-    left: 60px;
+    display: none;
   }
 
   & .contacts__phone {
@@ -658,6 +703,12 @@
 }
 
 .type2 {
+  .header__call-btn-wrap {
+    .contacts__phone--booking,
+    .contacts__phone--invest {
+      color: $color-black;
+    }
+  }
   & .language__item {
     color: $color-black;
   }
@@ -683,6 +734,18 @@
   }
 
   & .scroll-down {
+    & .header__call-btn {
+      .svg--link-mobile path {
+        stroke: $color-white !important;
+      }
+    }
+
+    .header__call-btn-wrap {
+      .contacts__phone--booking,
+      .contacts__phone--invest {
+        color: $color-white;
+      }
+    }
     & .language__item {
       color: $color-white !important;
     }

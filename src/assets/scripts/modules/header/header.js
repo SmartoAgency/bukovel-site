@@ -23,32 +23,33 @@ document.body.addEventListener('click', function(evt) {
   const countryList = evt.target.closest('.iti__country-list');
 
   if (btn) {
-    if (document.querySelector('[data-call-us-modal]').classList.contains('hidden')) {
-      gsap.from('.call-us__item', { scale: 0, y: 200, stagger: 0.1, duration: 0.5, autoAlpha: 0 });
-      gsap.to('.arrow-rotate', { rotateZ: 90 });
-      return document.querySelector('[data-call-us-modal]').classList.remove('hidden');
-    }
-    return;
+    // if (document.querySelector('[data-call-us-modal]').classList.contains('hidden')) {
+    //   gsap.from('.call-us__item', { scale: 0, y: 200, stagger: 0.1, duration: 0.5, autoAlpha: 0 });
+    //   gsap.to('.arrow-rotate', { rotateZ: 90 });
+    //   return document.querySelector('[data-call-us-modal]').classList.remove('hidden');
+    // }
+    // return;
+    return document.querySelector('[data-call-us-modal]').classList.toggle('hidden');
   }
   if (target) {
     gsap.to('.arrow-rotate', { rotateZ: 0 });
     return document.querySelector('[data-call-us-modal]').classList.add('hidden');
   }
-  if (!form && !target && !btn && !countryList) {
+  if (!form && !target && !countryList) {
     gsap.to('.arrow-rotate', { rotateZ: 0 });
     return document.querySelector('[data-call-us-modal]').classList.add('hidden');
   }
 });
-const select = document.querySelector('.order-call__select');
-const inputs = document.querySelectorAll('.order-call__number');
-select.addEventListener('change', function() {
-  if (select.value === 'investment' || select.value === 'reservation') {
-    inputs.forEach(inp => (inp.disabled = false));
-  } else {
-    inputs.forEach(inp => (inp.disabled = true));
-  }
-  return;
-});
+// const select = document.querySelector('.order-call__select');
+// // const inputs = document.querySelectorAll('.order-call__number');
+// select.addEventListener('change', function() {
+//   if (select.value === 'investment' || select.value === 'reservation') {
+//     inputs.forEach(inp => (inp.disabled = false));
+//   } else {
+//     inputs.forEach(inp => (inp.disabled = true));
+//   }
+//   return;
+// });
 //menu
 const openMenuBtn = document.querySelector('.menu-btn');
 const menuRef = document.querySelector('.menu__container');
@@ -72,7 +73,16 @@ tl.add(() => {
 tl.add(() => {
   headerBg.classList.add('menuOpen');
 });
-
+tl.to(
+  '.header__call-btn-wrap .contacts__phone--header .contacts__phone--booking',
+  { color: 'rgba(17, 17, 17, 1)' },
+  '<',
+);
+tl.to(
+  '.header__call-btn-wrap .contacts__phone--header .contacts__phone--invest',
+  { color: 'rgba(17, 17, 17, 1)' },
+  '<',
+);
 tl.to('.language__item', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.header__logo-name', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.header__logo-name--mobile', { color: 'rgba(17, 17, 17, 1)' }, '<');
