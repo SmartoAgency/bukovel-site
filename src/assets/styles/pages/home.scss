@@ -89,10 +89,10 @@ body {
   @include text-style-general-style;
   color: $color-white;
   text-align: end;
-  padding-top: 10px;
+ 
 
   @include laptop {
-    padding-top: 15px;
+   
   }
 
   ul {
@@ -125,6 +125,12 @@ body {
     svg {
       width: 100%;
       height: 100%;
+      path{fill:$color-black;}
+      circle {
+        fill:$color-yellow;
+        stroke: $color-yellow;
+      }
+      
     }
   }
 
@@ -174,7 +180,7 @@ body {
   flex-direction: column;
   gap: 20px;
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   left: 0;
   width: 100%;
 
@@ -203,9 +209,7 @@ body {
     @include text-style-general-style;
     color: $color-white;
 
-    @include laptop {
-      display: none;
-    }
+    
   }
 
   @include tablet {
@@ -690,14 +694,13 @@ body #cdawrap {
   }
 }
 
-.spa-section {
-  background-color: #000;
-}
-
-// .spa {
-//   background-image: linear-gradient(to bottom, #111111cb, transparent 40%),
-//     url('../images/sectionsBg/section1bg.jpg');
+// .spa-section {
+//   background-color: #000;
 // }
+
+.spa {
+position: relative;
+}
 
 .section__title-wrapper {
   display: flex;
@@ -724,6 +727,178 @@ body #cdawrap {
   flex-direction: column;
   height: 100%;
 }
+
+//правки 14/03/2024 "Зменшення назви "
+
+.hero__bg {
+  .section-title__first-row h1{
+      @include text-style-p;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+  
+  .section-main-text{
+    @include text-style-96;
+    margin-bottom: 30px;
+    @include tablet {
+      max-width: 80%;
+    }
+     @include laptop {
+      max-width: 50%;
+    }
+  }
+}
+.luxary-section {
+  .bottom-row{
+    position:relative;
+
+  }
+  .luxary__info-list{
+    position:absolute;
+    top:-100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width:80%;
+grid-row-gap: 40px;
+
+    @include tablet-hor {
+      transform: translate(-50%, -50%);
+      width:auto;
+    }
+    @include laptop {
+      top: 50%;
+      // transform: translate(-50%, -50%);
+      // width:auto;
+    }
+
+  } 
+  .luxary__info-item {
+    h3 {
+      @include text-style-p;
+      margin-bottom: 12px;
+      @include laptop {
+
+      }
+    }
+    p {
+      @include text-style-96;
+      @include desktop {
+        font-size:72px;
+      }
+      span{
+        @include text-style-p;
+      }
+    }
+  }
+}
+
+.apartment-cards {
+  .text{
+    position:static;
+    height:auto;
+    padding: 0;  
+    padding-top:12px;
+    width:100%;
+
+  }
+  .text__content {
+    width:100%;
+  }
+  .card--without-bulge {
+    background-color: $color-white;
+    padding: 24px;
+    transition: background-color 3s ease;
+    &:active {
+      background-color: #b68c17fd;
+      border: 1px solid $color-yellow
+    }
+    @include tablet {
+      padding: 40px;
+    }
+    @include tablet-hor {
+      padding: 15px;
+
+    }
+    @include laptop {
+      padding: 24px;
+    }
+    @include desktop {
+      padding: 40px;
+    }
+  }
+  .card__content{
+    height:70%;
+    border-radius: 0;
+    @include tablet-hor {
+      height:60%;
+
+    }
+    @include laptop {
+      height:70%;
+    }
+  }
+  .card__title{
+    @include text-style-p;
+    color:$color-black;
+    text-align: center;
+    width:100%;
+    margin-bottom: 16px;
+    @include tablet-hor {
+      font-size:20px;
+      margin-bottom: 8px;
+
+    }
+    @include laptop {
+      @include text-style-p;
+      color:$color-black;
+      margin-bottom: 16px;
+    }
+  }
+  .card__info-row {
+    display: flex;
+    gap:8px;
+    width:100%;
+
+  } 
+  .card__info-name{
+    color:$color-black;
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    text-align: left;
+    @include  text-style-news-descr;
+    &::after {
+      content: "";
+      background-color: rgba(148, 152, 158, 0.50);
+
+      ;
+      display: block;
+      height: 1px;
+      align-self: flex-end;
+      flex: 1;
+      width:100%;
+      
+    }
+  }
+  .card__link{
+    color: $color-black;
+    svg path{
+      stroke:$color-black;
+
+    }
+  }
+  .status{
+    padding:2px 4px;
+    background-color: #7BAD3B;
+    border-radius:4px;
+    color:$color-white;
+  }
+}
+
+
 
 .section-title__first-row {
   display: flex;
@@ -759,7 +934,9 @@ body #cdawrap {
 .section-title__number {
   // margin-top: 115px;
 }
-
+.height {
+  height: 100%;
+}
 .section__arrow {
   width: 25px;
   height: 41px;
@@ -875,6 +1052,51 @@ body #cdawrap {
 
   @include tablet-hor {
     display: none;
+  }
+}
+.swiper-apartments {
+  @extend .swiper-spa;
+
+  &-button-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
+  }
+
+  &-button-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(27%, -50%);
+    width: 77.801px;
+    height: 241.811px;
+    z-index: 3;
+    transition: opacity 300 ease-in-out;
+
+    svg {
+      transform: rotate(180deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    @include tablet {
+      width: 155.801px;
+      height: 482.811px;
+    }
   }
 }
 
@@ -1793,33 +2015,113 @@ body #cdawrap {
 }
 
 .contacts__content {
+  // display: flex;
+  // flex-direction: column;
+  // gap: 16px;
+  // width: 100%;
+
+  // @include tablet {
+  //   max-height: 390px;
+  //   width: calc(33% - 24px);
+  //   gap: 24px;
+  //   flex-wrap: wrap;
+  // }
+
+  // @include laptop {
+  //   max-height: 430px;
+  //   column-gap: 50px;
+  //   // width: 415px;
+  //   // max-height: 100%;
+  //   // flex-wrap: nowrap;
+  // }
+
+  // @include desktop {
+  //   max-height: 570px;
+  //   gap: 40px;
+  //   // width: 550px;
+  // }
+ display: flex;
+ flex-direction: column;
+ gap:20px;
+@include tablet {
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr 480px 480px;
+grid-column-gap: 24px;
+grid-row-gap: 24px;
+
+}
+@include laptop {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows:1fr 553px;
+}
+@include desktop {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows:1fr 800px;
+}
+
+}
+.contacts__item-wrap{
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 100%;
+  &4{
+    order:-1;
+  }
+  &2{
+    order:-1;
+  }
+  &1{
+    order:-1;
+  }
 
   @include tablet {
-    max-height: 390px;
-    width: calc(50% - 12px);
     gap: 24px;
-    flex-wrap: wrap;
   }
 
-  @include laptop {
-    max-height: 430px;
-    column-gap: 50px;
-    // width: 415px;
-    // max-height: 100%;
-    // flex-wrap: nowrap;
-  }
 
   @include desktop {
-    max-height: 570px;
     gap: 40px;
-    // width: 550px;
+    
+  }
+  
+
+@include tablet {
+  &1{
+    grid-area: 1 / 1 / 2 / 2; 
+  }
+  &2{
+    grid-area: 1 / 2 / 2 / 3; 
+  }
+  &3{
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  &4{
+    grid-area: 2 / 1 / 3 / 3;
+  }
+  &5{
+    grid-area: 3 / 2 / 4 / 3;
   }
 }
-
+  @include laptop {
+    &1{
+      grid-area: 1 / 1 / 2 / 3; 
+    }
+    &2{
+      grid-area: 1 / 3 / 2 / 5; 
+    }
+    &3{
+      grid-area: 1 / 5 / 2 / 7; 
+    }
+    &4{
+      grid-area: 2 / 1 / 3 / 4; 
+    }
+    &5{
+      grid-area: 2 / 4 / 3 / 7;
+    }
+  }
+  
+}
 .contacts__location,
 .contacts__social-list,
 .contacts__email-link {
@@ -1868,12 +2170,20 @@ body #cdawrap {
 }
 
 .contacts__map {
-  background-color: #907030;
+  
   width: 100%;
   height: 390px;
+  
+  iframe {
+    height:100%;
+    width:100%;
+  }
+  
 
+  
   @include tablet {
-    height: 468px;
+    
+    height: 480px;
   }
 
   @include laptop {

@@ -78,23 +78,23 @@ window.addEventListener('load', () => {
   }, 800);
 });
 
-gsap.fromTo(
-  '.hero__bg',
-  {
-    yPercent: 0,
-    opacity: 1,
-  },
-  {
-    yPercent: -100,
-    opacity: 0,
-    scrollTrigger: {
-      trigger: '.hero-section',
-      start: 'bottom center',
-      end: '+=50%',
-      scrub: 1,
-    },
-  },
-);
+// gsap.fromTo(
+//   '.hero__bg',
+//   {
+//     yPercent: 0,
+//     opacity: 1,
+//   },
+//   {
+//     yPercent: -100,
+//     opacity: 0,
+//     scrollTrigger: {
+//       trigger: '.hero-section',
+//       start: 'bottom center',
+//       end: '+=50%',
+//       scrub: 1,
+//     },
+//   },
+// );
 
 // document.querySelectorAll('.section').forEach(el => {
 //   gsap
@@ -110,23 +110,23 @@ gsap.fromTo(
 //     .to(el, { yPercent: -20, scale: 1.25 });
 // });
 
-if (document.documentElement.clientWidth > 1024) {
-  tl.fromTo(
-    '.spa',
-    { yPercent: 100, opacity: 0.2 },
-    {
-      scrollTrigger: {
-        trigger: '.spa-section',
-        start: 'top center',
-        end: '+=0%',
+// if (document.documentElement.clientWidth > 1024) {
+//   tl.fromTo(
+//     '.spa',
+//     { yPercent: 100, opacity: 0.2 },
+//     {
+//       scrollTrigger: {
+//         trigger: '.spa-section',
+//         start: 'top center',
+//         end: '+=0%',
 
-        scrub: 2,
-      },
-      yPercent: 0,
-      opacity: 1,
-    },
-  );
-}
+//         scrub: 2,
+//       },
+//       yPercent: 0,
+//       opacity: 1,
+//     },
+//   );
+// }
 gsap
   .timeline()
   .to('.hero__invest-more-wrap .logo-part__svg path', {
@@ -141,7 +141,47 @@ gsap
   });
 
 chaletInvestBtnAnim();
-
+const swiperApartments = new Swiper('.swiper-apartments', {
+  // Optional parameters
+  modules: [Navigation],
+  // modules: [EffectCoverflow],
+  // effect: 'coverflow',
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  speed: 500,
+  mousewheel: true,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-apartments-button-next',
+    prevEl: '.swiper-apartments-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    360: {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+    },
+    480: {
+      slidesPerView: 1.4,
+      spaceBetween: 20,
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 1.6,
+      spaceBetween: 40,
+    },
+    900: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+  },
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
 const swiperSpa = new Swiper('.swiper-spa', {
   // Optional parameters
   modules: [Navigation],
@@ -462,7 +502,7 @@ function hoverParalax(params = {}) {
   });
 }
 
-gsap.utils.toArray('.card--without-bulge img').forEach(el => {
+gsap.utils.toArray('.card--without-bulge .cardOut__img:not(.no-paralax)').forEach(el => {
   hoverParalax({
     degree: 15,
     selector: el,

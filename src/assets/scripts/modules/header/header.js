@@ -16,30 +16,30 @@ window.addEventListener('scroll', function headerSquosh() {
 });
 
 //pop up call us
-document.body.addEventListener('click', function(evt) {
-  const target = evt.target.closest('[data-call-us-modal-close]');
-  const form = evt.target.closest('[data-call-us-modal]');
-  const btn = evt.target.closest('[data-call-us-btn]');
-  const countryList = evt.target.closest('.iti__country-list');
+// document.body.addEventListener('click', function(evt) {
+//   const target = evt.target.closest('[data-call-us-modal-close]');
+//   const form = evt.target.closest('[data-call-us-modal]');
+//   const btn = evt.target.closest('[data-call-us-btn]');
+//   const countryList = evt.target.closest('.iti__country-list');
 
-  if (btn) {
-    // if (document.querySelector('[data-call-us-modal]').classList.contains('hidden')) {
-    //   gsap.from('.call-us__item', { scale: 0, y: 200, stagger: 0.1, duration: 0.5, autoAlpha: 0 });
-    //   gsap.to('.arrow-rotate', { rotateZ: 90 });
-    //   return document.querySelector('[data-call-us-modal]').classList.remove('hidden');
-    // }
-    // return;
-    return document.querySelector('[data-call-us-modal]').classList.toggle('hidden');
-  }
-  if (target) {
-    gsap.to('.arrow-rotate', { rotateZ: 0 });
-    return document.querySelector('[data-call-us-modal]').classList.add('hidden');
-  }
-  if (!form && !target && !countryList) {
-    gsap.to('.arrow-rotate', { rotateZ: 0 });
-    return document.querySelector('[data-call-us-modal]').classList.add('hidden');
-  }
-});
+//   if (btn) {
+//     // if (document.querySelector('[data-call-us-modal]').classList.contains('hidden')) {
+//     //   gsap.from('.call-us__item', { scale: 0, y: 200, stagger: 0.1, duration: 0.5, autoAlpha: 0 });
+//     //   gsap.to('.arrow-rotate', { rotateZ: 90 });
+//     //   return document.querySelector('[data-call-us-modal]').classList.remove('hidden');
+//     // }
+//     // return;
+//     return document.querySelector('[data-call-us-modal]').classList.toggle('hidden');
+//   }
+//   if (target) {
+//     gsap.to('.arrow-rotate', { rotateZ: 0 });
+//     return document.querySelector('[data-call-us-modal]').classList.add('hidden');
+//   }
+//   if (!form && !target && !countryList) {
+//     gsap.to('.arrow-rotate', { rotateZ: 0 });
+//     return document.querySelector('[data-call-us-modal]').classList.add('hidden');
+//   }
+// });
 // const select = document.querySelector('.order-call__select');
 // // const inputs = document.querySelectorAll('.order-call__number');
 // select.addEventListener('change', function() {
