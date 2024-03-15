@@ -762,16 +762,26 @@ position: relative;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     width:80%;
-grid-row-gap: 40px;
+    grid-row-gap: 40px;
 
     @include tablet-hor {
       transform: translate(-50%, -50%);
-      width:auto;
+      width:60%;
+      top: 50%;
+      
+      grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 20px;
     }
     @include laptop {
-      top: 50%;
+      top: 50%;width:auto;
+      grid-row-gap: 20px;
       // transform: translate(-50%, -50%);
       // width:auto;
+    }
+    @include desktop {
+      grid-column-gap: 60px;
+      grid-row-gap: 40px;
     }
 
   } 
