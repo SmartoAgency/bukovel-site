@@ -84,16 +84,14 @@ body {
 
 .hero__social-list {
   position: absolute;
-  right: 0;
-  bottom: -120px;
+  left: 0;
+  bottom: -250px;
   @include text-style-general-style;
   color: $color-white;
   text-align: end;
- 
 
-  @include laptop {
-   
-  }
+
+  @include laptop {}
 
   ul {
     display: flex;
@@ -125,12 +123,16 @@ body {
     svg {
       width: 100%;
       height: 100%;
-      path{fill:$color-black;}
+
+      path {
+        fill: $color-black;
+      }
+
       circle {
-        fill:$color-yellow;
+        fill: $color-yellow;
         stroke: $color-yellow;
       }
-      
+
     }
   }
 
@@ -140,6 +142,8 @@ body {
   }
 
   @include tablet {
+    left: auto;
+    right: 0;
     bottom: -160px;
 
     li:not(:last-child) {
@@ -155,15 +159,29 @@ body {
 .hero__text-block {
   position: absolute;
   left: 0;
-  bottom: -140px;
+  bottom: -150px;
   @include text-style-general-style;
-  max-width: 163px;
+  // align-items: center;
   align-self: flex-end;
   padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+
+  p {
+    max-width: 163px;
+  }
 
   @include tablet {
     bottom: -165px;
-    max-width: 310px;
+
+    gap: 40px;
+    flex-direction: row;
+
+    p {
+      max-width: 310px;
+    }
   }
 
   @include laptop {
@@ -171,7 +189,139 @@ body {
   }
 
   @include desktop {
-    max-width: 435px;
+
+    p {
+      max-width: 435px;
+    }
+  }
+
+  .hero-youtube-link {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    border-top: 3px solid $wc;
+    border-bottom: 3px solid $wc;
+    color: $wc;
+    font-size: 14px;
+    gap: 12px;
+    transition: border-color 0.4s ease-in-out;
+    height: fit-content;
+    background-image: linear-gradient(45deg, rgba(17, 17, 17, 0) 0, rgba(17, 17, 17, 0) 55%, rgba(255, 250, 221, .4784313725) 63%, rgba(26, 25, 25, 0) 70%, rgba(17, 17, 17, 0) 100%);
+    background-size: 500% 100%;
+    animation: 5s ease-in 1s infinite blick;
+    // span {
+    //   background: linear-gradient(45deg, rgba(17, 17, 17, 0) 0, rgba(17, 17, 17, 0) 60%, rgba(255, 250, 221, .4784313725) 63%, rgba(26, 25, 25, 0) 66%, rgba(17, 17, 17, 0) 100%);
+    //   background-size: 500% 100%;
+    //   animation: 10s ease-in 1s infinite blick;
+    // }
+
+
+    svg {
+      width: 24px;
+      height: 23px;
+
+      path {
+        transition: 0.4s ease-in-out;
+      }
+    }
+
+    @include tablet {
+      padding: 19px;
+      font-size: 16px;
+    }
+
+    @include laptop {
+      &:hover {
+        border-color: $color-yellow;
+
+
+        svg path {
+          fill: #E62117;
+        }
+      }
+    }
+
+    // @include desktop {}
+  }
+}
+
+@keyframes blick {
+  0% {
+    background-position-x: 0;
+  }
+
+
+
+  20% {
+    background-position-x: 100%;
+  }
+
+  50% {
+    background-image: linear-gradient(45deg, rgba(17, 17, 17, 0) 0, rgba(17, 17, 17, 0) 55%, rgba(26, 25, 25, 0) 70%, rgba(17, 17, 17, 0) 100%);
+    background-position-x: 100%;
+  }
+
+  60% {
+    background-position-x: 0;
+
+
+  }
+
+  61% {
+    background-image: linear-gradient(45deg, rgba(17, 17, 17, 0) 0, rgba(17, 17, 17, 0) 55%, rgba(255, 250, 221, .4784313725) 63%, rgba(26, 25, 25, 0) 70%, rgba(17, 17, 17, 0) 100%);
+  }
+}
+
+.mobile.landscape,
+.iphone.landscape {
+  .hero__bg {
+    padding-top: 100px;
+  }
+
+  .section-title .section-main-text {
+    font-size: 28px;
+  }
+
+  .section-title__first-row {}
+
+  .hero__invest-more-wrap {
+    display: none;
+  }
+
+  .hero__text-block {
+    bottom: -110px;
+    gap: 40px;
+    flex-direction: row;
+  }
+
+  .hero__social-list {
+    left: auto;
+    right: 0;
+    bottom: -100px;
+  }
+
+
+  .luxary-section .luxary__info-list {
+    top: auto;
+    bottom: 0px;
+    transform: translate(-50%, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+  }
+
+  .luxary-section {
+    padding-top: 60px;
+
+    .luxary__info-item p {
+      font-size: 48px !important;
+    }
+
+    .bottom-row {
+      top: 40px;
+    }
   }
 }
 
@@ -209,7 +359,7 @@ body {
     @include text-style-general-style;
     color: $color-white;
 
-    
+
   }
 
   @include tablet {
@@ -699,7 +849,7 @@ body #cdawrap {
 // }
 
 .spa {
-position: relative;
+  position: relative;
 }
 
 .section__title-wrapper {
@@ -731,74 +881,84 @@ position: relative;
 //правки 14/03/2024 "Зменшення назви "
 
 .hero__bg {
-  .section-title__first-row h1{
-      @include text-style-p;
-      text-transform: uppercase;
-      margin-bottom: 40px;
-    }
-  
-  .section-main-text{
+  .section-title__first-row h1 {
+    @include text-style-p;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .section-main-text {
     @include text-style-96;
     margin-bottom: 30px;
+
     @include tablet {
       max-width: 80%;
     }
-     @include laptop {
+
+    @include laptop {
       max-width: 50%;
     }
   }
 }
+
 .luxary-section {
-  .bottom-row{
-    position:relative;
+  .bottom-row {
+    position: relative;
 
   }
-  .luxary__info-list{
-    position:absolute;
-    top:-100%;
+
+  .luxary__info-list {
+    position: absolute;
+    top: -100%;
     left: 50%;
     transform: translate(-50%, -100%);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    width:80%;
+    width: 80%;
     grid-row-gap: 40px;
 
     @include tablet-hor {
       transform: translate(-50%, -50%);
-      width:60%;
+      width: 60%;
       top: 50%;
-      
+
       grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    grid-column-gap: 20px;
+      grid-template-rows: repeat(1, 1fr);
+      grid-column-gap: 20px;
     }
+
     @include laptop {
-      top: 50%;width:auto;
+      top: 50%;
+      width: auto;
       grid-row-gap: 20px;
       // transform: translate(-50%, -50%);
       // width:auto;
     }
+
     @include desktop {
       grid-column-gap: 60px;
       grid-row-gap: 40px;
     }
 
-  } 
+  }
+
   .luxary__info-item {
     h3 {
       @include text-style-p;
       margin-bottom: 12px;
-      @include laptop {
 
-      }
+      @include laptop {}
     }
+
     p {
       @include text-style-96;
+
       @include desktop {
-        font-size:72px;
+        font-size: 72px;
       }
-      span{
+
+      span {
         @include text-style-p;
       }
     }
@@ -806,80 +966,96 @@ position: relative;
 }
 
 .apartment-cards {
-  .text{
-    position:static;
-    height:auto;
-    padding: 0;  
-    padding-top:12px;
-    width:100%;
+  .text {
+    position: static;
+    height: auto;
+    padding: 0;
+    padding-top: 12px;
+    width: 100%;
 
   }
+
   .text__content {
-    width:100%;
+    width: 100%;
   }
+
   .card--without-bulge {
     background-color: $color-white;
     padding: 24px;
     transition: background-color 3s ease;
+
     &:active {
       background-color: #b68c17fd;
       border: 1px solid $color-yellow
     }
+
     @include tablet {
       padding: 40px;
     }
+
     @include tablet-hor {
       padding: 15px;
 
     }
+
     @include laptop {
       padding: 24px;
     }
+
     @include desktop {
       padding: 40px;
     }
   }
-  .card__content{
-    height:70%;
+
+  .card__content {
+    height: 70%;
     border-radius: 0;
+
     @include tablet-hor {
-      height:60%;
+      height: 60%;
 
     }
+
     @include laptop {
-      height:70%;
+      height: 70%;
     }
   }
-  .card__title{
+
+  .card__title {
     @include text-style-p;
-    color:$color-black;
+    color: $color-black;
     text-align: center;
-    width:100%;
+    width: 100%;
     margin-bottom: 16px;
+
     @include tablet-hor {
-      font-size:20px;
+      font-size: 20px;
       margin-bottom: 8px;
 
     }
+
     @include laptop {
       @include text-style-p;
-      color:$color-black;
+      color: $color-black;
       margin-bottom: 16px;
     }
   }
+
   .card__info-row {
     display: flex;
-    gap:8px;
-    width:100%;
+    gap: 8px;
+    width: 100%;
 
-  } 
-  .card__info-name{
-    color:$color-black;
+  }
+
+  .card__info-name {
+    color: $color-black;
     display: flex;
     align-items: flex-end;
     flex-grow: 1;
     text-align: left;
-    @include  text-style-news-descr;
+    @include text-style-news-descr;
+
     &::after {
       content: "";
       background-color: rgba(148, 152, 158, 0.50);
@@ -889,22 +1065,25 @@ position: relative;
       height: 1px;
       align-self: flex-end;
       flex: 1;
-      width:100%;
-      
-    }
-  }
-  .card__link{
-    color: $color-black;
-    svg path{
-      stroke:$color-black;
+      width: 100%;
 
     }
   }
-  .status{
-    padding:2px 4px;
+
+  .card__link {
+    color: $color-black;
+
+    svg path {
+      stroke: $color-black;
+
+    }
+  }
+
+  .status {
+    padding: 2px 4px;
     background-color: #7BAD3B;
-    border-radius:4px;
-    color:$color-white;
+    border-radius: 4px;
+    color: $color-white;
   }
 }
 
@@ -944,9 +1123,11 @@ position: relative;
 .section-title__number {
   // margin-top: 115px;
 }
+
 .height {
   height: 100%;
 }
+
 .section__arrow {
   width: 25px;
   height: 41px;
@@ -1064,6 +1245,7 @@ position: relative;
     display: none;
   }
 }
+
 .swiper-apartments {
   @extend .swiper-spa;
 
@@ -2050,39 +2232,46 @@ position: relative;
   //   gap: 40px;
   //   // width: 550px;
   // }
- display: flex;
- flex-direction: column;
- gap:20px;
-@include tablet {
-  display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: 1fr 480px 480px;
-grid-column-gap: 24px;
-grid-row-gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 480px 480px;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+
+  }
+
+  @include laptop {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 553px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 800px;
+  }
 
 }
-@include laptop {
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows:1fr 553px;
-}
-@include desktop {
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows:1fr 800px;
-}
 
-}
-.contacts__item-wrap{
+.contacts__item-wrap {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  &4{
-    order:-1;
+
+  &4 {
+    order: -1;
   }
-  &2{
-    order:-1;
+
+  &2 {
+    order: -1;
   }
-  &1{
-    order:-1;
+
+  &1 {
+    order: -1;
   }
 
   @include tablet {
@@ -2092,46 +2281,56 @@ grid-row-gap: 24px;
 
   @include desktop {
     gap: 40px;
-    
-  }
-  
 
-@include tablet {
-  &1{
-    grid-area: 1 / 1 / 2 / 2; 
   }
-  &2{
-    grid-area: 1 / 2 / 2 / 3; 
+
+
+  @include tablet {
+    &1 {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    &2 {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+
+    &3 {
+      grid-area: 3 / 1 / 4 / 2;
+    }
+
+    &4 {
+      grid-area: 2 / 1 / 3 / 3;
+    }
+
+    &5 {
+      grid-area: 3 / 2 / 4 / 3;
+    }
   }
-  &3{
-    grid-area: 3 / 1 / 4 / 2;
-  }
-  &4{
-    grid-area: 2 / 1 / 3 / 3;
-  }
-  &5{
-    grid-area: 3 / 2 / 4 / 3;
-  }
-}
+
   @include laptop {
-    &1{
-      grid-area: 1 / 1 / 2 / 3; 
+    &1 {
+      grid-area: 1 / 1 / 2 / 3;
     }
-    &2{
-      grid-area: 1 / 3 / 2 / 5; 
+
+    &2 {
+      grid-area: 1 / 3 / 2 / 5;
     }
-    &3{
-      grid-area: 1 / 5 / 2 / 7; 
+
+    &3 {
+      grid-area: 1 / 5 / 2 / 7;
     }
-    &4{
-      grid-area: 2 / 1 / 3 / 4; 
+
+    &4 {
+      grid-area: 2 / 1 / 3 / 4;
     }
-    &5{
+
+    &5 {
       grid-area: 2 / 4 / 3 / 7;
     }
   }
-  
+
 }
+
 .contacts__location,
 .contacts__social-list,
 .contacts__email-link {
@@ -2139,7 +2338,7 @@ grid-row-gap: 24px;
 }
 
 .contacts__label {
-  @include text-style-news-descr;
+  @include text-style-general-style;
   color: $color-gray-2;
   text-transform: none;
   text-decoration: none !important;
@@ -2180,19 +2379,19 @@ grid-row-gap: 24px;
 }
 
 .contacts__map {
-  
+
   width: 100%;
   height: 390px;
-  
-  iframe {
-    height:100%;
-    width:100%;
-  }
-  
 
-  
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+
+
+
   @include tablet {
-    
+
     height: 480px;
   }
 

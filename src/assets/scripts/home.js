@@ -10,6 +10,7 @@ import Swiper from 'swiper';
 import { Navigation, EffectCoverflow } from 'swiper';
 // import Swiper styles
 import 'swiper/css';
+import device from 'current-device';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 new App();
@@ -32,6 +33,26 @@ window.addEventListener('load', () => {
         {
           autoAlpha: 0,
           yPercent: -100,
+          duration: 1,
+          ease: 'power4.out',
+        },
+        '<',
+      )
+      .from(
+        '.hero-youtube-link',
+        {
+          autoAlpha: 0,
+          yPercent: -100,
+          duration: 1,
+          ease: 'power4.out',
+        },
+        '<',
+      )
+      .from(
+        '.section-main-text',
+        {
+          autoAlpha: 0,
+          xPercent: -100,
           duration: 1,
           ease: 'power4.out',
         },

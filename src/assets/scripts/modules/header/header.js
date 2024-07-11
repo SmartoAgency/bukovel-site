@@ -86,6 +86,7 @@ tl.to(
 tl.to('.language__item', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.header__logo-name', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.header__logo-name--mobile', { color: 'rgba(17, 17, 17, 1)' }, '<');
+tl.to('.eng-presentation', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.menu-btn p', { color: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.menu-btn__burger', { backgroundColor: 'rgba(17, 17, 17, 1)' }, '<');
 tl.to('.menu-btn__burger', { rotate: 45, duration: 0.5 }, '<');

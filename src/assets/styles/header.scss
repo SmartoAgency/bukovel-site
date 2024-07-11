@@ -76,14 +76,14 @@
   gap: 16px;
   margin-left: auto;
 
-  & ~ & {
+  &~& {
     margin-left: 12px;
   }
 
   @include tablet {
     gap: 32px;
 
-    & ~ & {
+    &~& {
       margin-left: 32px;
     }
   }
@@ -92,7 +92,7 @@
     margin-left: 0;
     gap: 60px;
 
-    & ~ & {
+    &~& {
       margin-left: 0;
     }
   }
@@ -125,11 +125,13 @@
     height: 67.259px;
   }
 }
+
 .mode--mobile {
   @include laptop {
     display: none;
   }
 }
+
 .contacts__phone--header {
   @extend .contacts__phone;
   display: flex;
@@ -137,8 +139,10 @@
   justify-content: center;
   align-items: center;
 }
+
 .header__call-btn-wrap {
   display: none;
+
   @include laptop {
     display: flex;
     gap: 20px;
@@ -150,24 +154,30 @@
     color: $color-white;
   }
 }
+
 .call-us__modal-container {
+
   .contacts__phone--booking,
   .contacts__phone--invest {
     @include text-style-general-style;
     color: $color-white;
   }
 }
+
 .contacts__label--header {
   @extend .contacts__label;
   color: $color-yellow;
   font-size: 12px;
+
   @media screen and (min-width: 768px) and (max-width: 1365px) {
     font-size: 14px;
   }
+
   @include desktop {
     font-size: 14px;
   }
 }
+
 .header__call-btn {
   border-radius: 50%;
 
@@ -176,6 +186,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   &.header__apartments {
     p {
       display: none;
@@ -239,8 +250,7 @@
   width: auto;
   padding-right: 12px;
 
-  @include tablet {
-  }
+  @include tablet {}
 
   @include laptop {
     p {
@@ -318,7 +328,7 @@
   text-decoration: none;
   color: $color-white;
 
-  & ~ &::before {
+  &~&::before {
     content: '|';
 
     transform: rotate(90deg);
@@ -333,7 +343,7 @@
   @include tablet {
     flex-direction: row;
 
-    & ~ &::before {
+    &~&::before {
       transform: rotate(0deg);
       left: -13px;
       bottom: 25%;
@@ -416,6 +426,7 @@
   gap: 10px;
   justify-items: center;
   align-items: center;
+
   // overflow: hidden;
   @include tablet {
     gap: 16px;
@@ -544,6 +555,19 @@
   background-color: $color-black;
   padding: 20px;
   width: 100%;
+}
+
+.eng-presentation {
+  @include text-style-general-style;
+  color: $color-white;
+
+  span {
+    display: none;
+
+    @include tablet {
+      display: inline;
+    }
+  }
 }
 
 .menu-btn {
@@ -704,11 +728,13 @@
 
 .type2 {
   .header__call-btn-wrap {
+
     .contacts__phone--booking,
     .contacts__phone--invest {
       color: $color-black;
     }
   }
+
   & .language__item {
     color: $color-black;
   }
@@ -741,11 +767,13 @@
     }
 
     .header__call-btn-wrap {
+
       .contacts__phone--booking,
       .contacts__phone--invest {
         color: $color-white;
       }
     }
+
     & .language__item {
       color: $color-white !important;
     }

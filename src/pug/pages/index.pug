@@ -85,7 +85,13 @@ block content
         span.section-title__first-row.second-row
           span.overflow-hidden.hero__text-block 
             p Продаж апартаментів в самому центрі Буковелю! Інвестиція, приречена на успіх!
-         
+            a.hero-youtube-link(target="_blank" href="​https://www.youtube.com/watch?v=i94hxFYST18")
+              span Відеопрезентація
+              <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24.4887 4.4359L24.4898 4.44632C24.497 4.52278 24.6663 6.33855 24.6665 8.16162V9.86583C24.6665 11.6889 24.497 13.5047 24.4898 13.5811L24.4871 13.6044C24.4636 13.7836 24.2335 15.3792 23.4379 16.1998C22.4833 17.1966 21.4066 17.305 20.8889 17.3572L20.8885 17.3572C20.8391 17.3621 20.794 17.3666 20.7539 17.3717L20.712 17.3758C17.5392 17.5948 12.7477 17.6246 12.6997 17.6248L12.6924 17.625L12.6851 17.6248C12.4416 17.6215 6.69777 17.54 4.86581 17.3746L4.81033 17.3673C4.75453 17.358 4.67339 17.3492 4.57908 17.339L4.57138 17.3381C3.95395 17.2711 2.80608 17.1463 1.89824 16.2035C1.06677 15.3738 0.864623 13.7731 0.844298 13.5928L0.843016 13.5813C0.835875 13.5048 0.666504 11.6889 0.666504 9.86583V8.16162C0.666504 6.33855 0.835875 4.5226 0.843016 4.44632L0.845763 4.42304C0.869383 4.24372 1.09936 2.6481 1.89495 1.82762C2.8632 0.816867 3.94608 0.69819 4.46646 0.641197C4.47376 0.640389 4.48096 0.639598 4.48805 0.638819C4.52061 0.635239 4.55092 0.631906 4.57889 0.628339L4.62119 0.624169C7.82258 0.405234 12.6142 0.375348 12.6622 0.375174L12.6664 0.375L12.6706 0.375174C12.7186 0.375348 17.5102 0.405234 20.6831 0.624169L20.725 0.628339C20.7607 0.632857 20.8006 0.637201 20.8442 0.641892C21.3706 0.698711 22.4652 0.817214 23.4307 1.79269C24.2661 2.62204 24.4684 4.25258 24.4887 4.4359ZM10.9126 5.55996L16.4972 8.23519C16.8277 8.39357 17.0322 8.69665 17.0308 9.02641C17.0293 9.35617 16.8223 9.6579 16.4908 9.81409L10.9061 12.4432C10.7528 12.5155 10.5861 12.5515 10.4199 12.5515C10.2384 12.5515 10.0573 12.5086 9.89396 12.4231C9.58115 12.2595 9.39446 11.9713 9.39446 11.6523V6.3478C9.39446 6.02733 9.5823 5.7386 9.89724 5.57515C10.212 5.41188 10.5915 5.40614 10.9126 5.55996Z" fill="white"/>
+              </svg>
+
+
       .hero__invest-more-wrap 
         .arrow-down__button-wrap
           buttom.arrow-down__button 
@@ -93,7 +99,7 @@ block content
               <path d="M-2.55046e-06 71.6522L169 71.6522M169 71.6522L169 61.0435L105.625 7.99999M169 71.6522L169 82.2609L105.625 130" stroke="white" stroke-width="10" />
             </svg>
           p Дізнатися більше
-        
+
   //- section.content.content--spacing
   //-   .grid.grid--3
   //-     .grid-wrap
@@ -207,24 +213,24 @@ block content
             h2 Luxury
           h2.section-title__second-row(style="margin-top:0") Apartments
           span.section-title__first-row.bottom-row
-              span.section-title__number 01
-                span.section-title__accent .
-              +svg("section-arrow").section__arrow
-              ul.luxary__info-list 
-                li.luxary__info-item 
-                  h3 Кількість
-                  p 245
-                li.luxary__info-item 
-                  h3 Дохідність
-                  p 12% 
-                    span річних
-                li.luxary__info-item 
-                  h3 Площа від
-                  p 32 м² 
-                //- li.luxary__info-item 
-                //-   h3 Дохідність
-                //-   p 12% 
-                //-     span річних
+            span.section-title__number 01
+              span.section-title__accent .
+            +svg("section-arrow").section__arrow
+            ul.luxary__info-list 
+              li.luxary__info-item 
+                h3 Кількість
+                p 245
+              li.luxary__info-item 
+                h3 Дохідність
+                p 12% 
+                  span річних
+              li.luxary__info-item 
+                h3 Площа від
+                p 32 м² 
+              //- li.luxary__info-item 
+              //-   h3 Дохідність
+              //-   p 12% 
+              //-     span річних
     .container.cards__container.apartment-cards
       each card in rooftopCards 
         a(href="/").card--without-bulge
